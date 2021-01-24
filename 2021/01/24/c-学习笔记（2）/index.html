@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>c++学习笔记（2） - navybunny&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="5.2 一维数组5.2.1 一维数组定义方式一维数组定义的三种方式：1.数据类型 数组名[ 数组长度 ];2.数据类型 数组名[ 数组长度 ] = { 值1，值2 …};3.数据类型 数组名[ ] ,"> 
+    <meta name="author" content="navybunny"> 
+    <link rel="alternative" href="atom.xml" title="navybunny&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">navybunny&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">c++学习笔记（2）</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">c++学习笔记（2）</h1>
+        <div class="stuff">
+            <span>一月 24, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>5.2 一维数组<br>5.2.1 一维数组定义方式<br>一维数组定义的三种方式：<br>1.数据类型 数组名[ 数组长度 ];<br>2.数据类型 数组名[ 数组长度 ] = { 值1，值2 …};<br>3.数据类型 数组名[ ] = { 值1，值2 …};<br>总结1：数组名的命名规范与变量名命名规范一致，不要和变量重名<br>总结2：数组中下标是从0开始索引<br>5.2.2 一维数组数组名<br>一维数组名称的用途：<br>1.可以统计整个数组在内存中的长度<br>2.可以获取数组在内存中的首地址<br>注意：数组名是常量，不可以赋值<br>总结1：直接打印数组名，可以查看数组所占内存的首地址<br>总结2：对数组名进行sizeof，可以获取整个数组占内存空间的大小<br>5.2.3 冒泡排序<br>作用： 最常用的排序算法，对数组内元素进行排序<br>1.比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>2.对每一对相邻元素做同样的工作，执行完毕后，找到第一个最大值。<br>3.重复以上的步骤，每次比较次数-1，直到不需要比较</p>
+<p>5.3 二维数组<br>二维数组就是在一维数组上，多加一个维度。<br>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ql8rmRUc-1599301407535)(assets/1541905559138.png)]<br>5.3.1 二维数组定义方式<br>二维数组定义的四种方式：<br>1.数据类型 数组名[ 行数 ][ 列数 ];<br>2.数据类型 数组名[ 行数 ][ 列数 ] = { {数据1，数据2 } ，{数据3，数据4 } };<br>3.数据类型 数组名[ 行数 ][ 列数 ] = { 数据1，数据2，数据3，数据4};<br>4.数据类型 数组名[ ][ 列数 ] = { 数据1，数据2，数据3，数据4};<br>建议：以上4种定义方式，利用第二种更加直观，提高代码的可读性<br>总结：在定义二维数组时，如果初始化了数据，可以省略行数<br>5.3.2 二维数组数组名<br>查看二维数组所占内存空间<br>获取二维数组首地址<br>总结1：二维数组名就是这个数组的首地址<br>总结2：对二维数组名进行sizeof时，可以获取整个二维数组占用的内存空间大小<br>6 函数<br>6.1 概述<br><strong>作用：</strong>将一段经常使用的代码封装起来，减少重复代码<br>一个较大的程序，一般分为若干个程序块，每个模块实现特定的功能。<br>6.2 函数的定义<br>函数的定义一般主要有5个步骤：<br>1、返回值类型<br>2、函数名<br>3、参数表列<br>4、函数体语句<br>5、return 表达式<br>语法：<br>返回值类型 函数名 （参数列表）{<br>       函数体语句<br>return表达式<br>}</p>
+<p>返回值类型 ：一个函数可以返回一个值。在函数定义中<br>函数名：给函数起个名称<br>参数列表：使用该函数时，传入的数据<br>函数体语句：花括号内的代码，函数内需要执行的语句<br>return表达式： 和返回值类型挂钩，函数执行完后，返回相应的数据<br>6.3 函数的调用<br><strong>功能：</strong>使用定义好的函数<br>语法：函数名（参数）<br>总结：函数定义里小括号内称为形参，函数调用时传入的参数称为实参<br>6.4 值传递<br>所谓值传递，就是函数调用时实参将数值传入给形参<br>值传递时，如果形参发生，并不会影响实参<br>总结： 值传递时，形参是修饰不了实参的<br>6.5 函数的常见样式<br>常见的函数样式有4种<br>1.无参无返<br>2.有参无返<br>3.无参有返<br>4.有参有返<br>6.6 函数的声明<br>作用： 告诉编译器函数名称及如何调用函数。函数的实际主体可以单独定义。<br>函数的声明可以多次，但是函数的定义只能有一次<br>6.7 函数的分文件编写<br><strong>作用：</strong>让代码结构更加清晰<br>函数分文件编写一般有4个步骤<br>1.创建后缀名为.h的头文件<br>2.创建后缀名为.cpp的源文件<br>3.在头文件中写函数的声明<br>4.在源文件中写函数的定义<br>7 指针<br>7.1 指针的基本概念<br>指针的作用： 可以通过指针间接访问内存<br>内存编号是从0开始记录的，一般用十六进制数字表示<br>可以利用指针变量保存地址<br>7.2 指针变量的定义和使用<br>指针变量定义语法： 数据类型 * 变量名；<br>指针变量和普通变量的区别<br>普通变量存放的是数据,指针变量存放的是地址<br>指针变量可以通过” * “操作符，操作指针变量指向的内存空间，这个过程称为解引用<br>总结1： 我们可以通过 &amp; 符号 获取变量的地址<br>总结2：利用指针可以记录地址<br>总结3：对指针变量解引用，可以操作指针指向的内存<br>7.3 指针所占内存空间<br>所有指针类型在32位操作系统下是4个字节，在64位下是8字节<br>7.4 空指针和野指针<br>空指针：指针变量指向内存中编号为0的空间<br><strong>用途：</strong>初始化指针变量<br><strong>注意：</strong>空指针指向的内存是不可以访问的<br>野指针：指针变量指向非法的内存空间<br>总结：空指针和野指针都不是我们申请的空间，因此不要访问。<br>7.5 const修饰指针<br>const修饰指针有三种情况<br>1.const修饰指针 — 常量指针<br>2.const修饰常量 — 指针常量<br>3.const即修饰指针，又修饰常量<br>技巧：看const右侧紧跟着的是指针还是常量, 是指针就是常量指针，是常量就是指针常量<br>7.6 指针和数组<br><strong>作用：</strong>利用指针访问数组中元素<br>7.7 指针和函数<br><strong>作用：</strong>利用指针作函数参数，可以修改实参的值<br>总结：如果不想修改实参，就用值传递，如果想修改实参，就用地址传递<br>当数组名传入到函数作为参数时，被退化为指向首元素的指针<br> 结构体<br>8.1 结构体基本概念<br>结构体属于用户自定义的数据类型，允许用户存储不同的数据类型<br>8.2 结构体定义和使用<br>语法：struct 结构体名 { 结构体成员列表 }；<br>通过结构体创建变量的方式有三种：<br>struct 结构体名 变量名<br>struct 结构体名 变量名 = { 成员1值 ， 成员2值…}<br>定义结构体时顺便创建变量<br>总结1：定义结构体时的关键字是struct，不可省略<br>总结2：创建结构体变量时，关键字struct可以省略<br>总结3：结构体变量利用操作符 ‘’.’’ 访问成员<br>8.3 结构体数组<br><strong>作用：</strong>将自定义的结构体放入到数组中方便维护<br>语法：struct 结构体名 数组名[元素个数] = { {} , {} , … {} }<br>8.4 结构体指针<br><strong>作用：</strong>通过指针访问结构体中的成员<br>利用操作符 -&gt;可以通过结构体指针访问结构体属性<br>总结：结构体指针可以通过 -&gt; 操作符 来访问结构体中的成员<br>8.5 结构体嵌套结构体<br>作用： 结构体中的成员可以是另一个结构体<br>8.6 结构体做函数参数<br><strong>作用：</strong>将结构体作为参数向函数中传递<br>传递方式有两种：<br>值传递<br>地址传递<br>总结：如果不想修改主函数中的数据，用值传递，反之用地址传递<br>8.7 结构体中 const使用场景<br><strong>作用：</strong>用const来防止误操作</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

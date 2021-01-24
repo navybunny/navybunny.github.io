@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>c++学习笔记（3） - navybunny&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="1 内存分区模型C++程序在执行时，将内存大方向划分为4个区域代码区：存放函数体的二进制代码，由操作系统进行管理的全局区：存放全局变量和静态变量以及常量栈区：由编译器自动分配释放, 存放函数的,"> 
+    <meta name="author" content="navybunny"> 
+    <link rel="alternative" href="atom.xml" title="navybunny&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">navybunny&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">c++学习笔记（3）</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">c++学习笔记（3）</h1>
+        <div class="stuff">
+            <span>一月 24, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>1 内存分区模型<br>C++程序在执行时，将内存大方向划分为4个区域<br>代码区：存放函数体的二进制代码，由操作系统进行管理的<br>全局区：存放全局变量和静态变量以及常量<br>栈区：由编译器自动分配释放, 存放函数的参数值,局部变量等<br>堆区：由程序员分配和释放,若程序员不释放,程序结束时由操作系统回收<br>内存四区意义：<br>不同区域存放的数据，赋予不同的生命周期, 给我们更大的灵活编程<br>1.1 程序运行前<br>​ 在程序编译后，生成了exe可执行程序，未执行该程序前分为两个区域<br>​ 代码区：<br>​ 存放 CPU 执行的机器指令<br>​ 代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可<br>​ 代码区是只读的，使其只读的原因是防止程序意外地修改了它的指令<br>​ 全局区：<br>​ 全局变量和静态变量存放在此.<br>​ 全局区还包含了常量区, 字符串常量和其他常量也存放在此.<br>​ 该区域的数据在程序结束后由操作系统释放.<br>总结：<br>C++中在程序运行前分为全局区和代码区<br>代码区特点是共享和只读<br>全局区中存放全局变量、静态变量、常量<br>常量区中存放 const修饰的全局常量 和 字符串常量<br>1.2 程序运行后<br>​ 栈区：<br>​ 由编译器自动分配释放, 存放函数的参数值,局部变量等<br>​ 注意事项：不要返回局部变量的地址，栈区开辟的数据由编译器自动释放<br>堆区：<br>​ 由程序员分配释放,若程序员不释放,程序结束时由操作系统回收<br>​ 在C++中主要利用new在堆区开辟内存<br>总结：<br>堆区数据由程序员管理开辟和释放<br>堆区数据利用new关键字进行开辟内存<br>1.3 new操作符<br>​ C++中利用new操作符在堆区开辟数据<br>​ 堆区开辟的数据，由程序员手动开辟，手动释放，释放利用操作符 delete<br>​ 语法：new 数据类型<br>​ 利用new创建的数据，会返回该数据对应的类型的指针<br>2 引用<br>2.1 引用的基本使用<br><strong>作用： **给变量起别名<br>语法： 数据类型 &amp;别名 = 原名<br>2.2 引用注意事项<br>引用必须初始化<br>引用在初始化后，不可以改变<br>2.3 引用做函数参数<br>**作用：</strong>函数传参时，可以利用引用的技术让形参修饰实参<br><strong>优点：</strong>可以简化指针修改实参<br>总结：通过引用参数产生的效果同按地址传递是一样的。引用的语法更清楚简单<br>2.4 引用做函数返回值<br>作用：引用是可以作为函数的返回值存在的<br>注意：不要返回局部变量引用<br>用法：函数调用作为左值<br>2.5 引用的本质<br>本质：引用的本质在c++内部实现是一个指针常量.<br>结论：C++推荐用引用技术，因为语法方便，引用本质是指针常量，但是所有的指针操作编译器都帮我们做了<br>2.6 常量引用<br><strong>作用：</strong>常量引用主要用来修饰形参，防止误操作<br>在函数形参列表中，可以加const修饰形参，防止形参改变实参<br>3 函数提高<br>3.1 函数默认参数<br>在C++中，函数的形参列表中的形参是可以有默认值的。<br>语法：返回值类型 函数名 （参数= 默认值）{}<br>3.2 函数占位参数<br>C++中函数的形参列表里可以有占位参数，用来做占位，调用函数时必须填补该位置<br>语法： 返回值类型 函数名 (数据类型){}<br>在现阶段函数的占位参数存在意义不大，但是后面的课程中会用到该技术<br>3.3 函数重载<br>3.3.1 函数重载概述<br><strong>作用：</strong>函数名可以相同，提高复用性<br>函数重载满足条件：<br>同一个作用域下<br>函数名称相同<br>函数参数类型不同 或者 个数不同 或者 顺序不同<br>注意: 函数的返回值不可以作为函数重载的条件<br>3.3.2 函数重载注意事项<br>引用作为重载条件<br>函数重载碰到函数默认参数<br>4 类和对象<br>C++面向对象的三大特性为：封装、继承、多态<br>C++认为万事万物都皆为对象，对象上有其属性和行为<br>例如：<br>​ 人可以作为对象，属性有姓名、年龄、身高、体重…，行为有走、跑、跳、吃饭、唱歌…<br>​ 车也可以作为对象，属性有轮胎、方向盘、车灯…,行为有载人、放音乐、放空调…<br>​ 具有相同性质的对象，我们可以抽象称为类，人属于人类，车属于车类<br>4.1 封装<br>4.1.1 封装的意义<br>封装是C++面向对象三大特性之一<br>封装的意义：<br>将属性和行为作为一个整体，表现生活中的事物<br>将属性和行为加以权限控制<br>封装意义一：<br>​ 在设计类的时候，属性和行为写在一起，表现事物<br>语法： class 类名{ 访问权限： 属性 / 行为 };<br>封装意义二：<br>类在设计时，可以把属性和行为放在不同的权限下，加以控制<br>访问权限有三种：<br>1.public 公共权限<br>2.protected 保护权限<br>3.private 私有权限<br>4.1.2 struct和class区别<br>在C++中 struct和class唯一的区别就在于 默认的访问权限不同<br>区别：<br>struct 默认权限为公共<br>class 默认权限为私有<br>4.1.3 成员属性设置为私有<br><strong>优点1：</strong>将所有成员属性设置为私有，可以自己控制读写权限<br><strong>优点2：</strong>对于写权限，我们可以检测数据的有效性<br>4.2 对象的初始化和清理<br>生活中我们买的电子产品都基本会有出厂设置，在某一天我们不用时候也会删除一些自己信息数据保证安全<br>C++中的面向对象来源于生活，每个对象也都会有初始设置以及 对象销毁前的清理数据的设置。<br>4.2.1 构造函数和析构函数<br>对象的初始化和清理也是两个非常重要的安全问题<br>​ 一个对象或者变量没有初始状态，对其使用后果是未知<br>​ 同样的使用完一个对象或变量，没有及时清理，也会造成一定的安全问题<br>c++利用了构造函数和析构函数解决上述问题，这两个函数将会被编译器自动调用，完成对象初始化和清理工作。<br>对象的初始化和清理工作是编译器强制要我们做的事情，因此如果我们不提供构造和析构，编译器会提供<br>编译器提供的构造函数和析构函数是空实现。<br>构造函数：主要作用在于创建对象时为对象的成员属性赋值，构造函数由编译器自动调用，无须手动调用。<br>析构函数：主要作用在于对象销毁前系统自动调用，执行一些清理工作。<br>构造函数语法：类名(){}<br>1.构造函数，没有返回值也不写void<br>2.函数名称与类名相同<br>3.构造函数可以有参数，因此可以发生重载<br>4.程序在调用对象时候会自动调用构造，无须手动调用,而且只会调用一次<br>析构函数语法： ~类名(){}<br>1.析构函数，没有返回值也不写void<br>2.函数名称与类名相同,在名称前加上符号 ~<br>3.析构函数不可以有参数，因此不可以发生重载<br>4.程序在对象销毁前会自动调用析构，无须手动调用,而且只会调用一次<br>4.2.2 构造函数的分类及调用<br>两种分类方式：<br>​ 按参数分为： 有参构造和无参构造<br>​ 按类型分为： 普通构造和拷贝构造<br>三种调用方式：<br>​ 括号法<br>​ 显示法<br>​ 隐式转换法<br>4.2.3 拷贝构造函数调用时机<br>C++中拷贝构造函数调用时机通常有三种情况<br>使用一个已经创建完毕的对象来初始化一个新对象<br>值传递的方式给函数参数传值<br>以值方式返回局部对象<br>4.2.4 构造函数调用规则<br>默认情况下，c++编译器至少给一个类添加3个函数<br>1．默认构造函数(无参，函数体为空)<br>2．默认析构函数(无参，函数体为空)<br>3．默认拷贝构造函数，对属性进行值拷贝<br>构造函数调用规则如下：<br>如果用户定义有参构造函数，c++不在提供默认无参构造，但是会提供默认拷贝构造<br>如果用户定义拷贝构造函数，c++不会再提供其他构造函数<br>4.2.5 深拷贝与浅拷贝<br>深浅拷贝是面试经典问题，也是常见的一个坑<br>浅拷贝：简单的赋值拷贝操作<br>深拷贝：在堆区重新申请空间，进行拷贝操作<br>总结：如果属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的问题<br>4.2.6 初始化列表<br>作用：<br>C++提供了初始化列表语法，用来初始化属性<br>语法：构造函数()：属性1(值1),属性2（值2）… {}<br>4.2.7 类对象作为类成员<br>C++类中的成员可以是另一个类的对象，我们称该成员为 对象成员<br>4.2.8 静态成员<br>静态成员就是在成员变量和成员函数前加上关键字static，称为静态成员<br>静态成员分为：<br>静态成员变量<br>所有对象共享同一份数据<br>在编译阶段分配内存<br>类内声明，类外初始化<br>静态成员函数<br>所有对象共享同一个函数<br>静态成员函数只能访问静态成员变量<br>4.3 C++对象模型和this指针<br>4.3.1 成员变量和成员函数分开存储<br>在C++中，类内的成员变量和成员函数分开存储<br>只有非静态成员变量才属于类的对象上<br>4.3.2 this指针概念<br>通过4.3.1我们知道在C++中成员变量和成员函数是分开存储的<br>每一个非静态成员函数只会诞生一份函数实例，也就是说多个同类型的对象会共用一块代码<br>那么问题是：这一块代码是如何区分那个对象调用自己的呢？<br>c++通过提供特殊的对象指针，this指针，解决上述问题。this指针指向被调用的成员函数所属的对象<br>this指针是隐含每一个非静态成员函数内的一种指针<br>this指针不需要定义，直接使用即可<br>this指针的用途：<br>当形参和成员变量同名时，可用this指针来区分<br>在类的非静态成员函数中返回对象本身，可使用return *this<br>4.3.3 空指针访问成员函数<br>C++中空指针也是可以调用成员函数的，但是也要注意有没有用到this指针<br>如果用到this指针，需要加以判断保证代码的健壮性<br>4.3.4 const修饰成员函数<br>常函数：<br>成员函数后加const后我们称为这个函数为常函数<br>常函数内不可以修改成员属性<br>成员属性声明时加关键字mutable后，在常函数中依然可以修改<br>常对象：<br>声明对象前加const称该对象为常对象<br>常对象只能调用常函数<br>4.4 友元<br>生活中你的家有客厅(Public)，有你的卧室(Private)<br>客厅所有来的客人都可以进去，但是你的卧室是私有的，也就是说只有你能进去<br>但是呢，你也可以允许你的好闺蜜好基友进去。<br>在程序里，有些私有属性 也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术<br>友元的目的就是让一个函数或者类 访问另一个类中私有成员<br>友元的关键字为 friend<br>友元的三种实现<br>全局函数做友元<br>类做友元<br>成员函数做友元<br>4.5 运算符重载<br>运算符重载概念：对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型<br>4.5.1 加号运算符重载<br>作用：实现两个自定义数据类型相加的运算<br>总结1：对于内置的数据类型的表达式的的运算符是不可能改变的<br>总结2：不要滥用运算符重载<br>4.5.2 左移运算符重载<br>作用：可以输出自定义数据类型<br>总结：重载左移运算符配合友元可以实现输出自定义数据类型<br>4.5.3 递增运算符重载<br>作用： 通过重载递增运算符，实现自己的整型数据<br>总结： 前置递增返回引用，后置递增返回值<br>4.5.4 赋值运算符重载<br>c++编译器至少给一个类添加4个函数<br>1.默认构造函数(无参，函数体为空)<br>2.默认析构函数(无参，函数体为空)<br>3.默认拷贝构造函数，对属性进行值拷贝<br>4.赋值运算符 operator=, 对属性进行值拷贝<br>如果类中有属性指向堆区，做赋值操作时也会出现深浅拷贝问题<br>4.5.5 关系运算符重载<br><strong>作用：</strong>重载关系运算符，可以让两个自定义类型对象进行对比操作<br>4.5.6 函数调用运算符重载<br>函数调用运算符 () 也可以重载<br>由于重载后使用的方式非常像函数的调用，因此称为仿函数<br>仿函数没有固定写法，非常灵活<br>4.6 继承<br>继承是面向对象三大特性之一<br>有些类与类之间存在特殊的关系，例如下图中：<br>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-q4LuDlTt-1599302023865)(assets/1544861202252.png)]<br>我们发现，定义这些类时，下级别的成员除了拥有上一级的共性，还有自己的特性。<br>这个时候我们就可以考虑利用继承的技术，减少重复代码<br>4.6.1 继承的基本语法<br>例如我们看到很多网站中，都有公共的头部，公共的底部，甚至公共的左侧列表，只有中心内容不同<br>总结：<br>继承的好处：可以减少重复的代码<br>class A : public B;<br>A 类称为子类 或 派生类<br>B 类称为父类 或 基类<br>派生类中的成员，包含两大部分：<br>一类是从基类继承过来的，一类是自己增加的成员。<br>从基类继承过过来的表现其共性，而新增的成员体现了其个性。<br>4.6.2 继承方式<br>继承的语法：class 子类 : 继承方式 父类<br>继承方式一共有三种：<br>公共继承<br>保护继承<br>私有继承<br>4.6.3 继承中的对象模型<br>结论： 父类中私有成员也是被子类继承下去了，只是由编译器给隐藏后访问不到<br>4.6.4 继承中构造和析构顺序<br>子类继承父类后，当创建子类对象，也会调用父类的构造函数<br>问题：父类和子类的构造和析构顺序是谁先谁后？<br>总结：继承中 先调用父类构造函数，再调用子类构造函数，析构顺序与构造相反<br>4.6.5 继承同名成员处理方式<br>问题：当子类与父类出现同名的成员，如何通过子类对象，访问到子类或父类中同名的数据呢？<br>访问子类同名成员 直接访问即可<br>访问父类同名成员 需要加作用域<br>总结：<br>1.子类对象可以直接访问到子类中同名成员<br>2.子类对象加作用域可以访问到父类同名成员<br>3.当子类与父类拥有同名的成员函数，子类会隐藏父类中同名成员函数，加作用域可以访问到父类中同名函数<br>4.6.6 继承同名静态成员处理方式<br>问题：继承中同名的静态成员在子类对象上如何进行访问？<br>静态成员和非静态成员出现同名，处理方式一致<br>访问子类同名成员 直接访问即可<br>访问父类同名成员 需要加作用域<br>总结：同名静态成员处理方式和非静态处理方式一样，只不过有两种访问的方式（通过对象 和 通过类名）<br>4.6.7 多继承语法<br>C++允许一个类继承多个类<br>语法：class 子类 ：继承方式 父类1 ， 继承方式 父类2…<br>多继承可能会引发父类中有同名成员出现，需要加作用域区分<br>C++实际开发中不建议用多继承<br>总结： 多继承中如果父类中出现了同名情况，子类使用时候要加作用域<br>4.6.8 菱形继承<br>菱形继承概念：<br>​ 两个派生类继承同一个基类<br>​ 又有某个类同时继承者两个派生类<br>​ 这种继承被称为菱形继承，或者钻石继承<br>总结：<br>菱形继承带来的主要问题是子类继承两份相同的数据，导致资源浪费以及毫无意义<br>利用虚继承可以解决菱形继承问题<br>4.7 多态<br>4.7.1 多态的基本概念<br>多态是C++面向对象三大特性之一<br>多态分为两类<br>静态多态: 函数重载 和 运算符重载属于静态多态，复用函数名<br>动态多态: 派生类和虚函数实现运行时多态<br>静态多态和动态多态区别：<br>静态多态的函数地址早绑定 - 编译阶段确定函数地址<br>动态多态的函数地址晚绑定 - 运行阶段确定函数地址<br>总结：<br>多态满足条件<br>有继承关系<br>子类重写父类中的虚函数<br>多态使用条件<br>父类指针或引用指向子类对象<br>重写：函数返回值类型 函数名 参数列表 完全一致称为重写</p>
+<p>4.7.2 多态案例一-计算器类<br>案例描述：<br>分别利用普通写法和多态技术，设计实现两个操作数进行运算的计算器类<br>多态的优点：<br>代码组织结构清晰<br>可读性强<br>利于前期和后期的扩展以及维护<br>总结：C++开发提倡利用多态设计程序架构，因为多态优点很多<br>4.7.3 纯虚函数和抽象类<br>在多态中，通常父类中虚函数的实现是毫无意义的，主要都是调用子类重写的内容<br>因此可以将虚函数改为纯虚函数<br>纯虚函数语法：virtual 返回值类型 函数名 （参数列表）= 0 ;<br>当类中有了纯虚函数，这个类也称为抽象类<br>抽象类特点：<br>无法实例化对象<br>子类必须重写抽象类中的纯虚函数，否则也属于抽象类<br>4.7.4 多态案例二-制作饮品<br>案例描述：<br>制作饮品的大致流程为：煮水 - 冲泡 - 倒入杯中 - 加入辅料<br>利用多态技术实现本案例，提供抽象制作饮品基类，提供子类制作咖啡和茶叶<br>4.7.5 虚析构和纯虚析构<br>多态使用时，如果子类中有属性开辟到堆区，那么父类指针在释放时无法调用到子类的析构代码<br>解决方式：将父类中的析构函数改为虚析构或者纯虚析构<br>虚析构和纯虚析构共性：<br>可以解决父类指针释放子类对象<br>都需要有具体的函数实现<br>虚析构和纯虚析构区别：<br>如果是纯虚析构，该类属于抽象类，无法实例化对象<br>虚析构语法：<br>virtual <del>类名(){}<br>纯虚析构语法：<br>virtual ~类名() = 0;<br>类名::</del>类名(){}<br>总结：<br>​ 1. 虚析构或纯虚析构就是用来解决通过父类指针释放子类对象<br>​ 2. 如果子类中没有堆区数据，可以不写为虚析构或纯虚析构<br>​ 3. 拥有纯虚析构函数的类也属于抽象类<br>4.7.6 多态案例三-电脑组装<br>案例描述：<br>电脑主要组成部件为 CPU（用于计算），显卡（用于显示），内存条（用于存储）<br>将每个零件封装出抽象基类，并且提供不同的厂商生产不同的零件，例如Intel厂商和Lenovo厂商<br>创建电脑类提供让电脑工作的函数，并且调用每个零件工作的接口<br>测试时组装三台不同的电脑进行工作<br>5 文件操作<br>程序运行时产生的数据都属于临时数据，程序一旦运行结束都会被释放<br>通过文件可以将数据持久化<br>C++中对文件操作需要包含头文件 &lt; fstream &gt;<br>文件类型分为两种：<br>1.文本文件 - 文件以文本的ASCII码形式存储在计算机中<br>2.二进制文件 - 文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们<br>操作文件的三大类:<br>1.ofstream：写操作<br>2.ifstream： 读操作<br>3.fstream ： 读写操作<br>5.1文本文件<br>5.1.1写文件<br>写文件步骤如下：<br>包含头文件<br>#include <fstream><br>创建流对象<br>ofstream ofs;<br>打开文件<br>ofs.open(“文件路径”,打开方式);<br>写数据<br>ofs &lt;&lt; “写入的数据”;<br>关闭文件<br>ofs.close();<br>文件打开方式：<br>打开方式    解释<br>ios::in    为读文件而打开文件<br>ios::out    为写文件而打开文件<br>ios::ate    初始位置：文件尾<br>ios::app    追加方式写文件<br>ios::trunc    如果文件存在先删除，再创建<br>ios::binary    二进制方式<br>注意： 文件打开方式可以配合使用，利用|操作符<br>总结：<br>文件操作必须包含头文件 fstream<br>读文件可以利用 ofstream ，或者fstream类<br>打开文件时候需要指定操作文件的路径，以及打开方式<br>利用&lt;&lt;可以向文件中写数据<br>操作完毕，要关闭文件<br>5.1.2读文件<br>读文件与写文件步骤相似，但是读取方式相对于比较多<br>读文件步骤如下：<br>包含头文件<br>#include <fstream><br>创建流对象<br>ifstream ifs;<br>打开文件并判断文件是否打开成功<br>ifs.open(“文件路径”,打开方式)<br>读数据<br>四种方式读取<br>关闭文件<br>ifs.close();</p>
+<p>总结：<br>读文件可以利用 ifstream ，或者fstream类<br>利用is_open函数可以判断文件是否打开成功<br>close 关闭文件<br>5.2 二进制文件<br>以二进制的方式对文件进行读写操作<br>打开方式要指定为 ios::binary<br>5.2.1 写文件<br>二进制方式写文件主要利用流对象调用成员函数write<br>函数原型 ：ostream&amp; write(const char * buffer,int len);<br>参数解释：字符指针buffer指向内存中一段存储空间。len是读写的字节数<br>总结：<br>文件输出流对象 可以通过write函数，以二进制方式写数据<br>5.2.2 读文件<br>二进制方式读文件主要利用流对象调用成员函数read<br>函数原型：istream&amp; read(char *buffer,int len);<br>参数解释：字符指针buffer指向内存中一段存储空间。len是读写的字节数<br>文件输入流对象 可以通过read函数，以二进制方式读数据<br>总结：<br>文件操作必须包含头文件 fstream<br>读文件可以利用 ofstream ，或者fstream类<br>打开文件时候需要指定操作文件的路径，以及打开方式<br>利用&lt;&lt;可以向文件中写数据<br>操作完毕，要关闭文件</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
