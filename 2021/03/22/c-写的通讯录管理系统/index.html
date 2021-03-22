@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>c++写的通讯录管理系统 - navybunny&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="这个管理系统还是有些瑕疵的
+比如在询问判定机制这块只能输入数字，一旦输入其他字符就会出现死循环
+还有就是删除操作的时候，如果1000人加满了，那么在删除的时候会因为找不到第1001个人前移补位而导致,"> 
+    <meta name="author" content="navybunny"> 
+    <link rel="alternative" href="atom.xml" title="navybunny&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">navybunny&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">c++写的通讯录管理系统</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">c++写的通讯录管理系统</h1>
+        <div class="stuff">
+            <span>三月 22, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>这个管理系统还是有些瑕疵的</p>
+<p>比如在询问判定机制这块只能输入数字，一旦输入其他字符就会出现死循环</p>
+<p>还有就是删除操作的时候，如果1000人加满了，那么在删除的时候会因为找不到第1001个人前移补位而导致出错。这个地方大佬建议我用链表。</p>
+<p>最最最重要的一点，就是程序运行完毕关闭程序，内存释放，导致存储的联系人全部丢失。所以应该结合文件操作，才能够实现基本的一个通讯录的功能</p>
+<p>这个东西只是写来练练手的，因个人能力欠缺导致这个还遗留有一些bug，请大家多多包涵。</p>
+<p>以下是我的程序源码（这个源码是我在黑马程序员c++教程的源码上添加了点询问以及判定机制）</p>
+<p>#include iostream<br>#include   string<br>#define max 1000<br>using namespace std;<br>//联系人的结构体<br>struct person {<br>    string name;<br>    int sex;<br>    int age;<br>    string phone;<br>    string addr;<br>};<br>//通讯录的结构体<br>struct addressbooks {<br>    struct person personarray[max];<br>    int size;<br>};<br>//1、添加联系人<br>void addperson(addressbooks <em>abs)<br>{<br>    //判断通讯录是否满<br>    if (abs-&gt;size == max)<br>    {<br>        cout &lt;&lt; “通讯录已满，无法添加！” &lt;&lt; endl;<br>        system(“pause”);//按任意键继续<br>        system(“cls”);//清屏操作<br>        return;<br>    }<br>    else<br>    {<br>        //姓名<br>        string name;<br>        cout &lt;&lt; “请输入姓名:” &lt;&lt; endl;<br>        cin &gt;&gt; name;<br>        abs-&gt;personarray[abs-&gt;size].name = name;<br>        //性别<br>        cout &lt;&lt; “请输入性别：” &lt;&lt; endl;<br>        cout &lt;&lt; “1—男” &lt;&lt; endl;<br>        cout &lt;&lt; “2—女” &lt;&lt; endl;<br>        int sex = 0;<br>        while (true)<br>        {<br>            //防止输入有误<br>            cin &gt;&gt; sex;<br>            if (sex == 1 || sex == 2)<br>            {<br>                abs-&gt;personarray[abs-&gt;size].sex = sex;<br>                break;<br>            }<br>            cout &lt;&lt; “性别输入错误，请重新输入” &lt;&lt; endl;<br>        }<br>        //年龄<br>        cout &lt;&lt; “请输入年龄:  “ &lt;&lt; endl;<br>        int age;<br>        while (true) {<br>            cin &gt;&gt; age;<br>            if (age &gt;= 0 &amp;&amp; age &lt;= 150)<br>            {<br>                abs-&gt;personarray[abs-&gt;size].age = age;<br>                break;<br>            }<br>            cout &lt;&lt; “年龄输入错误，请重新输入” &lt;&lt; endl;<br>        }<br>        //电话<br>        cout &lt;&lt; “请输入联系电话：” &lt;&lt; endl;<br>        string phone;<br>        cin &gt;&gt; phone;<br>        abs-&gt;personarray[abs-&gt;size].phone = phone;<br>        //住址<br>        cout &lt;&lt; “请输入家庭住址：” &lt;&lt; endl;<br>        string address;<br>        cin &gt;&gt; address;<br>        abs-&gt;personarray[abs-&gt;size].addr = address;<br>        //更新通讯录中的人数<br>        abs-&gt;size++;<br>        cout &lt;&lt; “添加成功” &lt;&lt; endl;<br>        system(“pause”);//按任意键继续<br>        system(“cls”);//清屏操作<br>    }<br>}<br>//2、显示所有联系人<br>void showperson(addressbooks *abs)<br>{<br>    int i;<br>    //判断通讯录中人数是否为0<br>    if (abs-&gt;size == 0)<br>        cout &lt;&lt; “当前记录为空” &lt;&lt; endl;<br>    else<br>    {<br>        for (i = 0; i &lt; abs-&gt;size; i++)<br>        {<br>            cout &lt;&lt; “姓名： “ &lt;&lt; abs-&gt;personarray[i].name &lt;&lt;”\t”;<br>            cout &lt;&lt; “性别： “ &lt;&lt; (abs-&gt;personarray[i].sex== 1?”男”:”女”)&lt;&lt;”\t”;<br>            cout &lt;&lt; “年龄： “ &lt;&lt; abs-&gt;personarray[i].age &lt;&lt;”\t”;<br>            cout &lt;&lt; “电话： “ &lt;&lt; abs-&gt;personarray[i].phone &lt;&lt;”\t”;<br>            cout &lt;&lt; “住址： “ &lt;&lt; abs-&gt;personarray[i].addr &lt;&lt; endl;<br>        }<br>    }<br>    system(“pause”);//按任意键继续<br>    system(“cls”);//清屏操作<br>}<br>//检测联系人是否存在<br>int isexist(addressbooks *abs, string name)<br>{<br>    int i;<br>    for (i = 0; i &lt; abs-&gt;size; i++)<br>    {<br>        if (abs-&gt;personarray[i].name == name)<br>            return i;<br>    }<br>    return -1;//若遍历结束未找到，返回-1<br>}<br>//3、删除联系人<br>void deleteperson(addressbooks <em>abs)<br>{<br>    int i;<br>    cout &lt;&lt; “请输入一个您要删除的联系人” &lt;&lt; endl;<br>    string name;<br>    cin&gt;&gt;name;<br>    int ret=isexist(abs,name);<br>    if (ret != -1)<br>    {<br>        int n = 0;<br>        cout &lt;&lt; “您是否要删除” &lt;&lt; ““” &lt;&lt; name &lt;&lt; “”” &lt;&lt; “的信息?” &lt;&lt; endl;<br>        cout &lt;&lt; “1———是” &lt;&lt; endl;<br>        cout &lt;&lt; “2———否” &lt;&lt; endl;<br>        while (true)<br>        {<br>            cin &gt;&gt; n;<br>            if (n == 1 || n == 2)<br>            {<br>                if (n == 1)<br>                {<br>                    for (i = ret; i &lt; abs-&gt;size; i++)//数据前移（2盖住1,3盖住2）<br>                    {<br>                        abs-&gt;personarray[i] = abs-&gt;personarray[i + 1];<br>                    }<br>                    abs-&gt;size–;//更新通讯录人数<br>                    cout &lt;&lt; “删除成功” &lt;&lt; endl;<br>                }<br>                else<br>                    cout &lt;&lt; “取消” &lt;&lt; endl;<br>                break;<br>            }<br>            cout &lt;&lt; “输入错误，请输入正确的选项” &lt;&lt; endl;<br>        }<br>    }<br>    else<br>    {<br>        cout &lt;&lt; “查无此人” &lt;&lt; endl;<br>    }<br>    system(“pause”);//按任意键继续<br>    system(“cls”);//清屏操作<br>}<br>//4、查找联系人<br>void finfperson(addressbooks *abs)<br>{<br>    cout &lt;&lt; “请输入您要查找的联系人” &lt;&lt; endl;<br>    string name;<br>    cin &gt;&gt; name;<br>    int ret=isexist(abs, name);<br>    if (ret != -1)<br>    {<br>        cout &lt;&lt; “姓名： “ &lt;&lt; abs-&gt;personarray[ret].name &lt;&lt; “\t”;<br>        cout &lt;&lt; “性别： “ &lt;&lt; abs-&gt;personarray[ret].sex &lt;&lt; “\t”;<br>        cout &lt;&lt; “年龄： “ &lt;&lt; abs-&gt;personarray[ret].age &lt;&lt; “\t”;<br>        cout &lt;&lt; “电话： “ &lt;&lt; abs-&gt;personarray[ret].phone &lt;&lt; “\t”;<br>        cout &lt;&lt; “地址： “ &lt;&lt; abs-&gt;personarray[ret].addr &lt;&lt; endl;<br>    }<br>    else<br>    {<br>        cout &lt;&lt; “查无此人” &lt;&lt; endl;<br>    }<br>    system(“pause”);<br>    system(“cls”);<br>}<br>//5、修改联系人信息<br>void modifyperson(addressbooks *abs)<br>{<br>    cout &lt;&lt; “请输入您要修改的联系人”&lt;&lt;endl;<br>    string name;<br>    cin &gt;&gt; name;<br>    int ret = isexist(abs, name);<br>    if (ret != -1)<br>    {<br>        //修改姓名<br>        string name;<br>        cout &lt;&lt; “请输入姓名: “ &lt;&lt; endl;<br>        cin &gt;&gt; name;<br>        abs-&gt;personarray[ret].name = name;<br>        //修改性别<br>        cout &lt;&lt; “请输入性别：” &lt;&lt; endl;<br>        cout &lt;&lt; “1—男” &lt;&lt; endl;<br>        cout &lt;&lt; “2—女” &lt;&lt; endl;<br>        int sex = 0;<br>        while (true)<br>        {<br>            //防止输入有误<br>            cin &gt;&gt; sex;<br>            if (sex == 1 || sex == 2)<br>            {<br>                abs-&gt;personarray[ret].sex = sex;<br>                break;<br>            }<br>            cout &lt;&lt; “性别输入错误，请重新输入” &lt;&lt; endl;<br>        }<br>        //修改年龄<br>        cout &lt;&lt; “请输入年龄： “ &lt;&lt; endl;<br>        int age = 0;<br>        while (true)<br>        {<br>            cin &gt;&gt; age;<br>            if (age &gt;= 0 &amp;&amp; age &lt;= 150)<br>            {<br>                abs-&gt;personarray[ret].age = age;<br>                break;<br>            }<br>            cout &lt;&lt; “年龄输入有误，请重新输入”&lt;&lt;endl;<br>        }<br>       //修改电话<br>        cout &lt;&lt; “请输入联系电话：” &lt;&lt; endl;<br>        string phone;<br>        cin &gt;&gt; phone;<br>        abs-&gt;personarray[ret].phone = phone;<br>        //修改地址<br>        cout &lt;&lt; “请输入家庭住址：” &lt;&lt; endl;<br>        string address;<br>        cin &gt;&gt; address;<br>        abs-&gt;personarray[ret].addr = address;<br>        cout &lt;&lt; “修改成功” &lt;&lt; endl;<br>    }<br>    else<br>    {<br>        cout &lt;&lt; “查无此人” &lt;&lt; endl;<br>    }<br>    system(“pause”);<br>    system(“cls”);<br>}<br>//6、清空联系人<br>void cleanperson(addressbooks *abs)<br>{<br>    cout &lt;&lt; “您是否要清除全部联系人的信息？” &lt;&lt; endl;<br>    cout &lt;&lt; “1———是” &lt;&lt; endl;<br>    cout &lt;&lt; “2———否” &lt;&lt; endl;<br>    int n = 0;<br>    while (true)<br>    {<br>        cin &gt;&gt; n;<br>        if (n == 1 || n == 2)<br>        {<br>            if (n == 1)<br>            {<br>                abs-&gt;size = 0;//将当前记录的联系人数量置为零，做逻辑清空操作<br>                cout &lt;&lt; “通讯录已清空” &lt;&lt; endl;<br>                system(“pause”);<br>                system(“cls”);<br>            }<br>            else<br>            {<br>                cout &lt;&lt; “取消” &lt;&lt; endl;<br>                system(“pause”);<br>                system(“cls”);<br>            }<br>            break;<br>        }<br>        cout &lt;&lt; “输入错误，请输入正确的选项” &lt;&lt; endl;<br>    }<br>}<br>void showMenu()<br>{<br>    cout &lt;&lt; “***************************” &lt;&lt; endl;<br>    cout &lt;&lt; “*****  1、添加联系人  *****” &lt;&lt; endl;<br>    cout &lt;&lt; “*****  2、显示联系人  *****” &lt;&lt; endl;<br>    cout &lt;&lt; “*****  3、删除联系人  *****” &lt;&lt; endl;<br>    cout &lt;&lt; “*****  4、查找联系人  *****” &lt;&lt; endl;<br>    cout &lt;&lt; “*****  5、修改联系人  *****” &lt;&lt; endl;<br>    cout &lt;&lt; “*****  6、清空联系人  *****” &lt;&lt; endl;<br>    cout &lt;&lt; “*****  0、退出通讯录  *****” &lt;&lt; endl;<br>    cout &lt;&lt; “***************************” &lt;&lt; endl;<br>}<br>int main()<br>{<br>    //创建通讯录结构体变量<br>    addressbooks abs;<br>    //初始化通讯录当前人员个数<br>    abs.size = 0;<br>    int select = 0;//创建用户选择输入的变量<br>    while (true)<br>    {<br>        showMenu();//菜单的调用<br>        cin &gt;&gt; select;<br>        switch(select)<br>        {<br>        case 1://1、添加联系人<br>            addperson(&amp;abs);<br>            break;<br>        case 2://2、显示联系人<br>            showperson(&amp;abs);<br>            break;<br>        case 3://3、删除联系人<br>        /</em>{<br>            cout &lt;&lt; “请输入需要删除的联系人的姓名： “ &lt;&lt; endl;<br>            string name;<br>            cin &gt;&gt; name;<br>            if (isexist(&amp;abs, name) == -1)<br>                cout &lt;&lt; “查无此人” &lt;&lt; endl;<br>            else<br>                cout &lt;&lt; “找到了” &lt;&lt; endl;<br>            system(“pause”);//按任意键继续<br>            system(“cls”);//清屏操作<br>        }</em>/<br>            deleteperson(&amp;abs);<br>            break;<br>        case 4://4、查找联系人<br>            finfperson(&amp;abs);<br>            break;<br>        case 5://5、修改联系人<br>            modifyperson(&amp;abs);<br>            break;<br>        case 6://6、清空联系人<br>            cleanperson(&amp;abs);<br>            break;<br>        case 0://0、退出通讯录<br>            cout &lt;&lt; “欢迎下次使用，再见！” &lt;&lt; endl;<br>            system(“pause”);<br>            return 0;<br>            break;<br>        }<br>    }<br>    system(“pause”);<br>     return 0;<br>}</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
