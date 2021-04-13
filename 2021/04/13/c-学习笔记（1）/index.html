@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>c++学习笔记（1） - navybunny&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="第一章、C++的初步认识一、最简单的C++程序例1：输出一行字符串：“this is a C++ program.”程序如下：#include //包含头文件iostreamusing namesp,"> 
+    <meta name="author" content="navybunny"> 
+    <link rel="alternative" href="atom.xml" title="navybunny&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">navybunny&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">c++学习笔记（1）</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">c++学习笔记（1）</h1>
+        <div class="stuff">
+            <span>四月 13, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>第一章、C++的初步认识<br>一、最简单的C++程序<br>例1：输出一行字符串：“this is a C++ program.”程序如下：<br>#include<iostream> //包含头文件iostream<br>using namespace std; //使用命名空间std<br>void main() {<br>cout &lt;&lt; “this is a C++ program.”;<br>}<br>二、C++程序的构成与书写形式<br>1、C++程序的构成：一个程序单位或多个程序单位。<br>2、一个程序单位的组成：预处理命令、全局声明部分、函数（每个程序中必须有且只有一个主函数）。文件可以缺少某些部分。<br>3、函数的组成：函数首部和函数体（包括局部声明部分和执行部分）。<br>4、语句：声明语句和执行语句。<br>5、C++和程序总是从main函数开始执行。<br>6、类是C++新增的重要的数据类型，它可以实现面向对象设计方法中的封装、信息隐藏、继承、派生、多态等功能。<br>7、C++程序的书写格式自由。<br>8、记得加上必要的注释。<br>三、C++程序的编写与实现<br>运行过程如下：<br>1、用C++ 语言编写程序（源程序）。<br>2、对源程序进行编译（以源程序文件为单位分别编译）。它的作用是对源程序进行词法检查和语法检查。<br>3、将目标文件连接（生成.exe文件）。<br>4、运行程序。<br>5、分析运行结果。<br>第二章、数据类型与表达式<br>一、C++的数据类型<br>（1）、整型：long int、int、short int<br>（2）、整型的存储方式为二进制数形式存储。<br>（3）、在整型符号和字符型符号前面可以加修饰符signed或unsigned。<br>（4）、浮点型：float、double、long double.<br>一、常量<br>数值常量：也叫常数。常量无unsigned型。其中有整数、浮点数。<br>字符常量：普通字符常量：用单撇号括起来的一个字符。（只能包含一个字符，区分大小写、撇号是定界符，不属于字符常量的一部分）。<br>转义字符常量：以“\”开头的字符序列。<br>字符数据是以ASCII码存储的，存储形式与整数的存储形式类似。<br>二、变量<br>标识符：用来标识变量、符号常量、函数、数组、类型等实体名字的有效字符序列。它只能由字母、数字和下划线3种字符组成、且第一个字符不能是数字。<br>定义变量：变量类型 变量名表列（一个或多个变量名的序列）<br>C++要求对变量做强制定义的目的是：<br>（1）、凡未被事先定义的，不作为变量名，这就能保证程序中变量名使用得正确。<br>（2）、每一个变量被指定义为一确定类型，在编译时就能为其分配相应的存储单元。<br>（3）、指定每一变量属于一个特定的类型，这就便于在编译时，据此检查该变量所进行的运算是否合法。<br>允许对变量进行初始化。<br>常变量：在定义变量时，前面加上const。这样的变量在程序运行期间值不能改变。（又称只读变量）<br>三、逗号表达式<br>逗号表达式：又称顺序求值运算符。其一般形式是：表达式1，表达式2</p>
+<p>第三章、运算符<br>■ 算术运算符：<br>+（加）、-（减）、<em>（乘）、/（除）、%（整除求余）、++（自加）、–（自减）<br>■ 关系运算符：<br>&lt;（小于）、&gt;（大于）、==（等于）、&gt;=（大于或等于）、&lt;=（小于或等于）、!=（不等于）<br>■ 逻辑运算符：<br>&amp;&amp;（逻辑与）、||（逻辑或）、!（逻辑非）<br>■ 位运算符：<br>&lt;&lt;（按位左移）、&gt;&gt;（按位右移）、&amp;（按位与）、|（按位或）、^（按位异或）、~（按位取反）<br>■ 赋值运算符：（=号及其扩展赋值运算符）<br>■ 条件运算符：（?:）<br>■ 逗号运算符：（,）<br>■ 指针运算符：（</em>）<br>■ 引用运算符和地址运算符：（&amp;）<br>■ 求字节数运算符：（sizeof）<br>■ 强制类型转换运算符：（(类型) 或 类型()）<br>■ 成员运算符：（.）<br>■ 指向成员的运算符：（-&gt;）<br>■ 下标运算符：（[]）<br>■ 其他运算符：（如函数调用运算符()）<br>顺序结构：程序按顺序执行，不发生跳转<br>选择结构：依据条件是否满足，有选择的执行相应功能<br>循环结构：依据条件是否满足，循环多次执行某段代码<br>第四章、程序流程结构<br> 选择结构<br> if语句<br>作用：执行满足条件的语句<br>if语句的三种形式<br>单行格式if语句<br>多行格式if语句<br>多条件的if语句<br>1.单行格式语句：if（条件）{条件满足执行的语句}<br>顺序结构：程序按顺序执行，不发生跳转<br>选择结构：依据条件是否满足，有选择的执行相应功能<br>循环结构：依据条件是否满足，循环多次执行某段代码<br> if语句<br>作用：执行满足条件的语句<br>if语句的三种形式<br>单行格式if语句<br>多行格式if语句<br>多条件的if语句<br>1.单行格式语句：if（条件）{条件满足执行的语句}<br>注意：if条件后面不加分号，加分号后无论条件是否满足都会执行<br>2.多行格式if语句：if（条件）{满足条件执行的语句}else{不满足条件执行的语句}；<br>3.多条件if语句：if（条件1）{条件1满足执行的语句}else if（条件二）{条件2满足执行的语句}……else{都不满足执行的语句}<br>三目运算符<br>作用：通过三目运算符实现简单的判断<br>语法：表达式1?表达式2 ：表达式3<br>解释：<br>如果表达式1的值为真，执行表达式2，并返回表达式2的结果；<br>如果表达式1的值为假，执行表达式3，并返回表达式3的结果。<br>switch语句<br>作用：执行多条件分支语句<br>循环结构<br> while循环语句<br>作用：满足循环条件，执行循环语句<br>语法：while（循环条件）{循环语句}<br>解释：只要循环条件的结果为真，就执行循环语句<br>do…while循环语句<br>作用：满足循环语句，执行循环条件<br>语法：do{循环语句}while（循环条件）；<br>注意：与while的区别在于do…while会先执行一次循环语句，再判断循环条件<br>for循环语句<br>作用：满足循环条件，执行循环语句<br>语法：for（其实表达式，条件表达式；末尾循环体）{循环语句}；<br>嵌套循环<br>作用：在循环体中再嵌套一层循环，解决一些实际问题<br>例如，我们想绘制一个二维矩阵，利用嵌套循环可以快速绘制<br>跳转语句<br> break语句<br>作用：用于跳出选择结构或者循环结构<br>break使用的时机：<br>出现在switch条件语句中，作用是终止case并跳出switch<br>出现在循环语句中，作用是跳出当前的循环语句<br>出现在嵌套循环中，跳出最近的内层循环语句</p>
+<p>continue语句<br>作用：在循环语句中，跳过本次循环中余下尚未执行的语句，继续执行下一次循环<br>goto语句<br>作用：可以无条件跳转语句<br>语法：goto 标记；<br>解释：如果标记的名称存在，执行到goto语句时，会跳转到标记的位置<br>注意：尽量不要使用goto</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
