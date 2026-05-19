@@ -1,21 +1,430 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2026/05/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>海空殇</title>
+    <url>/2021/04/13/HKWS/</url>
+    <content><![CDATA[<center>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" class="headerlink" title="侵我海空吾卫之，"></a>侵我海空吾卫之，</h3><h3 id="艰难险阻吾往之。"><a href="#艰难险阻吾往之。" class="headerlink" title="艰难险阻吾往之。"></a>艰难险阻吾往之。</h3><h3 id="纵与敌机同落之，"><a href="#纵与敌机同落之，" class="headerlink" title="纵与敌机同落之，"></a>纵与敌机同落之，</h3><h3 id="魂归大海终不悔。"><a href="#魂归大海终不悔。" class="headerlink" title="魂归大海终不悔。"></a>魂归大海终不悔。</h3></center>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<blockquote>
+<p>谨以此诗献给我们的海空卫士王伟，以及为保卫祖国献出宝贵生命的革命烈士们。<br>他们都是中华民族之脊梁，民族英雄永垂不朽！</p>
+</blockquote>
+<!-- 如果需要在博客中居中显示，上面的 <center> 标签已经可以满足大部分主题。若部分主题不兼容，可将 <center> 改为 <div align="center">  -->]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>诗歌</tag>
+        <tag>致敬英雄</tag>
+        <tag>家国情怀</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>尼康D4作品集</title>
+    <url>/2026/04/10/nikond4_1/</url>
+    <content><![CDATA[<p><img src="/images/DSC_3137.JPG" alt="照片"><br><img src="/images/DSC_3140.JPG" alt="照片"><br><img src="/images/DSC_3307.JPG" alt="照片"><br><img src="/images/DSC_3310.JPG" alt="照片"><br><img src="/images/DSC_3311.JPG" alt="照片"><br><img src="/images/DSC_3312.JPG" alt="照片"><br><img src="/images/DSC_3313.JPG" alt="照片"><br><img src="/images/DSC_3317.JPG" alt="照片"><br><img src="/images/DSC_3318.JPG" alt="照片"><br><img src="/images/DSC_3320.JPG" alt="照片"><br><img src="/images/DSC_3321.JPG" alt="照片"><br><img src="/images/DSC_3325.JPG" alt="照片"><br><img src="/images/DSC_3328.JPG" alt="照片"><br><img src="/images/DSC_3329.JPG" alt="照片"></p>
+<p><img src="/images/DSC_3337.JPG" alt="照片"><br><img src="/images/DSC_3338.JPG" alt="照片"><br><img src="/images/DSC_3341.JPG" alt="照片"><br><img src="/images/DSC_3343.JPG" alt="照片"><br><img src="/images/DSC_3345.JPG" alt="照片"><br><img src="/images/DSC_3347.JPG" alt="照片"><br><img src="/images/DSC_3379.JPG" alt="照片"><br><img src="/images/DSC_3403.JPG" alt="照片"><br><img src="/images/DSC_3409.JPG" alt="照片"><br><img src="/images/DSC_3416.JPG" alt="照片"><br><img src="/images/DSC_3420.jpg" alt="照片"><br><img src="/images/DSC_3425.jpg" alt="照片"><br><img src="/images/DSC_3625.JPG" alt="照片"><br><img src="/images/DSC_3642.JPG" alt="照片"></p>
+<p><img src="/images/DSC_3659.JPG" alt="照片"><br><img src="/images/DSC_3676.JPG" alt="照片"><br><img src="/images/DSC_3705.JPG" alt="照片"><br><img src="/images/DSC_3712.JPG" alt="照片"><br><img src="/images/DSC_3719.JPG" alt="照片"><br><img src="/images/DSC_3727.JPG" alt="照片"><br><img src="/images/DSC_3754.JPG" alt="照片"><br><img src="/images/DSC_3797.JPG" alt="照片"><br><img src="/images/DSC_3801.JPG" alt="照片"><br><img src="/images/DSC_3806.JPG" alt="照片"><br><img src="/images/DSC_3839.JPG" alt="照片"><br><img src="/images/DSC_3856.JPG" alt="照片"><br><img src="/images/DSC_3861.JPG" alt="照片"><br><img src="/images/DSC_3862.JPG" alt="照片"></p>
+<p><img src="/images/DSC_3865.JPG" alt="照片"><br><img src="/images/DSC_3869.JPG" alt="照片"><br><img src="/images/DSC_3870.JPG" alt="照片"><br><img src="/images/DSC_3872.JPG" alt="照片"><br><img src="/images/DSC_4198.JPG" alt="照片"><br><img src="/images/DSC_4219.JPG" alt="照片"><br><img src="/images/DSC_4418.JPG" alt="照片"><br><img src="/images/DSC_4426.JPG" alt="照片"><br><img src="/images/DSC_4558.JPG" alt="照片"><br><img src="/images/DSC_4669.JPG" alt="照片"><br><img src="/images/DSC_4694.JPG" alt="照片"><br><img src="/images/DSC_4764.JPG" alt="照片"><br><img src="/images/DSC_4932.JPG" alt="照片"></p>
 ]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>春日记录</tag>
+        <tag>校园随拍</tag>
+        <tag>尼康直出</tag>
+        <tag>风光摄影</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ 通讯录管理系统</title>
+    <url>/2021/04/13/C++TXL/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
+<ol>
+<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
+<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
+<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
+</ol>
+<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="完整程序源码"><a href="#完整程序源码" class="headerlink" title="完整程序源码"></a>完整程序源码</h2><pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#define MAX 1000
+using namespace std;
+
+// 联系人结构体
+struct Person {
+    string name;
+    int sex;      // 1-男  2-女
+    int age;
+    string phone;
+    string addr;
+};
+
+// 通讯录结构体
+struct AddressBooks {
+    Person personArray[MAX];
+    int size;     // 当前已存储的联系人数量
+};
+
+// 1. 添加联系人
+void addPerson(AddressBooks *abs) {
+    if (abs-&gt;size == MAX) {
+        cout &lt;&lt; &quot;通讯录已满，无法添加！&quot; &lt;&lt; endl;
+        system(&quot;pause&quot;);
+        system(&quot;cls&quot;);
+        return;
+    }
+    // 姓名
+    string name;
+    cout &lt;&lt; &quot;请输入姓名: &quot;;
+    cin &gt;&gt; name;
+    abs-&gt;personArray[abs-&gt;size].name = name;
+
+    // 性别
+    cout &lt;&lt; &quot;请输入性别：&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;1—男&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;2—女&quot; &lt;&lt; endl;
+    int sex = 0;
+    while (true) {
+        cin &gt;&gt; sex;
+        if (cin.fail()) {                    // 处理非数字输入
+            cin.clear();
+            cin.ignore(1024, &#39;\n&#39;);
+            cout &lt;&lt; &quot;输入无效，请重新输入性别(1或2): &quot;;
+            continue;
+        }
+        if (sex == 1 || sex == 2) {
+            abs-&gt;personArray[abs-&gt;size].sex = sex;
+            break;
+        }
+        cout &lt;&lt; &quot;性别输入错误，请重新输入: &quot;;
+    }
+
+    // 年龄
+    cout &lt;&lt; &quot;请输入年龄: &quot;;
+    int age;
+    while (true) {
+        cin &gt;&gt; age;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(1024, &#39;\n&#39;);
+            cout &lt;&lt; &quot;输入无效，请输入数字年龄(0-150): &quot;;
+            continue;
+        }
+        if (age &gt;= 0 &amp;&amp; age &lt;= 150) {
+            abs-&gt;personArray[abs-&gt;size].age = age;
+            break;
+        }
+        cout &lt;&lt; &quot;年龄输入错误，请重新输入: &quot;;
+    }
+
+    // 电话
+    cout &lt;&lt; &quot;请输入联系电话：&quot;;
+    string phone;
+    cin &gt;&gt; phone;
+    abs-&gt;personArray[abs-&gt;size].phone = phone;
+
+    // 住址
+    cout &lt;&lt; &quot;请输入家庭住址：&quot;;
+    string addr;
+    cin &gt;&gt; addr;
+    abs-&gt;personArray[abs-&gt;size].addr = addr;
+
+    abs-&gt;size++;
+    cout &lt;&lt; &quot;添加成功&quot; &lt;&lt; endl;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+
+// 2. 显示所有联系人
+void showPerson(AddressBooks *abs) {
+    if (abs-&gt;size == 0) {
+        cout &lt;&lt; &quot;当前记录为空&quot; &lt;&lt; endl;
+    } else {
+        for (int i = 0; i &lt; abs-&gt;size; i++) {
+            cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; abs-&gt;personArray[i].name &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;性别：&quot; &lt;&lt; (abs-&gt;personArray[i].sex == 1 ? &quot;男&quot; : &quot;女&quot;) &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; abs-&gt;personArray[i].age &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;电话：&quot; &lt;&lt; abs-&gt;personArray[i].phone &lt;&lt; &quot;\t&quot;;
+            cout &lt;&lt; &quot;住址：&quot; &lt;&lt; abs-&gt;personArray[i].addr &lt;&lt; endl;
+        }
+    }
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+
+// 检测联系人是否存在（返回索引，否则返回-1）
+int isExist(AddressBooks *abs, string name) {
+    for (int i = 0; i &lt; abs-&gt;size; i++) {
+        if (abs-&gt;personArray[i].name == name)
+            return i;
+    }
+    return -1;
+}
+
+// 3. 删除联系人（已修复越界问题）
+void deletePerson(AddressBooks *abs) {
+    cout &lt;&lt; &quot;请输入您要删除的联系人姓名: &quot;;
+    string name;
+    cin &gt;&gt; name;
+    int ret = isExist(abs, name);
+    if (ret != -1) {
+        cout &lt;&lt; &quot;您是否要删除 \&quot;&quot; &lt;&lt; name &lt;&lt; &quot;\&quot; 的信息?&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;1———是&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;2———否&quot; &lt;&lt; endl;
+        int choice = 0;
+        while (true) {
+            cin &gt;&gt; choice;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(1024, &#39;\n&#39;);
+                cout &lt;&lt; &quot;输入无效，请选择1或2: &quot;;
+                continue;
+            }
+            if (choice == 1) {
+                // 数据前移（防止越界：i+1 必须小于 size）
+                for (int i = ret; i &lt; abs-&gt;size - 1; i++) {
+                    abs-&gt;personArray[i] = abs-&gt;personArray[i + 1];
+                }
+                abs-&gt;size--;
+                cout &lt;&lt; &quot;删除成功&quot; &lt;&lt; endl;
+                break;
+            } else if (choice == 2) {
+                cout &lt;&lt; &quot;已取消删除&quot; &lt;&lt; endl;
+                break;
+            } else {
+                cout &lt;&lt; &quot;输入错误，请重新输入: &quot;;
+            }
+        }
+    } else {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+
+// 4. 查找联系人
+void findPerson(AddressBooks *abs) {
+    cout &lt;&lt; &quot;请输入您要查找的联系人姓名: &quot;;
+    string name;
+    cin &gt;&gt; name;
+    int ret = isExist(abs, name);
+    if (ret != -1) {
+        cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; abs-&gt;personArray[ret].name &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;性别：&quot; &lt;&lt; (abs-&gt;personArray[ret].sex == 1 ? &quot;男&quot; : &quot;女&quot;) &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;年龄：&quot; &lt;&lt; abs-&gt;personArray[ret].age &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;电话：&quot; &lt;&lt; abs-&gt;personArray[ret].phone &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot;住址：&quot; &lt;&lt; abs-&gt;personArray[ret].addr &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+
+// 5. 修改联系人信息
+void modifyPerson(AddressBooks *abs) {
+    cout &lt;&lt; &quot;请输入您要修改的联系人姓名: &quot;;
+    string name;
+    cin &gt;&gt; name;
+    int ret = isExist(abs, name);
+    if (ret != -1) {
+        // 修改姓名
+        cout &lt;&lt; &quot;请输入新姓名: &quot;;
+        cin &gt;&gt; abs-&gt;personArray[ret].name;
+        // 修改性别
+        cout &lt;&lt; &quot;请输入新性别（1-男  2-女）: &quot;;
+        int sex = 0;
+        while (true) {
+            cin &gt;&gt; sex;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(1024, &#39;\n&#39;);
+                cout &lt;&lt; &quot;输入无效，请重新输入: &quot;;
+                continue;
+            }
+            if (sex == 1 || sex == 2) {
+                abs-&gt;personArray[ret].sex = sex;
+                break;
+            }
+            cout &lt;&lt; &quot;输入错误，请重新输入: &quot;;
+        }
+        // 修改年龄
+        cout &lt;&lt; &quot;请输入新年龄: &quot;;
+        int age = 0;
+        while (true) {
+            cin &gt;&gt; age;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(1024, &#39;\n&#39;);
+                cout &lt;&lt; &quot;输入无效，请重新输入: &quot;;
+                continue;
+            }
+            if (age &gt;= 0 &amp;&amp; age &lt;= 150) {
+                abs-&gt;personArray[ret].age = age;
+                break;
+            }
+            cout &lt;&lt; &quot;输入错误，请重新输入: &quot;;
+        }
+        // 修改电话
+        cout &lt;&lt; &quot;请输入新电话: &quot;;
+        cin &gt;&gt; abs-&gt;personArray[ret].phone;
+        // 修改地址
+        cout &lt;&lt; &quot;请输入新住址: &quot;;
+        cin &gt;&gt; abs-&gt;personArray[ret].addr;
+        cout &lt;&lt; &quot;修改成功&quot; &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; &quot;查无此人&quot; &lt;&lt; endl;
+    }
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+
+// 6. 清空联系人
+void cleanPerson(AddressBooks *abs) {
+    cout &lt;&lt; &quot;您是否要清除全部联系人的信息？&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;1———是&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;2———否&quot; &lt;&lt; endl;
+    int choice = 0;
+    while (true) {
+        cin &gt;&gt; choice;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(1024, &#39;\n&#39;);
+            cout &lt;&lt; &quot;输入无效，请选择1或2: &quot;;
+            continue;
+        }
+        if (choice == 1) {
+            abs-&gt;size = 0;   // 逻辑清空
+            cout &lt;&lt; &quot;通讯录已清空&quot; &lt;&lt; endl;
+            break;
+        } else if (choice == 2) {
+            cout &lt;&lt; &quot;已取消清空&quot; &lt;&lt; endl;
+            break;
+        } else {
+            cout &lt;&lt; &quot;输入错误，请重新输入: &quot;;
+        }
+    }
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+}
+
+// 菜单
+void showMenu() {
+    cout &lt;&lt; &quot;***************************&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***** 1、添加联系人 *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***** 2、显示联系人 *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***** 3、删除联系人 *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***** 4、查找联系人 *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***** 5、修改联系人 *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***** 6、清空联系人 *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***** 0、退出通讯录 *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;***************************&quot; &lt;&lt; endl;
+}
+
+int main() {
+    AddressBooks abs;
+    abs.size = 0;
+    int select = 0;
+
+    while (true) {
+        showMenu();
+        cin &gt;&gt; select;
+        if (cin.fail()) {   // 菜单选择也做防护
+            cin.clear();
+            cin.ignore(1024, &#39;\n&#39;);
+            cout &lt;&lt; &quot;请输入数字选项！&quot; &lt;&lt; endl;
+            system(&quot;pause&quot;);
+            system(&quot;cls&quot;);
+            continue;
+        }
+
+        switch (select) {
+            case 1: addPerson(&amp;abs);    break;
+            case 2: showPerson(&amp;abs);   break;
+            case 3: deletePerson(&amp;abs); break;
+            case 4: findPerson(&amp;abs);   break;
+            case 5: modifyPerson(&amp;abs); break;
+            case 6: cleanPerson(&amp;abs);  break;
+            case 0:
+                cout &lt;&lt; &quot;欢迎下次使用，再见！&quot; &lt;&lt; endl;
+                system(&quot;pause&quot;);
+                return 0;
+            default:
+                cout &lt;&lt; &quot;选项错误，请重新选择&quot; &lt;&lt; endl;
+                system(&quot;pause&quot;);
+                system(&quot;cls&quot;);
+                break;
+        }
+    }
+    return 0;
+}
+</code></pre>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>数据结构</tag>
+        <tag>文件操作</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>胶片拍摄之巨星400</title>
+    <url>/2026/02/20/SuperStar400/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center"><img src="/images/film/r001-001.jpg" alt="胶片摄影"></th>
+<th align="center"><img src="/images/film/r001-002.jpg" alt="胶片摄影"></th>
+<th align="center"><img src="/images/film/r001-003.jpg" alt="胶片摄影"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/images/film/r001-007.jpg" alt="胶片摄影"></td>
+<td align="center"><img src="/images/film/r001-010.jpg" alt="胶片摄影"></td>
+<td align="center"><img src="/images/film/r001-017.jpg" alt="胶片摄影"></td>
+</tr>
+<tr>
+<td align="center"><img src="/images/film/r001-028.jpg" alt="胶片摄影"></td>
+<td align="center"><img src="/images/film/r001-030.jpg" alt="胶片摄影"></td>
+<td align="center"><img src="/images/film/r001-032.jpg" alt="胶片摄影"></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>胶片摄影</tag>
+        <tag>旅行随拍</tag>
+        <tag>烟火记录</tag>
+        <tag>静物模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>胶片日记｜一次性半格相机+135柯达金200</title>
+    <url>/2026/03/15/Kodak_gold_200/</url>
+    <content><![CDATA[<p><img src="/images/film/IMG2685.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4168.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4171.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4172.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4175.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4178.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4179.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4232.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4233.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4236.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4239.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4240.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4241.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4242.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4243.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4244.jpg" alt="胶片摄影"><br><img src="/images/film/IMG4245.jpg" alt="胶片摄影"></p>
+]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>校园随拍</tag>
+        <tag>胶片摄影</tag>
+        <tag>生活记录</tag>
+        <tag>复古色调</tag>
+        <tag>静物玩偶</tag>
+      </tags>
   </entry>
 </search>
