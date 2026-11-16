@@ -720,6 +720,40 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+/* 徽章标签条 —— 关于页与文章通用
+   用法：<div class="badge-row"><span class="badge">🎞️ 柯达全能400</span></div> */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 26px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--primary);
+  background: var(--primary-muted);
+  color: var(--primary);
+  font-size: 0.86em;
+  font-weight: 600;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.badge-row + .badge-row {
+  margin-top: -14px;
+}
+
+/* 小屏时徽章别太宽 */
+@media (max-width: 768px) {
+  .badge {
+    font-size: 0.8em;
+    padding: 4px 11px;
+  }
+}
+
 /* Post navigation */
 .post-nav {
   max-width: var(--content-width);
