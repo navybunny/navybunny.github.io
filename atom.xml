@@ -10,7 +10,25 @@
   <rights>All rights reserved 2026, NavyBunny</rights>
   <subtitle>一个爱摄影、玩模型、玩wargame且是一名铁杆军迷的计算机专业学生</subtitle>
   <title>NavyBunny的博客</title>
-  <updated>2026-11-16T16:21:10.027Z</updated>
+  <updated>2026-11-16T17:02:42.124Z</updated>
+  <entry>
+    <author>
+      <name>NavyBunny</name>
+    </author>
+    <category term="编程" scheme="https://navybunny.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="开发" scheme="https://navybunny.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    <category term="Hexo" scheme="https://navybunny.github.io/tags/Hexo/"/>
+    <category term="开源" scheme="https://navybunny.github.io/tags/%E5%BC%80%E6%BA%90/"/>
+    <id>https://navybunny.github.io/2026/11/17/hexo-post-studio/</id>
+    <link href="https://navybunny.github.io/2026/11/17/hexo-post-studio/"/>
+    <published>2026-11-16T17:10:00.000Z</published>
+    <summary>
+      <![CDATA[<p>这个博客是 Hexo + GitHub Pages，写久了就攒下两个烦人的地方。</p>
+<p>一个是<strong>图片</strong>。相机原图随手就是七八 MB，一次旅行回来几十张，往仓库里一扔，图床没上、压缩工具又懒得单独跑，最后页面加载慢得自己都不想看。</p>]]>
+    </summary>
+    <title>我给自己写了个 Hexo 图文发布工作台</title>
+    <updated>2026-11-16T17:02:42.124Z</updated>
+  </entry>
   <entry>
     <author>
       <name>NavyBunny</name>

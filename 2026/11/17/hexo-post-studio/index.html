@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+
+  <!-- SEO -->
+  
+    <title>我给自己写了个 Hexo 图文发布工作台 — NavyBunny的博客</title>
+  
+
+  <meta name="description" content="NavyBunny 的博客 —— 尼康 D4 与胶片摄影作品、模型与 Wargame 记录，以及一些计算机学习笔记。">
+  <meta name="keywords" content="NavyBunny博客,摄影,胶片,尼康,模型,军迷,Wargame,计算机">
+  <meta name="author" content="NavyBunny">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="我给自己写了个 Hexo 图文发布工作台">
+  <meta property="og:description" content="NavyBunny 的博客 —— 尼康 D4 与胶片摄影作品、模型与 Wargame 记录，以及一些计算机学习笔记。">
+  <meta property="og:url" content="https://navybunny.github.io/2026/11/17/hexo-post-studio/">
+  <meta property="og:site_name" content="NavyBunny的博客">
+  <meta property="og:image" content="https://navybunny.github.io/images/default-og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="我给自己写了个 Hexo 图文发布工作台">
+  <meta name="twitter:description" content="NavyBunny 的博客 —— 尼康 D4 与胶片摄影作品、模型与 Wargame 记录，以及一些计算机学习笔记。">
+  <meta name="twitter:image" content="https://navybunny.github.io/images/default-og-image.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://navybunny.github.io/2026/11/17/hexo-post-studio/">
+
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" type="application/atom+xml" title="NavyBunny的博客">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+
+  <!-- 首页首屏大图：高优先级预加载，改善 LCP -->
+  
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..900;1,14..32,400..700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/image-viewer.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"></head>
+<body>
+  <!-- Skip to content for accessibility -->
+  <a href="#main-content" class="sr-only" style="position:absolute;top:0;left:0;z-index:9999;background:var(--primary);color:#fff;padding:0.5rem 1rem;border-radius:0 0 4px 0;">跳到主要内容</a>
+
+<!-- Navbar -->
+<header class="navbar" role="banner" aria-label="主导航">
+  <a href="/" class="navbar-brand" aria-label="NavyBunny的博客 — Home">
+    <img src="/images/logo.svg" alt="" width="32" height="32" aria-hidden="true" style="display:inline-block;vertical-align:middle;">
+    <span class="kinetic-title">NavyBunny的博客</span>
+  </a>
+
+  <button class="navbar-toggle" aria-label="切换导航菜单" aria-expanded="false" id="navbarToggle">
+    <span aria-hidden="true">&#9776;</span>
+  </button>
+
+  <nav role="navigation" aria-label="主要导航">
+    <ul class="navbar-links" id="navbarLinks">
+      
+      
+        <li>
+          <a href="/" data-i18n="nav.home">
+            首页
+          </a>
+        </li>
+      
+        <li>
+          <a href="/archives/" data-i18n="nav.archives">
+            归档
+          </a>
+        </li>
+      
+        <li>
+          <a href="/tags/" data-i18n="nav.tags">
+            标签
+          </a>
+        </li>
+      
+        <li>
+          <a href="/about/" data-i18n="nav.about">
+            关于
+          </a>
+        </li>
+      
+        <li>
+          <a href="/search/" data-i18n="nav.search">
+            搜索
+          </a>
+        </li>
+      
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换到暗色模式" title="Toggle theme">
+          <span class="theme-toggle-icon" aria-hidden="true">&#9789;</span>
+        </button>
+      </li>
+      <li>
+        <button class="lang-toggle" id="langToggle" aria-label="English" title="语言" data-i18n-attrs="aria-label">
+          <span class="lang-toggle-text">English</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<main id="main-content">
+  <article class="post-container" itemscope itemtype="http://schema.org/Article">
+    
+    
+
+    <header class="post-header">
+      <h1 class="post-title kinetic-title" itemprop="headline">我给自己写了个 Hexo 图文发布工作台</h1>
+
+      <div class="post-meta">
+        <time datetime="2026-11-17" itemprop="datePublished">
+          2026-11-17
+        </time>
+        <span class="post-meta-sep" aria-hidden="true">·</span>
+        <span itemprop="author">NavyBunny</span>
+        
+          <span class="post-meta-sep" aria-hidden="true">·</span>
+          <span>
+            
+            ~7 <span data-i18n="post.min_read">分钟阅读</span>
+          </span>
+        
+      </div>
+
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%BC%80%E5%8F%91" class="tag-pill">开发</a>
+          
+            <a href="/tags/Hexo" class="tag-pill">Hexo</a>
+          
+            <a href="/tags/%E5%BC%80%E6%BA%90" class="tag-pill">开源</a>
+          
+        </div>
+      
+    </header>
+
+    <!-- Table of Contents -->
+    
+      <aside class="toc" id="toc" aria-label="文章目录" data-i18n-attrs="aria-label">
+        <div class="toc-title" data-i18n="post.toc_title">目录</div>
+        <ol class="toc-list" id="tocList"></ol>
+      </aside>
+    
+
+    <!-- Post Content -->
+    <div class="post-content" itemprop="articleBody">
+      <p>这个博客是 Hexo + GitHub Pages，写久了就攒下两个烦人的地方。</p>
+<p>一个是<strong>图片</strong>。相机原图随手就是七八 MB，一次旅行回来几十张，往仓库里一扔，图床没上、压缩工具又懒得单独跑，最后页面加载慢得自己都不想看。</p>
+<p>另一个是<strong>流程太碎</strong>。新建文章、写 Markdown、把图挪进 <code>source/images</code>、改路径、<code>hexo clean</code>、<code>hexo generate --deploy</code>、再来 <code>git push</code> —— 步骤不算多，但每次都容易漏。尤其是「源码提交了、网站没生成」或者反过来，我自己就干过好几次。</p>
+<p>所以这周干脆写了个小工具，把这两件事收进一个界面里。</p>
+<div class="badge-row"><span class="badge">💻 本地运行</span><span class="badge">🔒 不联网</span><span class="badge">🖼️ 图片自动压缩</span><span class="badge">🚀 一键发布</span><span class="badge">📦 已开源</span></div>
+
+<h2 id="🧰-它长什么样"><a href="#🧰-它长什么样" class="headerlink" title="🧰 它长什么样"></a>🧰 它长什么样</h2><p><img src="/images/hexo-post-studio-%E7%95%8C%E9%9D%A2.jpg" alt="hexo-post-studio 界面" width="1500" height="940" loading="eager" fetchpriority="high" decoding="async"></p>
+<p>左边是文章和页面列表，中间写 Markdown、右边调压缩参数和点发布，中间那栏可以切成「并排」实时看效果。</p>
+<p>说白了就是个编辑器，但有三点和我以前用的工具不一样：</p>
+<ul>
+<li><strong>图片直接拖进去</strong>，它当场压缩、存好、把 <code>![]()</code> 插到光标位置，一步不用管</li>
+<li><strong>内嵌预览用的是我自己主题的 CSS</strong>，所见基本就是所得</li>
+<li><strong>顶栏一直告诉我源码和线上是否一致</strong>，不用再自己回忆「我上次发布了吗」</li>
+</ul>
+<h2 id="🖼️-图片这一块，坑比想象中多"><a href="#🖼️-图片这一块，坑比想象中多" class="headerlink" title="🖼️ 图片这一块，坑比想象中多"></a>🖼️ 图片这一块，坑比想象中多</h2><p>最开始我想得很简单：所有图按长边 2560 压成 JPEG 就完事。真正做下来发现有几个必须处理的情况。</p>
+<p><strong>第一，绝对不能再压一次。</strong> 有损压缩是有代价的，同一张图压两遍画质会明显糊掉。所以工具的规则是：<strong>只压你新拖进来的图，已有的文件一个都不碰</strong>。听起来是废话，但很多工具就是在这上面出问题的。</p>
+<p><strong>第二，透明通道不能无脑转 JPEG。</strong> PNG 带透明的话转 JPEG 背景会变黑，所以带 alpha 的一律保留 PNG，其余才转。</p>
+<p><strong>第三，BMP 和 TIFF。</strong> 我玩胶片，扫描店出来经常是 <code>.bmp</code> 或 <code>.tif</code>。TIFF 好办，<code>sharp</code> 原生支持；<strong>BMP 就不行</strong>，<code>sharp</code> 会直接报 <code>unsupported image format</code>。最后我照着 BMP 格式规范自己写了个极简解码器，支持未压缩的 8&#x2F;24&#x2F;32 位，解成原始像素再交给 <code>sharp</code> 转 JPEG。写完拿 Pillow 解同一张图逐像素对比过，最大像素差是 0。</p>
+<p><strong>第四，动图别压成一帧。</strong> GIF &#x2F; WebP 如果是多帧动画，转 JPEG 就等于把动画毁了，所以这类直接原样保留，不压。</p>
+<p>实测数据放在这儿，你自己感受下差距：</p>
+<table>
+<thead>
+<tr>
+<th align="left">原图</th>
+<th align="left">处理后</th>
+<th align="left">比例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">相机原图 5148×3784，7.2 MB</td>
+<td align="left">354 KB（长边 2560 &#x2F; q88）</td>
+<td align="left">4.8%</td>
+</tr>
+<tr>
+<td align="left">同一张，长边 1600 &#x2F; q82</td>
+<td align="left">123 KB</td>
+<td align="left">1.7%</td>
+</tr>
+<tr>
+<td align="left">胶片扫描 BMP 3.03 MB</td>
+<td align="left">236 KB</td>
+<td align="left">7.6%</td>
+</tr>
+</tbody></table>
+<p>整个博客的图片我统计过：<strong>570.9 MB → 53.8 MB</strong>，剩 9.4%。而且这是在长边 2560 的前提下，点开看细节也不糊。</p>
+<h2 id="🚀-发布为什么是「两步」"><a href="#🚀-发布为什么是「两步」" class="headerlink" title="🚀 发布为什么是「两步」"></a>🚀 发布为什么是「两步」</h2><p>这个结构值得单独说，因为它一开始我也理解错过。</p>
+<p>Hexo 部署到 GitHub Pages，常见做法是<strong>一个仓库两个分支</strong>：</p>
+<blockquote>
+<p><strong><code>source</code></strong> 分支放源文件 —— <code>.md</code>、图片、主题、配置，这是你自己 <code>git push</code> 的</p>
+<p><strong><code>main</code></strong> 分支放生成的 HTML&#x2F;CSS&#x2F;JS —— 由 <code>hexo generate --deploy</code> 自动推上去，Pages 从这儿发布</p>
+</blockquote>
+<p>所以一次完整发布是两件事：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ① 生成并推送产物 → 网站变了</span></span><br><span class="line">hexo clean &amp;&amp; hexo generate --deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># ② 提交源码 → 备份，别人才能看到你的 markdown</span></span><br><span class="line">git add -A &amp;&amp; git commit -m <span class="string">&quot;...&quot;</span> &amp;&amp; git push origin <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>只做①</strong>：网站更新了，但你的文章只在本地，硬盘一坏就全没了。<br><strong>只做②</strong>：源码备份了，但网站还是旧的。</p>
+<p>工具只做①，②永远留给你自己敲。这不是偷懒 —— 自动提交会把提交历史搅乱，而且一次提交包含哪些改动，本来就该由人来决定。工具能做的是在顶栏用红字提醒你「N 处改动未提交」，别忘就行。</p>
+<h2 id="🧩-中途砍掉的功能"><a href="#🧩-中途砍掉的功能" class="headerlink" title="🧩 中途砍掉的功能"></a>🧩 中途砍掉的功能</h2><p>这类工具很容易越写越大，我砍掉了三个看着不错的东西：</p>
+<p><strong>图床。</strong> 一开始觉得该做，后来想明白：我图片总量压完才 54 MB，直接进仓库完全够用，图床反而多一个要维护、可能挂掉、还会产生外链依赖的环节。<strong>没有需求就不要造轮子。</strong></p>
+<p><strong>社交平台的分享按钮。</strong> 本来想加微信&#x2F;QQ 分享，查下来发现：微信的 JS-SDK 只在微信内置浏览器里生效，还需要认证服务号和服务器签名；应用外只能调 OpenSDK，那是原生 App 的事。为一篇博客搭这套太夸张了。最后全部统一成「复制链接」，一句话提示，干干净净。</p>
+<p><strong>在界面里改配置文件。</strong> 这个做了一半放弃了。那两份 YAML 全是注释，用常规方法重写会把注释冲掉，得按行精准改写才安全；而我的仓库是 CRLF 换行，第一版正则遇到行尾的 <code>\r</code> 会静默匹配失败 —— 表现就是「点了保存但没生效」，这种 bug 最难查。想想还是算了：那几个字段一年改一次，直接开文本编辑器更快。</p>
+<h2 id="🐛-几个真折腾了半天的-bug"><a href="#🐛-几个真折腾了半天的-bug" class="headerlink" title="🐛 几个真折腾了半天的 bug"></a>🐛 几个真折腾了半天的 bug</h2><p>写的过程里踩的坑，记下来给自己也给别人：</p>
+<p><strong>1. 多选图片只传了第一张。</strong> <code>e.target.files</code> 拿到的是<strong>实时的 FileList</strong>，我在异步上传开始后顺手写了句 <code>input.value = &#39;&#39;</code> 想把选择清空，结果 FileList 跟着一起空了，循环跑到第二轮时长度已经是 0。修法：进函数第一件事先 <code>slice</code> 成真数组。</p>
+<p><strong>2. 徽章全竖着堆成一列。</strong> 在 Markdown 里写 <code>&lt;div&gt;</code> 包裹的内容，只要中间有一个空行，HTML 块就在那儿被截断了，剩下的 <code>&lt;span&gt;</code> 会被当成普通段落，每行之间插 <code>&lt;br&gt;</code>。所以这种自定义块必须写成<strong>一整行</strong>。</p>
+<p><strong>3. YAML 里的日期悄悄差了 8 小时。</strong> <code>js-yaml</code> 默认会把 <code>2026-04-10 12:00:00</code> 当成 UTC 解析，再按本地时区格式化就成了 20:00。改用 <code>JSON_SCHEMA</code> 让它当字符串处理后正常。</p>
+<p><strong>4. 主题只给 <code>.post-content</code> 写了样式。</strong> 我的关于页容器叫 <code>.about-content</code>，所以关于页里的表格在很长一段时间里是<strong>没有边框的裸表</strong>，我一直以为是主题就这么设计的，直到重做关于页才发现。</p>
+<p><strong>5. 用 PowerShell 批量改 UTF-8 文件要小心。</strong> 我有一次用 <code>Get-Content -Raw</code> 读 <code>_config.yml</code> 再写回去，Windows PowerShell 5.1 默认按 GBK 解码 —— 中文全被二次编码毁掉，构建直接失败。这种操作用专门的编辑工具，或者显式指定 <code>-Encoding UTF8</code>。</p>
+<h2 id="📦-开源了"><a href="#📦-开源了" class="headerlink" title="📦 开源了"></a>📦 开源了</h2><p>东西整理干净后放到 GitHub 上了，MIT 协议，随便用：</p>
+<blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://github.com/navybunny/hexo-post-studio">https://github.com/navybunny/hexo-post-studio</a></strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接从 GitHub 跑，不用装</span></span><br><span class="line">npx --<span class="built_in">yes</span> github:navybunny/hexo-post-studio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者克隆下来</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/navybunny/hexo-post-studio.git</span><br><span class="line"><span class="built_in">cd</span> hexo-post-studio &amp;&amp; npm install &amp;&amp; npm start</span><br></pre></td></tr></table></figure>
+
+<p>它的定位很窄：<strong>只服务「Hexo + 本地图片 + GitHub Pages」这一种组合</strong>，不打算变成通用博客平台。如果你的情况正好一样，应该能省点事；不一样的话，那几段图片压缩和发布流程的代码也可以单独拆出来用。</p>
+<hr>
+<p>这次折腾下来最深的体会是：<strong>自己用的工具，最好的功能往往是「少做一点」。</strong></p>
+<p>不自动提交、不上图床、不搞分享生态、不在界面里改配置 —— 每一个「不做」的地方，都少了一处以后会出问题的地方。</p>
+
+    </div>
+  </article>
+
+  <!-- Post Navigation -->
+  
+    <nav class="post-nav" aria-label="相邻文章">
+      
+        <div></div>
+      
+      
+        <a href="/2026/11/16/%E4%B8%9C%E5%A4%A7%E6%B5%91%E5%8D%97%E4%B9%8B%E7%A7%8B/" class="post-nav-item">
+          <div class="post-nav-label" data-i18n="post.next">下一篇 →</div>
+          <div class="post-nav-title">东大浑南之秋</div>
+        </a>
+      
+    </nav>
+  
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <p class="footer-copyright" data-i18n="footer.copyright" data-i18n-attrs="text">
+    &copy; 2026-2026 NavyBunny.
+    Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> &amp; miku-theme.
+  </p>
+</footer>
+
+<!-- Complete Language Packs -->
+<script>
+window.MIKU_I18N = {
+  "zh-CN": {
+    "nav.home": "首页", "nav.archives": "归档", "nav.tags": "标签", "nav.about": "关于", "nav.search": "搜索",
+    "a11y.skip_to_content": "跳到主要内容", "a11y.toggle_nav": "切换导航菜单", "a11y.hero_banner": "首屏横幅",
+    "a11y.tag_cloud": "标签云", "a11y.recent_posts": "最新文章", "a11y.page_nav": "分页导航",
+    "a11y.archive_pagination": "归档分页", "a11y.toc": "文章目录", "a11y.adjacent_posts": "相邻文章", "a11y.avatar": "头像",
+    "a11y.search_posts": "搜索文章", "a11y.reading_time": "阅读时间",
+    "hero.scroll_hint": "向下滚动探索",
+    "post.toc_title": "目录", "post.prev": "← 上一篇", "post.next": "下一篇 →", "post.min_read": "分钟阅读",
+    "pagination.prev": "← 上一页", "pagination.next": "下一页 →",
+    "archive.title": "归档", "tags.title": "标签", "tags.empty": "暂无标签，快去写文章吧！",
+    "search.title": "搜索", "search.placeholder": "输入关键词搜索文章...",
+    "search.index_missing": "搜索索引未找到。请先运行 <code>hexo generate</code>。",
+    "search.no_results": "未找到与 &ldquo;%s&rdquo; 相关的文章。", "search.results": "%d 个结果",
+    "category.title": "分类", "category.empty": "暂无分类。",
+    "theme.switch_light": "切换到亮色模式", "theme.switch_dark": "切换到暗色模式",
+    "lang.switch_to": "English", "lang.label": "语言"
+  },
+  "en": {
+    "nav.home": "Home", "nav.archives": "Archives", "nav.tags": "Tags", "nav.about": "About", "nav.search": "Search",
+    "a11y.skip_to_content": "Skip to main content", "a11y.toggle_nav": "Toggle navigation menu",
+    "a11y.hero_banner": "Hero banner", "a11y.tag_cloud": "Tag cloud", "a11y.recent_posts": "Recent posts",
+    "a11y.page_nav": "Page navigation", "a11y.archive_pagination": "Archive pagination",
+    "a11y.toc": "Table of Contents", "a11y.adjacent_posts": "Adjacent posts", "a11y.avatar": "Avatar",
+    "a11y.search_posts": "Search posts", "a11y.reading_time": "Reading time",
+    "hero.scroll_hint": "Scroll to explore",
+    "post.toc_title": "Contents", "post.prev": "← Previous", "post.next": "Next →", "post.min_read": "min read",
+    "pagination.prev": "← Prev", "pagination.next": "Next →",
+    "archive.title": "Archives", "tags.title": "Tags", "tags.empty": "No tags yet. Write some posts!",
+    "search.title": "Search", "search.placeholder": "Type to search posts...",
+    "search.index_missing": "Search index not found. Run <code>hexo generate</code> first.",
+    "search.no_results": "No posts found for &ldquo;%s&rdquo;.", "search.results": "%d results",
+    "category.title": "Categories", "category.empty": "No categories yet.",
+    "theme.switch_light": "Switch to light mode", "theme.switch_dark": "Switch to dark mode",
+    "lang.switch_to": "中文", "lang.label": "Language"
+  }
+};
+</script>
+
+<!-- Scripts -->
+<script src="/js/main.js"></script>
+
+  <script src="/js/search.js"></script>
+
+
+<!-- hexo injector body_end start --><script src="/js/image-viewer.js" defer></script><!-- hexo injector body_end end --></body>
+</html>
+
