@@ -14,7 +14,11 @@
       <% } %>
 
       <h1 class="about-name kinetic-title"><%= config.author %></h1>
-      <p class="about-bio"><%= config.description %></p>
+      <%# 名字下面那行站点简介已按需隐藏；_config.yml 里的 description 仍保留，
+          供 head 里的 meta description / og:description 使用 %>
+      <% if (false) { %>
+        <p class="about-bio"><%= config.description %></p>
+      <% } %>
 
       <% if (page.content) { %>
         <div class="about-content">
