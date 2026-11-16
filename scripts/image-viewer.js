@@ -107,8 +107,17 @@ function enhance(html, title) {
     index += 1;
 
     // --- width / height，防止布局抖动 ---
+    // 注意：marked/Hexo 会把地址里的中文百分号编码，而 DIMS 的键是原始文件名，
+    // 所以要先解码再查，否则中文文件名的图会全部查不到尺寸。
     const src = attrOf(a, 'src') || '';
-    const dim = DIMS[src];
+    let dim = DIMS[src];
+    if (!dim && src.indexOf('%') !== -1) {
+      try {
+        dim = DIMS[decodeURIComponent(src)];
+      } catch (e) {
+        /* 不是合法的编码，忽略 */
+      }
+    }
     if (dim && attrOf(a, 'width') === null && attrOf(a, 'height') === null) {
       a += ` width="${dim.w}" height="${dim.h}"`;
     }
