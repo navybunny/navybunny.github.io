@@ -18,10 +18,8 @@
   var TOAST_MS = 1900;
 
   var UA = navigator.userAgent || '';
-  // 只保留「保存」按钮需要的两个判断（微信内不能下载、移动端用直链下载）。
-  // 分享已经统一为复制链接，不再需要平台识别。
+  // 只保留「保存」按钮需要的判断：手机上不触发下载，改为提示长按保存。
   var IS_MOBILE = /Android|iPhone|iPad|iPod|Mobile|HarmonyOS/i.test(UA);
-  var IS_WECHAT = /MicroMessenger/i.test(UA);
 
   var ICON = {
     close:
@@ -360,23 +358,12 @@
     if (!url) return;
     var name = filenameOf(url);
 
-    // 微信内置浏览器：WebView 不支持 blob 下载，只会提示"请在浏览器打开"。
-    // 唯一可靠的办法是长按图片，走微信自己的「保存图片」进相册。
-    if (IS_WECHAT) {
-      toast('长按图片 → 保存图片');
-      return;
-    }
-
-    // 移动端浏览器：部分 WebView 不支持 blob，直接用链接下载更稳
+    // 手机上一律不触发下载。
+    // 微信 / QQ 的内置 WebView 下载下来的文件进不了相册，还会弹出"请在浏览器打开"
+    // 或"普通下载"之类的中间步骤，纯干扰。长按图片走系统/App 自己的
+    // 「保存图片」，才是唯一能真正进相册的方式。
     if (IS_MOBILE) {
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = name;
-      a.rel = 'noopener';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      toast('已开始下载；若想进相册，可长按图片保存');
+      toast('长按图片 → 保存图片');
       return;
     }
 
@@ -388,8 +375,6 @@
       toast('已在新标签页打开，右键「图片另存为」');
     }
   }
-
-  /* ---------------- 分享 ---------------- */
 
   /* ---------------- 分享 ---------------- */
 
