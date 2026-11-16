@@ -465,6 +465,11 @@
     }, 1400);
   }
 
+  // 浏览器没有系统分享面板时的兜底：复制链接并说明原因
+  function noShareHint(url, name) {
+    copyLink(url, '当前浏览器不支持系统分享，' + name + '已复制');
+  }
+
   // QQ
   function shareQQ(kind) {
     var url = shareURLOf(kind);
@@ -483,25 +488,29 @@
       return;
     }
 
-    // 手机普通浏览器：安卓上直接调起 QQ 的「发送给好友」界面。
-    // iOS 上不用 scheme —— Safari 打不开未知协议会弹「无法打开网页」的报错框，
-    // 直接走系统分享面板更干净。
-    if (!IS_ANDROID) {
-      if (CAN_NATIVE_SHARE) nativeShare(url);
-      else copyLink(url, name + '已复制，打开 QQ 粘贴发送');
+    // 有系统分享面板就优先用它：选 QQ 之后由 QQ 自己弹出「选择聊天」，
+    // 不会经过安卓那条"此网站请求打开 App"的确认框。
+    if (CAN_NATIVE_SHARE) {
+      nativeShare(url);
       return;
     }
 
-    var scheme =
-      'mqqapi://share/to_fri?src_type=web&version=1&file_type=news&share_type=0' +
-      '&url=' + encodeURIComponent(url) +
-      '&title=' + encodeURIComponent(document.title || '') +
-      '&description=' + encodeURIComponent(document.title || '') +
-      '&image_url=' + encodeURIComponent(kind === 'image' ? url : (imgEl && imgEl.src) || '');
+    // 没有系统面板：安卓上退回 QQ 的 URL scheme（会先弹系统确认框）
+    if (IS_ANDROID) {
+      var scheme =
+        'mqqapi://share/to_fri?src_type=web&version=1&file_type=news&share_type=0' +
+        '&url=' + encodeURIComponent(url) +
+        '&title=' + encodeURIComponent(document.title || '') +
+        '&description=' + encodeURIComponent(document.title || '') +
+        '&image_url=' + encodeURIComponent(kind === 'image' ? url : (imgEl && imgEl.src) || '');
 
-    openApp(scheme, function () {
-      nativeShare(url); // 没装 QQ 或拉不起来，退到系统面板
-    });
+      openApp(scheme, function () {
+        noShareHint(url, name);
+      });
+      return;
+    }
+
+    noShareHint(url, name);
   }
 
   // 微信
@@ -522,9 +531,14 @@
       return;
     }
 
-    // 微信没有可调起的 scheme，只能交给系统面板
-    if (CAN_NATIVE_SHARE) nativeShare(url);
-    else copyLink(url, name + '已复制，打开微信粘贴发送');
+    // 微信没有可调起的 URL scheme，只能交给系统分享面板：
+    // 在面板里选微信后，微信自己会弹出「选择聊天」。
+    if (CAN_NATIVE_SHARE) {
+      nativeShare(url);
+      return;
+    }
+
+    noShareHint(url, name);
   }
 
   // 分享本文链接（桌面复制；手机走系统面板或平台提示）
@@ -544,8 +558,11 @@
       toast('点击右上角 ··· → 分享给好友');
       return;
     }
-    if (CAN_NATIVE_SHARE) nativeShare(url);
-    else copyLink(url, '文章链接已复制');
+    if (CAN_NATIVE_SHARE) {
+      nativeShare(url);
+      return;
+    }
+    noShareHint(url, '文章链接');
   }
 
   // 复制图片链接
