@@ -1,37 +1,154 @@
 'use strict';
 
 /**
- * 文章图片增强（不改主题文件）
+ * 文章图片增强（不改主题文件，只靠 Hexo 的 filter / injector）
  *
- *  1. 给正文图片加 loading="lazy" / decoding="async"
- *     —— 打开页面只下首屏图，滚到哪加载哪
- *  2. 注入放大查看器的 CSS / JS
- *     —— 点击图片全屏放大，右下角有「保存」「分享」
+ *  1. 扫描本地图片，读出真实尺寸
+ *  2. 给正文 img 补上 width/height —— 图片加载完不会把页面顶来顶去（防 CLS）
+ *  3. 首图改 loading="eager" + fetchpriority="high" —— 优化 LCP
+ *  4. 其余图片 loading="lazy" / decoding="async" —— 滚到哪加载哪
+ *  5. 把「照片」这类没信息量的 alt 换成「文章标题 - 照片 N」—— 利于搜索与读屏
+ *  6. 注入放大查看器的 CSS / JS
  *
  * 放在博客根目录的 scripts/ 下，Hexo 启动时自动加载。
  */
 
-// ---------- 1. 懒加载 ----------
-const LAZY = /<img\b([^>]*)>/gi;
+const fs = require('fs');
+const path = require('path');
 
-const addLazy = (html) => {
+// ---------- 1. 读取本地图片尺寸 ----------
+
+/**
+ * 只解析 JPEG 的文件头拿宽高，不依赖任何图像库。
+ * 找 SOF0~SOF15（排除 DHT/JPG/DAC），高度在偏移 +5、宽度在 +7。
+ */
+function readJpegSize(buf) {
+  if (buf.length < 4 || buf[0] !== 0xff || buf[1] !== 0xd8) return null;
+  let i = 2;
+  while (i + 9 < buf.length) {
+    if (buf[i] !== 0xff) {
+      i += 1;
+      continue;
+    }
+    const marker = buf[i + 1];
+    // 无长度字段的标记
+    if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+      i += 2;
+      continue;
+    }
+    const len = buf.readUInt16BE(i + 2);
+    if (len < 2) return null;
+    if (
+      marker >= 0xc0 &&
+      marker <= 0xcf &&
+      marker !== 0xc4 &&
+      marker !== 0xc8 &&
+      marker !== 0xcc
+    ) {
+      if (i + 9 > buf.length) return null;
+      return { h: buf.readUInt16BE(i + 5), w: buf.readUInt16BE(i + 7) };
+    }
+    i += 2 + len;
+  }
+  return null;
+}
+
+// key 形如 "/images/film/r001-001.jpg"
+const DIMS = Object.create(null);
+
+function scanImages(dir, prefix) {
+  let entries;
+  try {
+    entries = fs.readdirSync(dir, { withFileTypes: true });
+  } catch (e) {
+    return;
+  }
+  for (const ent of entries) {
+    const full = path.join(dir, ent.name);
+    const url = prefix + '/' + ent.name;
+    if (ent.isDirectory()) {
+      scanImages(full, url);
+    } else if (/\.jpe?g$/i.test(ent.name)) {
+      try {
+        const size = readJpegSize(fs.readFileSync(full));
+        if (size) DIMS[url] = size;
+      } catch (e) {
+        /* 读不了就跳过 */
+      }
+    }
+  }
+}
+
+try {
+  const base = hexo.base_dir;
+  const srcDir = hexo.config.source_dir || 'source';
+  scanImages(path.join(base, srcDir, 'images'), '/images');
+  hexo.log.debug('image-enhance: 读取到 %d 张图片尺寸', Object.keys(DIMS).length);
+} catch (e) {
+  hexo.log.warn('image-enhance: 扫描图片尺寸失败 %s', e.message);
+}
+
+// ---------- 2. 处理正文里的 img ----------
+
+// 这些 alt 等于没写，换成带标题的描述
+const WEAK_ALT = ['', '照片', '图片', '胶片摄影', '数码摄影', '相片', 'image', 'photo'];
+
+function attrOf(attrs, name) {
+  const m = new RegExp('\\b' + name + '\\s*=\\s*"([^"]*)"', 'i').exec(attrs);
+  return m ? m[1] : null;
+}
+
+function enhance(html, title) {
   if (!html || typeof html !== 'string') return html;
-  return html.replace(LAZY, (whole, attrs) => {
+
+  let index = 0;
+  return html.replace(/<img\b([^>]*)>/gi, (whole, attrs) => {
     let a = attrs;
-    if (!/\bloading\s*=/i.test(a)) a += ' loading="lazy"';
-    if (!/\bdecoding\s*=/i.test(a)) a += ' decoding="async"';
+    index += 1;
+
+    // --- width / height，防止布局抖动 ---
+    const src = attrOf(a, 'src') || '';
+    const dim = DIMS[src];
+    if (dim && attrOf(a, 'width') === null && attrOf(a, 'height') === null) {
+      a += ` width="${dim.w}" height="${dim.h}"`;
+    }
+
+    // --- alt：把没信息量的换成「标题 - 照片 N」---
+    if (title) {
+      const cur = (attrOf(a, 'alt') || '').trim();
+      if (WEAK_ALT.indexOf(cur) !== -1) {
+        const next = String(title).replace(/"/g, '').trim() + ' - 照片 ' + index;
+        a =
+          attrOf(a, 'alt') !== null
+            ? a.replace(/\balt\s*=\s*"[^"]*"/i, 'alt="' + next + '"')
+            : a + ' alt="' + next + '"';
+      }
+    }
+
+    // --- 加载策略：首图立刻加载，其余懒加载 ---
+    if (index === 1) {
+      a = a.replace(/\s*\bloading\s*=\s*"[^"]*"/i, '');
+      a = a.replace(/\s*\bfetchpriority\s*=\s*"[^"]*"/i, '');
+      a += ' loading="eager" fetchpriority="high" decoding="async"';
+    } else {
+      if (!/\bloading\s*=/i.test(a)) a += ' loading="lazy"';
+      if (!/\bdecoding\s*=/i.test(a)) a += ' decoding="async"';
+    }
+
     return `<img${a}>`;
   });
-};
+}
 
 hexo.extend.filter.register('after_post_render', (data) => {
-  data.content = addLazy(data.content);
-  if (data.excerpt) data.excerpt = addLazy(data.excerpt);
-  if (data.more) data.more = addLazy(data.more);
+  const title = data.title || '';
+  data.content = enhance(data.content, title);
+  if (data.excerpt) data.excerpt = enhance(data.excerpt, title);
+  if (data.more) data.more = enhance(data.more, title);
   return data;
 });
 
-// ---------- 2. 注入放大查看器资源 ----------
+// ---------- 3. 注入放大查看器资源 ----------
+
 hexo.extend.injector.register(
   'head_end',
   '<link rel="stylesheet" href="/css/image-viewer.css">'

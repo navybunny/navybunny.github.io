@@ -3,6 +3,12 @@
    配色沿用主题变量（--primary / --accent）
    ============================================ */
 
+/* 正文图片现在带 width/height 属性（防布局抖动），
+   必须让高度自动，否则会被压扁变形 */
+img[width][height] {
+  height: auto;
+}
+
 body.iv-open {
   overflow: hidden;
 }

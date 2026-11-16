@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://navybunny.github.io/sitemap.xml

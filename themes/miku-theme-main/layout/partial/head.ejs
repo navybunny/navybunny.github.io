@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <%
+    // 统一的页面信息，避免各标签各算一套
+    var _base = config.url.replace(/\/+$/, '');
+    var _fullPath = (page.path || '').replace(/index\.html$/, '');
+    var _pageUrl = _base + '/' + _fullPath;
+    var _rawDesc = page.description || page.excerpt || config.description || '';
+    var _desc = String(_rawDesc).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 150);
+    // 社交平台对 webp 支持不好，统一用 jpg 卡片图
+    var _cover = page.cover || page.thumbnail;
+    var _ogImage = _cover ? (_base + '/' + String(_cover).replace(/^\/+/, '')) : (_base + '/images/default-og-image.jpg');
+  %>
+
   <!-- SEO -->
   <% if (page.title) { %>
     <title><%= page.title %> — <%= config.title %></title>
@@ -12,34 +24,28 @@
     <title><%= config.title %></title>
   <% } %>
 
-  <meta name="description" content="<%= page.description || page.excerpt || config.description %>">
+  <meta name="description" content="<%= _desc %>">
   <meta name="keywords" content="<%= page.keywords || config.keywords %>">
   <meta name="author" content="<%= config.author %>">
 
   <!-- Open Graph -->
   <meta property="og:type" content="<%= page.layout === 'post' ? 'article' : 'website' %>">
   <meta property="og:title" content="<%= page.title || config.title %>">
-  <meta property="og:description" content="<%= page.description || page.excerpt || config.description %>">
-  <meta property="og:url" content="<%= config.url %>/<%= page.path %>">
+  <meta property="og:description" content="<%= _desc %>">
+  <meta property="og:url" content="<%= _pageUrl %>">
   <meta property="og:site_name" content="<%= config.title %>">
-  <% if (page.cover || page.thumbnail) { %>
-    <meta property="og:image" content="<%= config.url %>/<%= page.cover || page.thumbnail %>">
-  <% } else { %>
-    <meta property="og:image" content="<%= config.url %>/images/default-og-image.webp">
-  <% } %>
+  <meta property="og:image" content="<%= _ogImage %>">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<%= page.title || config.title %>">
-  <meta name="twitter:description" content="<%= page.description || page.excerpt || config.description %>">
-  <% if (page.cover || page.thumbnail) { %>
-    <meta name="twitter:image" content="<%= config.url %>/<%= page.cover || page.thumbnail %>">
-  <% } else { %>
-    <meta name="twitter:image" content="<%= config.url %>/images/default-og-image.webp">
-  <% } %>
+  <meta name="twitter:description" content="<%= _desc %>">
+  <meta name="twitter:image" content="<%= _ogImage %>">
 
   <!-- Canonical -->
-  <link rel="canonical" href="<%= config.url %>/<%= page.path %>">
+  <link rel="canonical" href="<%= _pageUrl %>">
 
   <!-- RSS -->
   <link rel="alternate" href="<%= url_for('/atom.xml') %>" type="application/atom+xml" title="<%= config.title %>">
@@ -48,6 +54,11 @@
   <link rel="stylesheet" href="<%= url_for('/css/variables.css') %>">
   <link rel="stylesheet" href="<%= url_for('/css/style.css') %>">
   <link rel="stylesheet" href="<%= url_for('/css/highlight.css') %>">
+
+  <!-- 首页首屏大图：高优先级预加载，改善 LCP -->
+  <% if (is_home()) { %>
+    <link rel="preload" as="image" href="<%= url_for('/images/hero-bg.webp') %>" fetchpriority="high">
+  <% } %>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

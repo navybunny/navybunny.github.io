@@ -5,8 +5,8 @@
 # Site
 title: NavyBunny的博客
 subtitle: '一个爱摄影、玩模型、玩wargame且是一名铁杆军迷的计算机专业学生'
-description: ''
-keywords: NavyBunny博客
+description: 'NavyBunny 的博客 —— 尼康 D4 与胶片摄影作品、模型与 Wargame 记录，以及一些计算机学习笔记。'
+keywords: NavyBunny博客,摄影,胶片,尼康,模型,军迷,Wargame,计算机
 author: NavyBunny
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -110,3 +110,16 @@ search:
   field: post
   content: true
   format: html
+
+# RSS 订阅（生成 /atom.xml，head 里的 rel=alternate 指向它）
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: false
+
+# 站点地图（生成 /sitemap.xml，给搜索引擎用）
+sitemap:
+  path: sitemap.xml
+  tags: true
+  categories: true
