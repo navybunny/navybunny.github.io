@@ -20,7 +20,11 @@
   var UA = navigator.userAgent || '';
   var IS_MOBILE = /Android|iPhone|iPad|iPod|Mobile|HarmonyOS/i.test(UA);
   var IS_WECHAT = /MicroMessenger/i.test(UA);
-  // 移动端才有可用的系统分享面板（能选微信/QQ、再选聊天）
+  // QQ 内置浏览器 / QQ 客户端：UA 里带 " QQ/" 或 MQQBrowser
+  var IS_QQ = /\sQQ\/|MQQBrowser|QQBrowser/i.test(UA);
+  var IS_ANDROID = /Android/i.test(UA);
+  var IS_IOS = /iPhone|iPad|iPod/i.test(UA) || (/Macintosh/i.test(UA) && (navigator.maxTouchPoints || 0) > 1);
+  // 移动端才有可用的系统分享面板
   var CAN_NATIVE_SHARE = IS_MOBILE && typeof navigator.share === 'function';
 
   var ICON = {
@@ -105,20 +109,15 @@
     actions.appendChild(saveBtn);
     actions.appendChild(shareBtn);
 
-    // 分享菜单：按平台给不同选项
+    // 分享菜单：顺序固定为 QQ / 微信 / 链接
     shareMenu = mk('div', 'iv-share-menu');
     shareMenu.setAttribute('role', 'menu');
 
-    var menuItems = [];
-    if (CAN_NATIVE_SHARE) {
-      // 移动端：系统面板能直接选微信/QQ，再选聊天（单选或多选）
-      menuItems.push({ act: 'native', icon: ICON.share, text: '分享…（微信/QQ）' });
-    } else {
-      menuItems.push({ act: 'wechat', icon: ICON.wechat, text: '分享到微信' });
-      menuItems.push({ act: 'qq', icon: ICON.qq, text: '分享到 QQ' });
-    }
-    menuItems.push({ act: 'page', icon: ICON.link, text: '分享这篇文章' });
-    menuItems.push({ act: 'copy', icon: ICON.link, text: '复制图片链接' });
+    var menuItems = [
+      { act: 'qq', icon: ICON.qq, text: '分享到 QQ' },
+      { act: 'wechat', icon: ICON.wechat, text: '分享到微信' },
+      { act: 'copy', icon: ICON.link, text: '复制链接' }
+    ];
 
     menuItems.forEach(function (item) {
       var b = mk('button', 'iv-menu-item', item.icon + '<span>' + item.text + '</span>');
@@ -127,10 +126,8 @@
       b.setAttribute('role', 'menuitem');
       b.addEventListener('click', function (e) {
         e.stopPropagation();
-        if (item.act === 'wechat') shareWechat();
-        else if (item.act === 'qq') shareQQ();
-        else if (item.act === 'native') shareNative();
-        else if (item.act === 'page') sharePage();
+        if (item.act === 'qq') shareQQ();
+        else if (item.act === 'wechat') shareWechat();
         else shareCopy();
       });
       shareMenu.appendChild(b);
@@ -409,61 +406,23 @@
     if (shareMenu) shareMenu.classList.remove('iv-show');
   }
 
-  // 微信：网页无法直接调起「发送给朋友」。
-  // 微信只允许「已认证公众号 + JS-SDK + 服务端签名」的域名调用分享接口，
-  // 纯静态博客没有这个条件，所以这里复制链接并给出明确指引。
-  function shareWechat() {
-    var url = imgEl.src;
-    if (!url) return;
-    closeShareMenu();
-
-    // 已经在微信内置浏览器里：微信会接管右上角菜单，直接提示用户
-    if (IS_WECHAT) {
-      toast('点击右上角 ··· → 发送给朋友');
-      return;
-    }
-    copyLink(url, '链接已复制，打开微信粘贴发送');
+  // 分享出去的统一是「文章页面」链接（像 B站 那样，带标题、排版和上下文），
+  // 而不是图片直链 —— 直链别人点开只有一张没有上下文的裸图。
+  function pageUrl() {
+    return window.location.href;
   }
 
-  // QQ：走官方分享组件，新窗口打开
-  function shareQQ() {
-    var url = imgEl.src;
-    if (!url) return;
-    closeShareMenu();
-
-    var title = document.title || '图片';
-    var u =
-      'https://connect.qq.com/widget/shareqq/index.html' +
-      '?url=' + encodeURIComponent(url) +
-      '&title=' + encodeURIComponent(title) +
-      '&summary=' + encodeURIComponent(title) +
-      '&pics=' + encodeURIComponent(url);
-
-    var w = window.open(u, 'qq_share', 'width=880,height=660,noopener');
-    if (!w) toast('弹出窗口被拦截，请允许后重试');
-  }
-
-  // 移动端：调起系统分享面板（微信 / QQ / 其他 App 都在里面，
-  // 选完 App 再由它自己弹出聊天选择，支持单选和多选）
-  function shareNative() {
-    closeShareMenu();
-    var url = imgEl.src;
-    if (!url) return;
-
+  // 系统分享面板（移动端普通浏览器可用）：能选微信 / QQ / 其他 App，
+  // 选完 App 再由它自己弹出聊天选择，支持单选和多选。
+  function nativeShare(url) {
     if (!CAN_NATIVE_SHARE) {
       copyLink(url, '链接已复制');
       return;
     }
-
     try {
-      var p = navigator.share({
-        title: document.title || '图片',
-        text: imgEl.alt || '',
-        url: url
-      });
+      var p = navigator.share({ title: document.title || '', url: url });
       if (p && p.catch) {
         p.catch(function (err) {
-          // 用户自己取消，不打扰
           if (err && err.name === 'AbortError') return;
           copyLink(url, '链接已复制');
         });
@@ -473,34 +432,95 @@
     }
   }
 
-  // 分享当前文章页面（带排版和上下文的完整页面）
-  function sharePage() {
-    closeShareMenu();
-    var pageUrl = window.location.href;
+  // 尝试用 URL scheme 拉起 App；1.4 秒内页面没离开前台就认为没拉起来，走兜底
+  function openApp(scheme, fallback) {
+    var left = false;
+    var onHide = function () {
+      if (document.hidden) left = true;
+    };
+    var onBlur = function () {
+      left = true;
+    };
+    document.addEventListener('visibilitychange', onHide);
+    window.addEventListener('blur', onBlur);
 
-    if (CAN_NATIVE_SHARE) {
-      try {
-        var p = navigator.share({ title: document.title || '', url: pageUrl });
-        if (p && p.catch) {
-          p.catch(function (err) {
-            if (err && err.name === 'AbortError') return;
-            copyLink(pageUrl, '文章链接已复制');
-          });
-        }
-        return;
-      } catch (e) {
-        /* 落到复制 */
-      }
+    try {
+      window.location.href = scheme;
+    } catch (e) {
+      /* 忽略 */
     }
-    copyLink(pageUrl, '文章链接已复制');
+
+    setTimeout(function () {
+      document.removeEventListener('visibilitychange', onHide);
+      window.removeEventListener('blur', onBlur);
+      if (!left && !document.hidden) fallback();
+    }, 1400);
+  }
+
+  // QQ
+  function shareQQ() {
+    closeShareMenu();
+    var url = pageUrl();
+
+    // 电脑端：只复制链接（QQ 的网页分享是扫码页，效果不好）
+    if (!IS_MOBILE) {
+      copyLink(url, '文章链接已复制，打开 QQ 粘贴发送');
+      return;
+    }
+
+    // 手机 QQ 内置浏览器：用 QQ 自己的右上角菜单
+    if (IS_QQ) {
+      toast('点击右上角 ··· → 分享给好友');
+      return;
+    }
+
+    // 手机普通浏览器：安卓上直接调起 QQ 的「发送给好友」界面。
+    // iOS 上不用 scheme —— Safari 打不开未知协议会弹「无法打开网页」的报错框，
+    // 直接走系统分享面板更干净。
+    if (!IS_ANDROID) {
+      if (CAN_NATIVE_SHARE) nativeShare(url);
+      else copyLink(url, '链接已复制，打开 QQ 粘贴发送');
+      return;
+    }
+
+    var scheme =
+      'mqqapi://share/to_fri?src_type=web&version=1&file_type=news&share_type=0' +
+      '&url=' + encodeURIComponent(url) +
+      '&title=' + encodeURIComponent(document.title || '') +
+      '&description=' + encodeURIComponent(document.title || '') +
+      '&image_url=' + encodeURIComponent(imgEl.src || '');
+
+    openApp(scheme, function () {
+      nativeShare(url); // 没装 QQ 或拉不起来，退到系统面板
+    });
+  }
+
+  // 微信
+  function shareWechat() {
+    closeShareMenu();
+    var url = pageUrl();
+
+    // 电脑端：只复制链接
+    if (!IS_MOBILE) {
+      copyLink(url, '文章链接已复制，打开微信粘贴发送');
+      return;
+    }
+
+    // 微信内置浏览器：微信不开放任何网页分享接口，只能走右上角
+    if (IS_WECHAT) {
+      toast('点击右上角 ··· → 发送给朋友');
+      return;
+    }
+
+    // 微信没有可调起的 scheme，只能交给系统面板
+    if (CAN_NATIVE_SHARE) nativeShare(url);
+    else copyLink(url, '链接已复制，打开微信粘贴发送');
   }
 
   // 复制链接
   function shareCopy() {
-    var url = imgEl.src;
-    if (!url) return;
     closeShareMenu();
-    copyLink(url, '图片链接已复制');
+    copyLink(pageUrl(), '文章链接已复制');
   }
 
   // 同步复制：execCommand 立刻返回成功与否，反馈确定、不等 Promise。
