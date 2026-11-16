@@ -636,12 +636,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Post body content */
-.post-content {
+.post-content,
+.about-content {
   font-size: 1.05rem;
   line-height: 1.85;
 }
 
-.post-content h2 {
+.post-content h2,
+.about-content h2 {
   font-size: 1.6rem;
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -650,26 +652,31 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary);
 }
 
-.post-content h3 {
+.post-content h3,
+.about-content h3 {
   font-size: 1.3rem;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
 }
 
-.post-content p {
+.post-content p,
+.about-content p {
   margin-bottom: 1.25rem;
 }
 
-.post-content ul, .post-content ol {
+.post-content ul, .post-content ol,
+.about-content ul, .about-content ol {
   margin-bottom: 1.25rem;
   padding-left: 1.5rem;
 }
 
-.post-content li {
+.post-content li,
+.about-content li {
   margin-bottom: 0.35rem;
 }
 
-.post-content blockquote {
+.post-content blockquote,
+.about-content blockquote {
   border-left: 4px solid var(--primary);
   padding: 0.5rem 1.25rem;
   margin: 1.5rem 0;
@@ -678,32 +685,37 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
 }
 
-.post-content img {
+.post-content img,
+.about-content img {
   border-radius: var(--radius-md);
   margin: 1.5rem auto;
   box-shadow: var(--shadow-md);
 }
 
-.post-content hr {
+.post-content hr,
+.about-content hr {
   border: none;
   height: 1px;
   background: var(--border);
   margin: 2.5rem 0;
 }
 
-.post-content table {
+.post-content table,
+.about-content table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
 }
 
-.post-content th, .post-content td {
+.post-content th, .post-content td,
+.about-content th, .about-content td {
   border: 1px solid var(--border);
   padding: 0.6rem 0.9rem;
   text-align: left;
 }
 
-.post-content th {
+.post-content th,
+.about-content th {
   background: var(--bg-alt);
   font-weight: 600;
 }
