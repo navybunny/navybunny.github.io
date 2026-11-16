@@ -156,31 +156,14 @@
     <published>2026-02-20T12:00:00.000Z</published>
     <summary>
       <![CDATA[<p>这也算是我第一卷成功的胶卷，巨星400的色彩确实很润，非常耐看。</p>
-<h2 id="📸-成片"><a href="#📸-成片" class="headerlink" title="📸 成片"></a>📸 成片</h2><table>
-<thead>
-<tr>]]>
+<blockquote>
+<p>📋 <strong>这一卷的家伙事儿</strong></p>
+<ul>
+<li>📷 <strong>机身</strong>　美能达 α3</li>
+<li>🔭]]>
     </summary>
     <title>胶片日记｜美能达α3搭配巨星400寒假拍摄</title>
-    <updated>2026-11-16T16:27:59.898Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>NavyBunny</name>
-    </author>
-    <category term="随笔" scheme="https://navybunny.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    <category term="诗歌" scheme="https://navybunny.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
-    <category term="致敬英雄" scheme="https://navybunny.github.io/tags/%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/"/>
-    <category term="家国情怀" scheme="https://navybunny.github.io/tags/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80/"/>
-    <id>https://navybunny.github.io/2021/04/13/HKWS/</id>
-    <link href="https://navybunny.github.io/2021/04/13/HKWS/"/>
-    <published>2021-04-13T04:00:00.000Z</published>
-    <summary>
-      <![CDATA[<center>
-
-<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" clas]]>
-    </summary>
-    <title>海空殇</title>
-    <updated>2026-05-19T09:35:46.371Z</updated>
+    <updated>2026-11-16T16:37:04.186Z</updated>
   </entry>
   <entry>
     <author>
@@ -205,5 +188,24 @@
     </summary>
     <title>C++ 通讯录管理系统</title>
     <updated>2026-11-16T11:34:11.340Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>NavyBunny</name>
+    </author>
+    <category term="随笔" scheme="https://navybunny.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="诗歌" scheme="https://navybunny.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
+    <category term="致敬英雄" scheme="https://navybunny.github.io/tags/%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/"/>
+    <category term="家国情怀" scheme="https://navybunny.github.io/tags/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80/"/>
+    <id>https://navybunny.github.io/2021/04/13/HKWS/</id>
+    <link href="https://navybunny.github.io/2021/04/13/HKWS/"/>
+    <published>2021-04-13T04:00:00.000Z</published>
+    <summary>
+      <![CDATA[<center>
+
+<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" clas]]>
+    </summary>
+    <title>海空殇</title>
+    <updated>2026-05-19T09:35:46.371Z</updated>
   </entry>
 </feed>
