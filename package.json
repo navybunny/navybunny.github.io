@@ -5,7 +5,8 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "compress": "python tools/compress-images.py",
+    "deploy": "hexo clean && hexo generate --deploy",
     "server": "hexo server"
   },
   "hexo": {
