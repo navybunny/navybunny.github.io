@@ -5,7 +5,7 @@ layout: about
 
 ## 🐰 你好，我是 NavyBunny
 
-一个爱摄影、玩模型、打 Wargame 的计算机工科男 —— 心里还住着一个军人梦。
+一个爱摄影、玩模型、玩军事类游戏的计算机工科男 —— 心里还住着一个军人梦。
 
 <div class="badge-row"><span class="badge">🎖️ 铁杆军迷</span><span class="badge">📷 胶片 &amp; 数码双修</span><span class="badge">🎮 游戏重度玩家</span><span class="badge">🧩 模型爱好者</span><span class="badge">💻 计算机在读</span></div>
 

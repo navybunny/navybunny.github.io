@@ -1,10 +1,22 @@
 ---
-title: "尼康D4作品集"
-date: 2026-04-10 12:00:00
-tags: [摄影, 春日记录, 校园随拍, 尼康直出, 风光摄影]
+title: 尼康D4作品集
+date: "2026-04-10 12:00:00"
+tags:
+  - 摄影
+  - 春日记录
+  - 校园随拍
+  - 尼康直出
+  - 风光摄影
 categories: 摄影
 ---
 
+D4直出确实不错，还得是全画幅，虽说有点经典的尼康黄，但是偏黄也别有一番韵味。
+> 📋 **设备清单**
+>
+> - 📷 **机身**　尼康D4
+> - 🔭 **镜头**　尼康80-200 f2.8 三代小钢炮+尼康 50mm f1.8g
+
+## 📸 成片
 ![照片](/images/DSC_3137.JPG)
 ![照片](/images/DSC_3140.JPG)
 ![照片](/images/DSC_3307.JPG)
@@ -54,6 +66,8 @@ categories: 摄影
 ![照片](/images/DSC_3869.JPG)
 ![照片](/images/DSC_3870.JPG)
 ![照片](/images/DSC_3872.JPG)
+![DSC_4002](/images/DSC_4002.jpg)
+![DSC_4016](/images/DSC_4016.jpg)
 ![照片](/images/DSC_4198.JPG)
 ![照片](/images/DSC_4219.JPG)
 ![照片](/images/DSC_4418.JPG)
