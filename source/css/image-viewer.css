@@ -334,3 +334,63 @@ body.iv-open {
     transition: none;
   }
 }
+
+/* ============================================
+   文章页「分享本文」按钮
+   ============================================ */
+.post-share-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+  padding: 3px 11px;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary, #475569);
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 12.5px;
+  line-height: 1.7;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: color 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.post-share-btn:hover {
+  color: var(--primary, #39c5bb);
+  border-color: var(--primary, #39c5bb);
+  background: var(--primary-muted, rgba(57, 197, 187, 0.12));
+}
+
+.post-share-btn:focus-visible {
+  outline: 2px solid var(--primary, #39c5bb);
+  outline-offset: 2px;
+}
+
+.post-share-btn svg {
+  flex: none;
+  width: 14px;
+  height: 14px;
+}
+
+/* 页面级的轻提示（查看器未打开时使用） */
+.iv-toast-standalone {
+  position: fixed;
+  left: 50%;
+  bottom: 42px;
+  z-index: 99991;
+}
+
+@media (max-width: 768px) {
+  .post-share-btn {
+    margin-left: 8px;
+    padding: 2px 9px;
+    font-size: 12px;
+  }
+
+  .iv-toast-standalone {
+    bottom: 32px;
+  }
+}

@@ -47,6 +47,7 @@
   };
 
   var mask, stage, imgEl, counterEl, toastEl, closeBtn, prevBtn, nextBtn, saveBtn, shareBtn, shareMenu;
+  var standaloneToast = null;
   var list = [];
   var cur = 0;
   var isActual = false;
@@ -116,6 +117,7 @@
     var menuItems = [
       { act: 'qq', icon: ICON.qq, text: '分享到 QQ' },
       { act: 'wechat', icon: ICON.wechat, text: '分享到微信' },
+      { act: 'page', icon: ICON.share, text: '分享本文链接' },
       { act: 'copy', icon: ICON.link, text: '复制链接' }
     ];
 
@@ -126,8 +128,9 @@
       b.setAttribute('role', 'menuitem');
       b.addEventListener('click', function (e) {
         e.stopPropagation();
-        if (item.act === 'qq') shareQQ();
-        else if (item.act === 'wechat') shareWechat();
+        if (item.act === 'qq') shareQQ('image');
+        else if (item.act === 'wechat') shareWechat('image');
+        else if (item.act === 'page') sharePageLink();
         else shareCopy();
       });
       shareMenu.appendChild(b);
@@ -406,10 +409,15 @@
     if (shareMenu) shareMenu.classList.remove('iv-show');
   }
 
-  // 分享出去的统一是「文章页面」链接（像 B站 那样，带标题、排版和上下文），
-  // 而不是图片直链 —— 直链别人点开只有一张没有上下文的裸图。
-  function pageUrl() {
-    return window.location.href;
+  // 要分享的链接：kind='image' → 图片直链；kind='page' → 本文链接
+  function shareURLOf(kind) {
+    if (kind === 'page') return window.location.href;
+    var src = (imgEl && imgEl.src) || '';
+    return src || window.location.href;
+  }
+
+  function linkName(kind) {
+    return kind === 'page' ? '文章链接' : '图片链接';
   }
 
   // 系统分享面板（移动端普通浏览器可用）：能选微信 / QQ / 其他 App，
@@ -458,13 +466,14 @@
   }
 
   // QQ
-  function shareQQ() {
+  function shareQQ(kind) {
+    var url = shareURLOf(kind);
+    var name = linkName(kind);
     closeShareMenu();
-    var url = pageUrl();
 
     // 电脑端：只复制链接（QQ 的网页分享是扫码页，效果不好）
     if (!IS_MOBILE) {
-      copyLink(url, '文章链接已复制，打开 QQ 粘贴发送');
+      copyLink(url, name + '已复制，打开 QQ 粘贴发送');
       return;
     }
 
@@ -479,7 +488,7 @@
     // 直接走系统分享面板更干净。
     if (!IS_ANDROID) {
       if (CAN_NATIVE_SHARE) nativeShare(url);
-      else copyLink(url, '链接已复制，打开 QQ 粘贴发送');
+      else copyLink(url, name + '已复制，打开 QQ 粘贴发送');
       return;
     }
 
@@ -488,7 +497,7 @@
       '&url=' + encodeURIComponent(url) +
       '&title=' + encodeURIComponent(document.title || '') +
       '&description=' + encodeURIComponent(document.title || '') +
-      '&image_url=' + encodeURIComponent(imgEl.src || '');
+      '&image_url=' + encodeURIComponent(kind === 'image' ? url : (imgEl && imgEl.src) || '');
 
     openApp(scheme, function () {
       nativeShare(url); // 没装 QQ 或拉不起来，退到系统面板
@@ -496,13 +505,14 @@
   }
 
   // 微信
-  function shareWechat() {
+  function shareWechat(kind) {
+    var url = shareURLOf(kind);
+    var name = linkName(kind);
     closeShareMenu();
-    var url = pageUrl();
 
     // 电脑端：只复制链接
     if (!IS_MOBILE) {
-      copyLink(url, '文章链接已复制，打开微信粘贴发送');
+      copyLink(url, name + '已复制，打开微信粘贴发送');
       return;
     }
 
@@ -514,13 +524,34 @@
 
     // 微信没有可调起的 scheme，只能交给系统面板
     if (CAN_NATIVE_SHARE) nativeShare(url);
-    else copyLink(url, '链接已复制，打开微信粘贴发送');
+    else copyLink(url, name + '已复制，打开微信粘贴发送');
   }
 
-  // 复制链接
+  // 分享本文链接（桌面复制；手机走系统面板或平台提示）
+  function sharePageLink() {
+    closeShareMenu();
+    var url = window.location.href;
+
+    if (!IS_MOBILE) {
+      copyLink(url, '文章链接已复制，可粘贴到 QQ / 微信发送');
+      return;
+    }
+    if (IS_WECHAT) {
+      toast('点击右上角 ··· → 发送给朋友');
+      return;
+    }
+    if (IS_QQ) {
+      toast('点击右上角 ··· → 分享给好友');
+      return;
+    }
+    if (CAN_NATIVE_SHARE) nativeShare(url);
+    else copyLink(url, '文章链接已复制');
+  }
+
+  // 复制图片链接
   function shareCopy() {
     closeShareMenu();
-    copyLink(pageUrl(), '文章链接已复制');
+    copyLink(shareURLOf('image'), '图片链接已复制');
   }
 
   // 同步复制：execCommand 立刻返回成功与否，反馈确定、不等 Promise。
@@ -592,21 +623,52 @@
 
   /* ---------------- 轻提示 ---------------- */
 
+  // 查看器没打开时（比如点文章顶部的分享按钮），需要一个独立的 toast 宿主
+  function toastHost() {
+    if (toastEl) return toastEl;
+    if (!standaloneToast) {
+      standaloneToast = mk('div', 'iv-toast iv-toast-standalone');
+      document.body.appendChild(standaloneToast);
+    }
+    return standaloneToast;
+  }
+
   function toast(msg) {
-    if (!toastEl) return;
-    toastEl.textContent = msg;
-    toastEl.classList.add('iv-show');
+    var el = toastHost();
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.add('iv-show');
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(hideToast, TOAST_MS);
   }
 
   function hideToast() {
-    if (!toastEl) return;
-    toastEl.classList.remove('iv-show');
+    var el = toastEl || standaloneToast;
+    if (!el) return;
+    el.classList.remove('iv-show');
     if (toastTimer) {
       clearTimeout(toastTimer);
       toastTimer = null;
     }
+  }
+
+  /* ---------------- 文章顶部的「分享本文」按钮 ---------------- */
+
+  function mountArticleShare() {
+    var host = document.querySelector('.post-container .post-header .post-meta');
+    if (!host) return;
+    if (host.querySelector('.post-share-btn')) return;
+
+    var btn = mk('button', 'post-share-btn', ICON.share + '<span>分享本文</span>');
+    btn.type = 'button';
+    btn.title = '分享这篇文章';
+    btn.setAttribute('aria-label', '分享这篇文章');
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      sharePageLink();
+    });
+    host.appendChild(btn);
   }
 
   /* ---------------- 事件绑定 ---------------- */
@@ -643,4 +705,11 @@
       go(1);
     }
   });
+
+  // 文章页顶部的「分享本文」按钮
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mountArticleShare);
+  } else {
+    mountArticleShare();
+  }
 })();
