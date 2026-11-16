@@ -104,27 +104,32 @@
     </author>
     <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
     <category term="摄影" scheme="https://navybunny.github.io/tags/%E6%91%84%E5%BD%B1/"/>
-    <category term="校园随拍" scheme="https://navybunny.github.io/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D/"/>
     <category term="春日记录" scheme="https://navybunny.github.io/tags/%E6%98%A5%E6%97%A5%E8%AE%B0%E5%BD%95/"/>
+    <category term="校园随拍" scheme="https://navybunny.github.io/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D/"/>
     <category term="尼康直出" scheme="https://navybunny.github.io/tags/%E5%B0%BC%E5%BA%B7%E7%9B%B4%E5%87%BA/"/>
     <category term="风光摄影" scheme="https://navybunny.github.io/tags/%E9%A3%8E%E5%85%89%E6%91%84%E5%BD%B1/"/>
     <id>https://navybunny.github.io/2026/04/10/nikond4_1/</id>
     <link href="https://navybunny.github.io/2026/04/10/nikond4_1/"/>
     <published>2026-04-10T04:00:00.000Z</published>
     <summary>
-      <![CDATA[<p><img src="/images/DSC_3137.JPG" alt="尼康D4作品集 - 照片 1" width="2560" height="1882" loading="eager" fetchpriority="high" decoding="async"><br]]>
+      <![CDATA[<p>D4直出确实不错</p>
+<blockquote>
+<p>📋 <strong>设备清单</strong></p>
+<ul>
+<li>📷 <strong>机身</strong>　尼康D4</li>
+<li>🔭 <strong>镜头</strong>　尼康80-200 f]]>
     </summary>
     <title>尼康D4作品集</title>
-    <updated>2026-11-16T11:37:18.730Z</updated>
+    <updated>2026-11-16T15:54:38.972Z</updated>
   </entry>
   <entry>
     <author>
       <name>NavyBunny</name>
     </author>
     <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
+    <category term="校园随拍" scheme="https://navybunny.github.io/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D/"/>
     <category term="胶片摄影" scheme="https://navybunny.github.io/tags/%E8%83%B6%E7%89%87%E6%91%84%E5%BD%B1/"/>
     <category term="生活记录" scheme="https://navybunny.github.io/tags/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
-    <category term="校园随拍" scheme="https://navybunny.github.io/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D/"/>
     <category term="复古色调" scheme="https://navybunny.github.io/tags/%E5%A4%8D%E5%8F%A4%E8%89%B2%E8%B0%83/"/>
     <category term="静物玩偶" scheme="https://navybunny.github.io/tags/%E9%9D%99%E7%89%A9%E7%8E%A9%E5%81%B6/"/>
     <id>https://navybunny.github.io/2026/03/15/Kodak_gold_200/</id>
@@ -162,6 +167,25 @@
     <author>
       <name>NavyBunny</name>
     </author>
+    <category term="随笔" scheme="https://navybunny.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="诗歌" scheme="https://navybunny.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
+    <category term="致敬英雄" scheme="https://navybunny.github.io/tags/%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/"/>
+    <category term="家国情怀" scheme="https://navybunny.github.io/tags/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80/"/>
+    <id>https://navybunny.github.io/2021/04/13/HKWS/</id>
+    <link href="https://navybunny.github.io/2021/04/13/HKWS/"/>
+    <published>2021-04-13T04:00:00.000Z</published>
+    <summary>
+      <![CDATA[<center>
+
+<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" clas]]>
+    </summary>
+    <title>海空殇</title>
+    <updated>2026-05-19T09:35:46.371Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>NavyBunny</name>
+    </author>
     <category term="编程" scheme="https://navybunny.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     <category term="C++" scheme="https://navybunny.github.io/tags/C/"/>
     <category term="数据结构" scheme="https://navybunny.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -181,24 +205,5 @@
     </summary>
     <title>C++ 通讯录管理系统</title>
     <updated>2026-11-16T11:34:11.340Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>NavyBunny</name>
-    </author>
-    <category term="随笔" scheme="https://navybunny.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    <category term="诗歌" scheme="https://navybunny.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
-    <category term="致敬英雄" scheme="https://navybunny.github.io/tags/%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/"/>
-    <category term="家国情怀" scheme="https://navybunny.github.io/tags/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80/"/>
-    <id>https://navybunny.github.io/2021/04/13/HKWS/</id>
-    <link href="https://navybunny.github.io/2021/04/13/HKWS/"/>
-    <published>2021-04-13T04:00:00.000Z</published>
-    <summary>
-      <![CDATA[<center>
-
-<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" clas]]>
-    </summary>
-    <title>海空殇</title>
-    <updated>2026-05-19T09:35:46.371Z</updated>
   </entry>
 </feed>
