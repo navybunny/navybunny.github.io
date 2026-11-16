@@ -18,14 +18,10 @@
   var TOAST_MS = 1900;
 
   var UA = navigator.userAgent || '';
+  // 只保留「保存」按钮需要的两个判断（微信内不能下载、移动端用直链下载）。
+  // 分享已经统一为复制链接，不再需要平台识别。
   var IS_MOBILE = /Android|iPhone|iPad|iPod|Mobile|HarmonyOS/i.test(UA);
   var IS_WECHAT = /MicroMessenger/i.test(UA);
-  // QQ 内置浏览器 / QQ 客户端：UA 里带 " QQ/" 或 MQQBrowser
-  var IS_QQ = /\sQQ\/|MQQBrowser|QQBrowser/i.test(UA);
-  var IS_ANDROID = /Android/i.test(UA);
-  var IS_IOS = /iPhone|iPad|iPod/i.test(UA) || (/Macintosh/i.test(UA) && (navigator.maxTouchPoints || 0) > 1);
-  // 移动端才有可用的系统分享面板
-  var CAN_NATIVE_SHARE = IS_MOBILE && typeof navigator.share === 'function';
 
   var ICON = {
     close:
@@ -128,10 +124,8 @@
       b.setAttribute('role', 'menuitem');
       b.addEventListener('click', function (e) {
         e.stopPropagation();
-        if (item.act === 'qq') shareQQ('image');
-        else if (item.act === 'wechat') shareWechat('image');
-        else if (item.act === 'page') sharePageLink();
-        else shareCopy();
+        if (item.act === 'page') sharePageLink();
+        else shareImageLink();
       });
       shareMenu.appendChild(b);
     });
@@ -416,159 +410,21 @@
     return src || window.location.href;
   }
 
-  function linkName(kind) {
-    return kind === 'page' ? '文章链接' : '图片链接';
-  }
+  // ---------------- 分享（一律复制链接） ----------------
+  // 网页没法直接调起微信/QQ 的「选择聊天」，三条路都走不通或不值得：
+  //   · 微信 Open SDK 只对「审核通过的原生 App」开放，网页连注册资格都没有
+  //   · URL scheme（mqqapi://）在安卓会先弹「此网站请求打开 App」确认框
+  //   · Web Share API 依赖浏览器实现，国产轻量浏览器普遍不支持
+  // 所以统一成最确定的做法：复制链接，用户自己粘贴。
 
-  // 系统分享面板（移动端普通浏览器可用）：能选微信 / QQ / 其他 App，
-  // 选完 App 再由它自己弹出聊天选择，支持单选和多选。
-  function nativeShare(url) {
-    if (!CAN_NATIVE_SHARE) {
-      copyLink(url, '链接已复制');
-      return;
-    }
-    try {
-      var p = navigator.share({ title: document.title || '', url: url });
-      if (p && p.catch) {
-        p.catch(function (err) {
-          if (err && err.name === 'AbortError') return;
-          copyLink(url, '链接已复制');
-        });
-      }
-    } catch (e) {
-      copyLink(url, '链接已复制');
-    }
-  }
-
-  // 尝试用 URL scheme 拉起 App；1.4 秒内页面没离开前台就认为没拉起来，走兜底
-  function openApp(scheme, fallback) {
-    var left = false;
-    var onHide = function () {
-      if (document.hidden) left = true;
-    };
-    var onBlur = function () {
-      left = true;
-    };
-    document.addEventListener('visibilitychange', onHide);
-    window.addEventListener('blur', onBlur);
-
-    try {
-      window.location.href = scheme;
-    } catch (e) {
-      /* 忽略 */
-    }
-
-    setTimeout(function () {
-      document.removeEventListener('visibilitychange', onHide);
-      window.removeEventListener('blur', onBlur);
-      if (!left && !document.hidden) fallback();
-    }, 1400);
-  }
-
-  // 浏览器没有系统分享面板时的兜底：复制链接并说明原因
-  function noShareHint(url, name) {
-    copyLink(url, '当前浏览器不支持系统分享，' + name + '已复制');
-  }
-
-  // QQ
-  function shareQQ(kind) {
-    var url = shareURLOf(kind);
-    var name = linkName(kind);
+  function shareImageLink() {
     closeShareMenu();
-
-    // 电脑端：只复制链接（QQ 的网页分享是扫码页，效果不好）
-    if (!IS_MOBILE) {
-      copyLink(url, name + '已复制，打开 QQ 粘贴发送');
-      return;
-    }
-
-    // 手机 QQ 内置浏览器：用 QQ 自己的右上角菜单
-    if (IS_QQ) {
-      toast('点击右上角 ··· → 分享给好友');
-      return;
-    }
-
-    // 有系统分享面板就优先用它：选 QQ 之后由 QQ 自己弹出「选择聊天」，
-    // 不会经过安卓那条"此网站请求打开 App"的确认框。
-    if (CAN_NATIVE_SHARE) {
-      nativeShare(url);
-      return;
-    }
-
-    // 没有系统面板：安卓上退回 QQ 的 URL scheme（会先弹系统确认框）
-    if (IS_ANDROID) {
-      var scheme =
-        'mqqapi://share/to_fri?src_type=web&version=1&file_type=news&share_type=0' +
-        '&url=' + encodeURIComponent(url) +
-        '&title=' + encodeURIComponent(document.title || '') +
-        '&description=' + encodeURIComponent(document.title || '') +
-        '&image_url=' + encodeURIComponent(kind === 'image' ? url : (imgEl && imgEl.src) || '');
-
-      openApp(scheme, function () {
-        noShareHint(url, name);
-      });
-      return;
-    }
-
-    noShareHint(url, name);
+    copyLink(shareURLOf('image'), '图片链接已复制，粘贴即可分享');
   }
 
-  // 微信
-  function shareWechat(kind) {
-    var url = shareURLOf(kind);
-    var name = linkName(kind);
-    closeShareMenu();
-
-    // 电脑端：只复制链接
-    if (!IS_MOBILE) {
-      copyLink(url, name + '已复制，打开微信粘贴发送');
-      return;
-    }
-
-    // 微信内置浏览器：微信不开放任何网页分享接口，只能走右上角
-    if (IS_WECHAT) {
-      toast('点击右上角 ··· → 发送给朋友');
-      return;
-    }
-
-    // 微信没有可调起的 URL scheme，只能交给系统分享面板：
-    // 在面板里选微信后，微信自己会弹出「选择聊天」。
-    if (CAN_NATIVE_SHARE) {
-      nativeShare(url);
-      return;
-    }
-
-    noShareHint(url, name);
-  }
-
-  // 分享本文链接（桌面复制；手机走系统面板或平台提示）
   function sharePageLink() {
     closeShareMenu();
-    var url = window.location.href;
-
-    if (!IS_MOBILE) {
-      copyLink(url, '文章链接已复制，可粘贴到 QQ / 微信发送');
-      return;
-    }
-    if (IS_WECHAT) {
-      toast('点击右上角 ··· → 发送给朋友');
-      return;
-    }
-    if (IS_QQ) {
-      toast('点击右上角 ··· → 分享给好友');
-      return;
-    }
-    if (CAN_NATIVE_SHARE) {
-      nativeShare(url);
-      return;
-    }
-    noShareHint(url, '文章链接');
-  }
-
-  // 复制图片链接
-  function shareCopy() {
-    closeShareMenu();
-    copyLink(shareURLOf('image'), '图片链接已复制');
+    copyLink(window.location.href, '本文链接已复制，粘贴即可分享');
   }
 
   // 同步复制：execCommand 立刻返回成功与否，反馈确定、不等 Promise。
