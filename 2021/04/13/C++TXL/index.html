@@ -5,50 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  
+
   <!-- SEO -->
   
     <title>C++ 通讯录管理系统 — NavyBunny的博客</title>
   
 
-  <meta name="description" content="&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;输入年龄、性别等数字选项时，如果&lt;strong&gt;不小心输入了非数字字符&lt;/strong&gt;，程序会陷入死循环。&lt;/li&gt;
-&lt;li&gt;联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 &lt;code&gt;personArray[1000]&lt;/code&gt; 而导致&lt;strong&gt;数组越界&lt;/strong&gt;。大佬建议使用链表来优化。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;程序关闭后所有数据丢失&lt;/strong&gt;，因为没有结合文件操作进行持久化存储。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。&lt;/p&gt;">
-  <meta name="keywords" content="NavyBunny博客">
+  <meta name="description" content="前言 这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点： 输入年龄、性别等数字选项时，如果 不小心输入了非数字字符 ，程序会陷入死循环。 联系人数组满员（1000人）后，执行删">
+  <meta name="keywords" content="NavyBunny博客,摄影,胶片,尼康,模型,军迷,Wargame,计算机">
   <meta name="author" content="NavyBunny">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="C++ 通讯录管理系统">
-  <meta property="og:description" content="&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;输入年龄、性别等数字选项时，如果&lt;strong&gt;不小心输入了非数字字符&lt;/strong&gt;，程序会陷入死循环。&lt;/li&gt;
-&lt;li&gt;联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 &lt;code&gt;personArray[1000]&lt;/code&gt; 而导致&lt;strong&gt;数组越界&lt;/strong&gt;。大佬建议使用链表来优化。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;程序关闭后所有数据丢失&lt;/strong&gt;，因为没有结合文件操作进行持久化存储。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。&lt;/p&gt;">
+  <meta property="og:description" content="前言 这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点： 输入年龄、性别等数字选项时，如果 不小心输入了非数字字符 ，程序会陷入死循环。 联系人数组满员（1000人）后，执行删">
   <meta property="og:url" content="https://navybunny.github.io/2021/04/13/C++TXL/">
   <meta property="og:site_name" content="NavyBunny的博客">
-  
-    <meta property="og:image" content="https://navybunny.github.io/images/default-og-image.webp">
-  
+  <meta property="og:image" content="https://navybunny.github.io/images/default-og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="C++ 通讯录管理系统">
-  <meta name="twitter:description" content="&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;输入年龄、性别等数字选项时，如果&lt;strong&gt;不小心输入了非数字字符&lt;/strong&gt;，程序会陷入死循环。&lt;/li&gt;
-&lt;li&gt;联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 &lt;code&gt;personArray[1000]&lt;/code&gt; 而导致&lt;strong&gt;数组越界&lt;/strong&gt;。大佬建议使用链表来优化。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;程序关闭后所有数据丢失&lt;/strong&gt;，因为没有结合文件操作进行持久化存储。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。&lt;/p&gt;">
-  
-    <meta name="twitter:image" content="https://navybunny.github.io/images/default-og-image.webp">
-  
+  <meta name="twitter:description" content="前言 这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点： 输入年龄、性别等数字选项时，如果 不小心输入了非数字字符 ，程序会陷入死循环。 联系人数组满员（1000人）后，执行删">
+  <meta name="twitter:image" content="https://navybunny.github.io/images/default-og-image.jpg">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://navybunny.github.io/2021/04/13/C++TXL/">
@@ -60,6 +42,9 @@
   <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/highlight.css">
+
+  <!-- 首页首屏大图：高优先级预加载，改善 LCP -->
+  
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
