@@ -17,6 +17,12 @@
   var MIN_WIDTH = 300; // 小图标不参与放大
   var TOAST_MS = 1900;
 
+  var UA = navigator.userAgent || '';
+  var IS_MOBILE = /Android|iPhone|iPad|iPod|Mobile|HarmonyOS/i.test(UA);
+  var IS_WECHAT = /MicroMessenger/i.test(UA);
+  // 移动端才有可用的系统分享面板（能选微信/QQ、再选聊天）
+  var CAN_NATIVE_SHARE = IS_MOBILE && typeof navigator.share === 'function';
+
   var ICON = {
     close:
       '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>',
@@ -99,14 +105,22 @@
     actions.appendChild(saveBtn);
     actions.appendChild(shareBtn);
 
-    // 分享菜单：微信 / QQ / 复制链接
+    // 分享菜单：按平台给不同选项
     shareMenu = mk('div', 'iv-share-menu');
     shareMenu.setAttribute('role', 'menu');
-    [
-      { act: 'wechat', icon: ICON.wechat, text: '分享到微信' },
-      { act: 'qq', icon: ICON.qq, text: '分享到 QQ' },
-      { act: 'copy', icon: ICON.link, text: '复制链接' }
-    ].forEach(function (item) {
+
+    var menuItems = [];
+    if (CAN_NATIVE_SHARE) {
+      // 移动端：系统面板能直接选微信/QQ，再选聊天（单选或多选）
+      menuItems.push({ act: 'native', icon: ICON.share, text: '分享…（微信/QQ）' });
+    } else {
+      menuItems.push({ act: 'wechat', icon: ICON.wechat, text: '分享到微信' });
+      menuItems.push({ act: 'qq', icon: ICON.qq, text: '分享到 QQ' });
+    }
+    menuItems.push({ act: 'page', icon: ICON.link, text: '分享这篇文章' });
+    menuItems.push({ act: 'copy', icon: ICON.link, text: '复制图片链接' });
+
+    menuItems.forEach(function (item) {
       var b = mk('button', 'iv-menu-item', item.icon + '<span>' + item.text + '</span>');
       b.type = 'button';
       b.setAttribute('data-act', item.act);
@@ -115,6 +129,8 @@
         e.stopPropagation();
         if (item.act === 'wechat') shareWechat();
         else if (item.act === 'qq') shareQQ();
+        else if (item.act === 'native') shareNative();
+        else if (item.act === 'page') sharePage();
         else shareCopy();
       });
       shareMenu.appendChild(b);
@@ -330,7 +346,7 @@
         setTimeout(function () {
           URL.revokeObjectURL(objUrl);
         }, 2000);
-        toast('已保存：' + name);
+        toast('已开始下载：' + name);
       })
       .catch(function () {
         // 兜底：直接链接下载
@@ -350,10 +366,30 @@
     if (!url) return;
     var name = filenameOf(url);
 
+    // 微信内置浏览器：WebView 不支持 blob 下载，只会提示"请在浏览器打开"。
+    // 唯一可靠的办法是长按图片，走微信自己的「保存图片」进相册。
+    if (IS_WECHAT) {
+      toast('长按图片 → 保存图片');
+      return;
+    }
+
+    // 移动端浏览器：部分 WebView 不支持 blob，直接用链接下载更稳
+    if (IS_MOBILE) {
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = name;
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      toast('已开始下载；若想进相册，可长按图片保存');
+      return;
+    }
+
+    // 桌面端：blob 下载，文件名最可靠（不受系统 MIME 影响）
     if (sameOrigin(url)) {
       saveBlob(url, name);
     } else {
-      // 跨域（以后若换图床）fetch 可能被 CORS 拦住，直接新窗口打开
       window.open(url, '_blank', 'noopener');
       toast('已在新标签页打开，右键「图片另存为」');
     }
@@ -382,7 +418,7 @@
     closeShareMenu();
 
     // 已经在微信内置浏览器里：微信会接管右上角菜单，直接提示用户
-    if (/MicroMessenger/i.test(navigator.userAgent)) {
+    if (IS_WECHAT) {
       toast('点击右上角 ··· → 发送给朋友');
       return;
     }
@@ -405,6 +441,58 @@
 
     var w = window.open(u, 'qq_share', 'width=880,height=660,noopener');
     if (!w) toast('弹出窗口被拦截，请允许后重试');
+  }
+
+  // 移动端：调起系统分享面板（微信 / QQ / 其他 App 都在里面，
+  // 选完 App 再由它自己弹出聊天选择，支持单选和多选）
+  function shareNative() {
+    closeShareMenu();
+    var url = imgEl.src;
+    if (!url) return;
+
+    if (!CAN_NATIVE_SHARE) {
+      copyLink(url, '链接已复制');
+      return;
+    }
+
+    try {
+      var p = navigator.share({
+        title: document.title || '图片',
+        text: imgEl.alt || '',
+        url: url
+      });
+      if (p && p.catch) {
+        p.catch(function (err) {
+          // 用户自己取消，不打扰
+          if (err && err.name === 'AbortError') return;
+          copyLink(url, '链接已复制');
+        });
+      }
+    } catch (e) {
+      copyLink(url, '链接已复制');
+    }
+  }
+
+  // 分享当前文章页面（带排版和上下文的完整页面）
+  function sharePage() {
+    closeShareMenu();
+    var pageUrl = window.location.href;
+
+    if (CAN_NATIVE_SHARE) {
+      try {
+        var p = navigator.share({ title: document.title || '', url: pageUrl });
+        if (p && p.catch) {
+          p.catch(function (err) {
+            if (err && err.name === 'AbortError') return;
+            copyLink(pageUrl, '文章链接已复制');
+          });
+        }
+        return;
+      } catch (e) {
+        /* 落到复制 */
+      }
+    }
+    copyLink(pageUrl, '文章链接已复制');
   }
 
   // 复制链接
