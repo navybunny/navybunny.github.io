@@ -237,15 +237,28 @@
 
   /* ---------------- 保存 ---------------- */
 
+  // 已知的图片扩展名白名单。不在名单里的一律按 .jpg 处理，
+  // 避免出现 .php / .ashx / 无扩展名之类的怪名字。
+  var KNOWN_EXT = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'avif', 'bmp'];
+
   function filenameOf(url) {
     var clean = String(url).split('#')[0].split('?')[0];
     var base = clean.substring(clean.lastIndexOf('/') + 1);
     try {
       base = decodeURIComponent(base);
     } catch (e) {}
+    // 去掉 Windows 文件名里不允许的字符
+    base = base.replace(/[\\/:*?"<>|]/g, '_');
     if (!base) base = 'image';
-    if (!/\.[a-z0-9]{2,5}$/i.test(base)) base += '.jpg';
-    return base;
+
+    var dot = base.lastIndexOf('.');
+    var stem = dot > 0 ? base.substring(0, dot) : base;
+    var ext = dot > 0 ? base.substring(dot + 1).toLowerCase() : '';
+    if (KNOWN_EXT.indexOf(ext) === -1) ext = 'jpg';
+    if (!stem) stem = 'image';
+    // 统一小写扩展名：.JPG / .Jpg / .JPEG 都归一成 .jpg，
+    // 避免个别系统把大写扩展名认错、或另存时按 MIME 改成 .jfif
+    return stem + '.' + ext;
   }
 
   function sameOrigin(url) {
@@ -258,22 +271,50 @@
     }
   }
 
+  // 走 blob 下载：浏览器会严格采用我们给的文件名，
+  // 不会退回去按 MIME 类型 image/jpeg 猜成 .jfif。
+  function saveBlob(url, name) {
+    fetch(url, { cache: 'force-cache', credentials: 'same-origin' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.blob();
+      })
+      .then(function (blob) {
+        var objUrl = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = objUrl;
+        a.download = name;
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(function () {
+          URL.revokeObjectURL(objUrl);
+        }, 2000);
+        toast('已保存：' + name);
+      })
+      .catch(function () {
+        // 兜底：直接链接下载
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = name;
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        toast('已开始下载：' + name);
+      });
+  }
+
   function doSave() {
     var url = imgEl.src;
     if (!url) return;
     var name = filenameOf(url);
 
     if (sameOrigin(url)) {
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = name;
-      a.rel = 'noopener';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      toast('已开始下载：' + name);
+      saveBlob(url, name);
     } else {
-      // 跨域（比如以后换了图床）download 属性会被忽略，退回新窗口打开
+      // 跨域（以后若换图床）fetch 可能被 CORS 拦住，直接新窗口打开
       window.open(url, '_blank', 'noopener');
       toast('已在新标签页打开，右键「图片另存为」');
     }
