@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>海空殇</title>
+    <url>/2021/04/13/HKWS/</url>
+    <content><![CDATA[<center>
+
+<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" class="headerlink" title="侵我海空吾卫之，"></a>侵我海空吾卫之，</h3><h3 id="艰难险阻吾往之。"><a href="#艰难险阻吾往之。" class="headerlink" title="艰难险阻吾往之。"></a>艰难险阻吾往之。</h3><h3 id="纵与敌机同落之，"><a href="#纵与敌机同落之，" class="headerlink" title="纵与敌机同落之，"></a>纵与敌机同落之，</h3><h3 id="魂归大海终不悔。"><a href="#魂归大海终不悔。" class="headerlink" title="魂归大海终不悔。"></a>魂归大海终不悔。</h3></center>
+
+<blockquote>
+<p>谨以此诗献给我们的海空卫士王伟，以及为保卫祖国献出宝贵生命的革命烈士们。<br>他们都是中华民族之脊梁，民族英雄永垂不朽！</p>
+</blockquote>
+<!-- 如果需要在博客中居中显示，上面的 <center> 标签已经可以满足大部分主题。若部分主题不兼容，可将 <center> 改为 <div align="center">  -->]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>诗歌</tag>
+        <tag>致敬英雄</tag>
+        <tag>家国情怀</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++ 通讯录管理系统</title>
     <url>/2021/04/13/C++TXL/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
@@ -339,26 +359,6 @@ int main() {
       </tags>
   </entry>
   <entry>
-    <title>海空殇</title>
-    <url>/2021/04/13/HKWS/</url>
-    <content><![CDATA[<center>
-
-<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" class="headerlink" title="侵我海空吾卫之，"></a>侵我海空吾卫之，</h3><h3 id="艰难险阻吾往之。"><a href="#艰难险阻吾往之。" class="headerlink" title="艰难险阻吾往之。"></a>艰难险阻吾往之。</h3><h3 id="纵与敌机同落之，"><a href="#纵与敌机同落之，" class="headerlink" title="纵与敌机同落之，"></a>纵与敌机同落之，</h3><h3 id="魂归大海终不悔。"><a href="#魂归大海终不悔。" class="headerlink" title="魂归大海终不悔。"></a>魂归大海终不悔。</h3></center>
-
-<blockquote>
-<p>谨以此诗献给我们的海空卫士王伟，以及为保卫祖国献出宝贵生命的革命烈士们。<br>他们都是中华民族之脊梁，民族英雄永垂不朽！</p>
-</blockquote>
-<!-- 如果需要在博客中居中显示，上面的 <center> 标签已经可以满足大部分主题。若部分主题不兼容，可将 <center> 改为 <div align="center">  -->]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>诗歌</tag>
-        <tag>致敬英雄</tag>
-        <tag>家国情怀</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>胶片日记｜美能达α3搭配柯达全能400暑假拍摄</title>
     <url>/2026/11/16/Kodak_Ultramax_400/</url>
     <content><![CDATA[<p>这次的<strong>柯达全能400</strong>相当不错，目测色彩偏白亮一些，整体还是很润，跟之前的巨星400味道不太一样。</p>
@@ -432,6 +432,32 @@ int main() {
         <tag>旅行随拍</tag>
         <tag>烟火记录</tag>
         <tag>静物模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>尼康FM搭配福马400黑白胶卷</title>
+    <url>/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/</url>
+    <content><![CDATA[<p>第一次尝试黑白胶片，效果还可以<br>​就是有些可惜，相机的快门帘是布帘，时间长了老化了有漏光，看照片上像是星星一样的白点那就是漏光。</p>
+<blockquote>
+<p>📋 <strong>这一卷的家伙事儿</strong></p>
+<ul>
+<li>📷 <strong>机身</strong>　尼康FM</li>
+<li>🔭 <strong>镜头</strong>　尼康auto 50 f2</li>
+<li>🎞️ <strong>胶卷</strong>　福马400</li>
+<li>🖨️ <strong>扫描</strong>　柯尼卡美能达 DS-2000</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="📸-成片"><a href="#📸-成片" class="headerlink" title="📸 成片"></a>📸 成片</h2><p><img src="/images/r001-003.jpg" alt="r001-003" width="2560" height="1707" loading="eager" fetchpriority="high" decoding="async"><br><img src="/images/r001-004.jpg" alt="r001-004" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-006.jpg" alt="r001-006" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-007-2.jpg" alt="r001-007" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-009-1.jpg" alt="r001-009" width="1707" height="2560" loading="lazy" decoding="async"><br><img src="/images/r001-010-1.jpg" alt="r001-010" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-011-1.jpg" alt="r001-011" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-013-1.jpg" alt="r001-013" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-014-1.jpg" alt="r001-014" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-015-1.jpg" alt="r001-015" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-016-1.jpg" alt="r001-016" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-017-1.jpg" alt="r001-017" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-018-1.jpg" alt="r001-018" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-019-1.jpg" alt="r001-019" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-024-1.jpg" alt="r001-024" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-025.jpg" alt="r001-025" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-026.jpg" alt="r001-026" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-027.jpg" alt="r001-027" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-028-1.jpg" alt="r001-028" width="1707" height="2560" loading="lazy" decoding="async"><br><img src="/images/r001-029-1.jpg" alt="r001-029" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-030.jpg" alt="r001-030" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-031-1.jpg" alt="r001-031" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-032.jpg" alt="r001-032" width="1707" height="2560" loading="lazy" decoding="async"><br><img src="/images/r001-034.jpg" alt="r001-034" width="1707" height="2560" loading="lazy" decoding="async"><br><img src="/images/r001-037.jpg" alt="r001-037" width="2560" height="1707" loading="lazy" decoding="async"><br><img src="/images/r001-038.jpg" alt="r001-038" width="2560" height="1707" loading="lazy" decoding="async"></p>
+]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>摄影</tag>
+        <tag>胶片</tag>
+        <tag>福马</tag>
+        <tag>黑白</tag>
       </tags>
   </entry>
   <entry>

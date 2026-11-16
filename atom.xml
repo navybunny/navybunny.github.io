@@ -10,7 +10,29 @@
   <rights>All rights reserved 2026, NavyBunny</rights>
   <subtitle>一个爱摄影、玩模型、玩wargame且是一名铁杆军迷的计算机专业学生</subtitle>
   <title>NavyBunny的博客</title>
-  <updated>2026-11-16T15:00:25.370Z</updated>
+  <updated>2026-11-16T15:07:53.756Z</updated>
+  <entry>
+    <author>
+      <name>NavyBunny</name>
+    </author>
+    <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
+    <category term="摄影" scheme="https://navybunny.github.io/tags/%E6%91%84%E5%BD%B1/"/>
+    <category term="胶片" scheme="https://navybunny.github.io/tags/%E8%83%B6%E7%89%87/"/>
+    <category term="福马" scheme="https://navybunny.github.io/tags/%E7%A6%8F%E9%A9%AC/"/>
+    <category term="黑白" scheme="https://navybunny.github.io/tags/%E9%BB%91%E7%99%BD/"/>
+    <id>https://navybunny.github.io/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/</id>
+    <link href="https://navybunny.github.io/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/"/>
+    <published>2026-11-16T15:05:01.000Z</published>
+    <summary>
+      <![CDATA[<p>第一次尝试黑白胶片，效果还可以<br>​就是有些可惜，相机的快门帘是布帘，时间长了老化了有漏光，看照片上像是星星一样的白点那就是漏光。</p>
+<blockquote>
+<p>📋 <strong>这一卷的家伙事儿</strong></p>
+<ul>
+<li>📷 <str]]>
+    </summary>
+    <title>尼康FM搭配福马400黑白胶卷</title>
+    <updated>2026-11-16T15:07:53.756Z</updated>
+  </entry>
   <entry>
     <author>
       <name>NavyBunny</name>
@@ -95,6 +117,25 @@
     <author>
       <name>NavyBunny</name>
     </author>
+    <category term="随笔" scheme="https://navybunny.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="诗歌" scheme="https://navybunny.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
+    <category term="致敬英雄" scheme="https://navybunny.github.io/tags/%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/"/>
+    <category term="家国情怀" scheme="https://navybunny.github.io/tags/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80/"/>
+    <id>https://navybunny.github.io/2021/04/13/HKWS/</id>
+    <link href="https://navybunny.github.io/2021/04/13/HKWS/"/>
+    <published>2021-04-13T04:00:00.000Z</published>
+    <summary>
+      <![CDATA[<center>
+
+<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" clas]]>
+    </summary>
+    <title>海空殇</title>
+    <updated>2026-05-19T09:35:46.371Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>NavyBunny</name>
+    </author>
     <category term="编程" scheme="https://navybunny.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     <category term="C++" scheme="https://navybunny.github.io/tags/C/"/>
     <category term="数据结构" scheme="https://navybunny.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -114,24 +155,5 @@
     </summary>
     <title>C++ 通讯录管理系统</title>
     <updated>2026-11-16T11:34:11.340Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>NavyBunny</name>
-    </author>
-    <category term="随笔" scheme="https://navybunny.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    <category term="诗歌" scheme="https://navybunny.github.io/tags/%E8%AF%97%E6%AD%8C/"/>
-    <category term="致敬英雄" scheme="https://navybunny.github.io/tags/%E8%87%B4%E6%95%AC%E8%8B%B1%E9%9B%84/"/>
-    <category term="家国情怀" scheme="https://navybunny.github.io/tags/%E5%AE%B6%E5%9B%BD%E6%83%85%E6%80%80/"/>
-    <id>https://navybunny.github.io/2021/04/13/HKWS/</id>
-    <link href="https://navybunny.github.io/2021/04/13/HKWS/"/>
-    <published>2021-04-13T04:00:00.000Z</published>
-    <summary>
-      <![CDATA[<center>
-
-<h1 id="海空殇"><a href="#海空殇" class="headerlink" title="海空殇"></a><strong>海空殇</strong></h1><h3 id="侵我海空吾卫之，"><a href="#侵我海空吾卫之，" clas]]>
-    </summary>
-    <title>海空殇</title>
-    <updated>2026-05-19T09:35:46.371Z</updated>
   </entry>
 </feed>
