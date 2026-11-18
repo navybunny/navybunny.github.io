@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+
+  <!-- SEO -->
+  
+    <title>论文精读七问 — NavyBunny的博客</title>
+  
+
+  <meta name="description" content="NavyBunny 的博客 —— 尼康 D4 与胶片摄影作品、模型与 Wargame 记录，以及一些计算机学习笔记。">
+  <meta name="keywords" content="NavyBunny博客,摄影,胶片,尼康,模型,军迷,Wargame,计算机">
+  <meta name="author" content="NavyBunny">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="论文精读七问">
+  <meta property="og:description" content="NavyBunny 的博客 —— 尼康 D4 与胶片摄影作品、模型与 Wargame 记录，以及一些计算机学习笔记。">
+  <meta property="og:url" content="https://navybunny.github.io/2026/11/18/论文精读七问/">
+  <meta property="og:site_name" content="NavyBunny的博客">
+  <meta property="og:image" content="https://navybunny.github.io/images/default-og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="论文精读七问">
+  <meta name="twitter:description" content="NavyBunny 的博客 —— 尼康 D4 与胶片摄影作品、模型与 Wargame 记录，以及一些计算机学习笔记。">
+  <meta name="twitter:image" content="https://navybunny.github.io/images/default-og-image.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://navybunny.github.io/2026/11/18/论文精读七问/">
+
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" type="application/atom+xml" title="NavyBunny的博客">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+
+  <!-- 首页首屏大图：高优先级预加载，改善 LCP -->
+  
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..900;1,14..32,400..700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/image-viewer.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"></head>
+<body>
+  <!-- Skip to content for accessibility -->
+  <a href="#main-content" class="sr-only" style="position:absolute;top:0;left:0;z-index:9999;background:var(--primary);color:#fff;padding:0.5rem 1rem;border-radius:0 0 4px 0;">跳到主要内容</a>
+
+<!-- Navbar -->
+<header class="navbar" role="banner" aria-label="主导航">
+  <a href="/" class="navbar-brand" aria-label="NavyBunny的博客 — Home">
+    <img src="/images/logo.svg" alt="" width="32" height="32" aria-hidden="true" style="display:inline-block;vertical-align:middle;">
+    <span class="kinetic-title">NavyBunny的博客</span>
+  </a>
+
+  <button class="navbar-toggle" aria-label="切换导航菜单" aria-expanded="false" id="navbarToggle">
+    <span aria-hidden="true">&#9776;</span>
+  </button>
+
+  <nav role="navigation" aria-label="主要导航">
+    <ul class="navbar-links" id="navbarLinks">
+      
+      
+        <li>
+          <a href="/" data-i18n="nav.home">
+            首页
+          </a>
+        </li>
+      
+        <li>
+          <a href="/archives/" data-i18n="nav.archives">
+            归档
+          </a>
+        </li>
+      
+        <li>
+          <a href="/tags/" data-i18n="nav.tags">
+            标签
+          </a>
+        </li>
+      
+        <li>
+          <a href="/about/" data-i18n="nav.about">
+            关于
+          </a>
+        </li>
+      
+        <li>
+          <a href="/search/" data-i18n="nav.search">
+            搜索
+          </a>
+        </li>
+      
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换到暗色模式" title="Toggle theme">
+          <span class="theme-toggle-icon" aria-hidden="true">&#9789;</span>
+        </button>
+      </li>
+      <li>
+        <button class="lang-toggle" id="langToggle" aria-label="English" title="语言" data-i18n-attrs="aria-label">
+          <span class="lang-toggle-text">English</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<main id="main-content">
+  <article class="post-container" itemscope itemtype="http://schema.org/Article">
+    
+    
+
+    <header class="post-header">
+      <h1 class="post-title kinetic-title" itemprop="headline">论文精读七问</h1>
+
+      <div class="post-meta">
+        <time datetime="2026-11-18" itemprop="datePublished">
+          2026-11-18
+        </time>
+        <span class="post-meta-sep" aria-hidden="true">·</span>
+        <span itemprop="author">NavyBunny</span>
+        
+          <span class="post-meta-sep" aria-hidden="true">·</span>
+          <span>
+            
+            ~4 <span data-i18n="post.min_read">分钟阅读</span>
+          </span>
+        
+      </div>
+
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%A7%91%E7%A0%94" class="tag-pill">科研</a>
+          
+            <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB" class="tag-pill">文献阅读</a>
+          
+        </div>
+      
+    </header>
+
+    <!-- Table of Contents -->
+    
+      <aside class="toc" id="toc" aria-label="文章目录" data-i18n-attrs="aria-label">
+        <div class="toc-title" data-i18n="post.toc_title">目录</div>
+        <ol class="toc-list" id="tocList"></ol>
+      </aside>
+    
+
+    <!-- Post Content -->
+    <div class="post-content" itemprop="articleBody">
+      <blockquote>
+<p>拿到一篇论文，别读完摘要就完了。按这七个方向逐层往下问，能问出它到底解决了什么、还差在哪。</p>
+<p>这份清单可以直接当审稿模板用，也可以自己读文献时对照着来。</p>
+</blockquote>
+<div class="badge-row"><span class="badge">🔍 真实问题</span><span class="badge">🧱 隐含假设</span><span class="badge">💡 真实创新</span><span class="badge">📊 实验充分性</span><span class="badge">⚠️ 失效场景</span><span class="badge">📝 审稿意见</span><span class="badge">🚀 扩展方向</span></div>
+
+<h2 id="🎯-一、它真正解决的问题是什么"><a href="#🎯-一、它真正解决的问题是什么" class="headerlink" title="🎯 一、它真正解决的问题是什么"></a>🎯 一、它真正解决的问题是什么</h2><p>复述摘要是最容易的，也是最有欺骗性的。</p>
+<p><strong>先做四层区分</strong></p>
+<ol>
+<li>作者<strong>表面上声称</strong>要解决什么问题</li>
+<li>论文<strong>实际通过方法和实验</strong>解决了什么问题</li>
+<li>这个问题在<strong>该研究领域</strong>里处在什么位置</li>
+<li>如果<strong>没有这篇论文</strong>，已有方法具体卡在哪里</li>
+</ol>
+<blockquote>
+<p><strong>✍️ 输出</strong></p>
+<p>用一句话概括：这篇论文的真实问题意识是什么。</p>
+</blockquote>
+<h2 id="🧱-二、它成立所依赖的默认前提"><a href="#🧱-二、它成立所依赖的默认前提" class="headerlink" title="🧱 二、它成立所依赖的默认前提"></a>🧱 二、它成立所依赖的默认前提</h2><p>任何结论都有前提，区别只在于作者有没有说出来。</p>
+<p><strong>从五个角度检查</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">角度</th>
+<th align="left">要追问的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">📦 <strong>数据假设</strong></td>
+<td align="left">数据是否足够代表真实场景</td>
+</tr>
+<tr>
+<td align="left">🔧 <strong>方法假设</strong></td>
+<td align="left">方法是否依赖某些特定条件</td>
+</tr>
+<tr>
+<td align="left">🎯 <strong>任务假设</strong></td>
+<td align="left">作者定义的问题是否合理</td>
+</tr>
+<tr>
+<td align="left">🧪 <strong>实验假设</strong></td>
+<td align="left">实验设置是否默认了某种有利条件</td>
+</tr>
+<tr>
+<td align="left">🌍 <strong>应用假设</strong></td>
+<td align="left">结论能否推广到其他场景</td>
+</tr>
+</tbody></table>
+<p><strong>再把它们分成三类</strong></p>
+<ul>
+<li><strong>明说的</strong>：论文明确写出的假设</li>
+<li><strong>暗含的</strong>：没有明说、但实际依赖的假设</li>
+<li><strong>致命的</strong>：一旦不成立，结论直接失效的高风险假设</li>
+</ul>
+<blockquote>
+<p><strong>✍️ 输出</strong></p>
+<p>五个角度逐个过一遍，标出哪几条落在「致命」那一栏。</p>
+</blockquote>
+<h2 id="💡-三、真实创新点到底在哪"><a href="#💡-三、真实创新点到底在哪" class="headerlink" title="💡 三、真实创新点到底在哪"></a>💡 三、真实创新点到底在哪</h2><p>「提出了新方法」这句话没有信息量。</p>
+<p><strong>五个具体问题</strong></p>
+<ol>
+<li>它改变了已有方法的<strong>哪个环节</strong></li>
+<li>它引入了什么<strong>新的建模方式、训练方式、数据处理方式或评估方式</strong></li>
+<li>这个变化<strong>为什么可能有效</strong></li>
+<li>这个创新是<strong>概念上、技术上，还是工程实现上</strong>的</li>
+<li>它和<strong>最相关的 2–3 个已有方法</strong>相比，差异到底在哪里</li>
+</ol>
+<blockquote>
+<p><strong>✍️ 输出</strong></p>
+<p>判断这个方法的新意是 <strong>强 &#x2F; 中 &#x2F; 弱</strong>，并说明理由。</p>
+</blockquote>
+<h2 id="📊-四、实验撑不撑得住结论"><a href="#📊-四、实验撑不撑得住结论" class="headerlink" title="📊 四、实验撑不撑得住结论"></a>📊 四、实验撑不撑得住结论</h2><p><strong>逐项过</strong></p>
+<ol>
+<li>作者的核心结论是什么</li>
+<li>哪些实验结果<strong>直接</strong>支持这个结论</li>
+<li>哪些实验只能<strong>间接</strong>支持</li>
+<li>是否缺少关键 baseline</li>
+<li>是否缺少消融实验</li>
+<li>是否存在<strong>数据集、指标或实验设置上的偏向</strong></li>
+<li>结果提升是否足够显著，还是可能只是小幅改进</li>
+</ol>
+<blockquote>
+<p><strong>✍️ 输出</strong></p>
+<p>三选一写清楚：<strong>结论被充分支持 &#x2F; 结论被部分支持 &#x2F; 结论支持不足</strong>，并解释原因。</p>
+</blockquote>
+<h2 id="⚠️-五、可能失效的场景"><a href="#⚠️-五、可能失效的场景" class="headerlink" title="⚠️ 五、可能失效的场景"></a>⚠️ 五、可能失效的场景</h2><p><strong>七个方向找反例</strong></p>
+<ol>
+<li>换一个数据集是否还成立</li>
+<li>换一个任务场景是否还成立</li>
+<li>数据噪声更大时是否还成立</li>
+<li>样本规模更小时是否还成立</li>
+<li>分布发生变化时是否还成立</li>
+<li>面对更强 baseline 时是否还成立</li>
+<li>在真实应用中是否会遇到论文没有覆盖的问题</li>
+</ol>
+<blockquote>
+<p><strong>✍️ 输出</strong></p>
+<p>列出<strong>至少 5 个</strong>可能的反例或失败场景，并说明每个反例<strong>为什么会挑战</strong>论文结论。</p>
+</blockquote>
+<h2 id="📝-六、审稿人视角"><a href="#📝-六、审稿人视角" class="headerlink" title="📝 六、审稿人视角"></a>📝 六、审稿人视角</h2><p>严格，但公正。</p>
+<p><strong>八项质疑</strong></p>
+<ol>
+<li>研究问题是否重要</li>
+<li>创新性是否足够</li>
+<li>方法是否清楚且合理</li>
+<li>实验是否充分</li>
+<li>baseline 是否公平</li>
+<li>结论是否夸大</li>
+<li>可复现性是否足够</li>
+<li>写作中是否有逻辑跳跃</li>
+</ol>
+<blockquote>
+<p><strong>✍️ 输出</strong></p>
+<ul>
+<li><strong>3 条主要质疑</strong></li>
+<li><strong>3 条次要质疑</strong></li>
+<li>作者可以如何回应这些质疑</li>
+<li>审稿倾向四选一：<strong>接收 &#x2F; 弱接收 &#x2F; 弱拒 &#x2F; 拒绝</strong></li>
+</ul>
+</blockquote>
+<h2 id="🚀-七、可以往下做什么"><a href="#🚀-七、可以往下做什么" class="headerlink" title="🚀 七、可以往下做什么"></a>🚀 七、可以往下做什么</h2><p><strong>六个扩展角度</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">角度</th>
+<th align="left">问自己</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">🧠 <strong>方法扩展</strong></td>
+<td align="left">如何改进模型、算法或框架</td>
+</tr>
+<tr>
+<td align="left">📚 <strong>数据扩展</strong></td>
+<td align="left">能否换数据、加数据或构造新数据</td>
+</tr>
+<tr>
+<td align="left">🎯 <strong>任务扩展</strong></td>
+<td align="left">能否应用到新的任务或场景</td>
+</tr>
+<tr>
+<td align="left">📐 <strong>理论扩展</strong></td>
+<td align="left">是否有未解释清楚的机制或原理</td>
+</tr>
+<tr>
+<td align="left">🧪 <strong>实验扩展</strong></td>
+<td align="left">还可以补充哪些实验来增强说服力</td>
+</tr>
+<tr>
+<td align="left">🌍 <strong>应用扩展</strong></td>
+<td align="left">能否落到真实系统或实际问题中</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>✍️ 输出</strong></p>
+<p>给出 <strong>5 个具体研究想法</strong>，每个都要写全这四项：</p>
+<ul>
+<li>研究问题</li>
+<li>为什么值得做</li>
+<li>可以怎么做</li>
+<li>需要什么数据或实验、难点是什么</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="🧭-怎么用这份清单"><a href="#🧭-怎么用这份清单" class="headerlink" title="🧭 怎么用这份清单"></a>🧭 怎么用这份清单</h2><ul>
+<li><strong>通读一篇论文</strong> —— 七步全过一遍</li>
+<li><strong>组会讲论文</strong> —— 重点做第一、三、四节</li>
+<li><strong>写审稿意见</strong> —— 重点做第二、五、六节</li>
+<li><strong>找自己的选题</strong> —— 重点做第五节和第七节</li>
+</ul>
+<blockquote>
+<p>最容易偷懒的是第三节。写完「提出了新方法」就收手，等于什么都没写。</p>
+</blockquote>
+
+    </div>
+  </article>
+
+  <!-- Post Navigation -->
+  
+    <nav class="post-nav" aria-label="相邻文章">
+      
+        <div></div>
+      
+      
+        <a href="/2026/11/18/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%88%E6%B5%81%E7%A8%8B%E7%89%88%EF%BC%89/" class="post-nav-item">
+          <div class="post-nav-label" data-i18n="post.next">下一篇 →</div>
+          <div class="post-nav-title">科研方法论（流程版）</div>
+        </a>
+      
+    </nav>
+  
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <p class="footer-copyright" data-i18n="footer.copyright" data-i18n-attrs="text">
+    &copy; 2026-2026 NavyBunny.
+    Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> &amp; miku-theme.
+  </p>
+</footer>
+
+<!-- Complete Language Packs -->
+<script>
+window.MIKU_I18N = {
+  "zh-CN": {
+    "nav.home": "首页", "nav.archives": "归档", "nav.tags": "标签", "nav.about": "关于", "nav.search": "搜索",
+    "a11y.skip_to_content": "跳到主要内容", "a11y.toggle_nav": "切换导航菜单", "a11y.hero_banner": "首屏横幅",
+    "a11y.tag_cloud": "标签云", "a11y.recent_posts": "最新文章", "a11y.page_nav": "分页导航",
+    "a11y.archive_pagination": "归档分页", "a11y.toc": "文章目录", "a11y.adjacent_posts": "相邻文章", "a11y.avatar": "头像",
+    "a11y.search_posts": "搜索文章", "a11y.reading_time": "阅读时间",
+    "hero.scroll_hint": "向下滚动探索",
+    "post.toc_title": "目录", "post.prev": "← 上一篇", "post.next": "下一篇 →", "post.min_read": "分钟阅读",
+    "pagination.prev": "← 上一页", "pagination.next": "下一页 →",
+    "archive.title": "归档", "tags.title": "标签", "tags.empty": "暂无标签，快去写文章吧！",
+    "search.title": "搜索", "search.placeholder": "输入关键词搜索文章...",
+    "search.index_missing": "搜索索引未找到。请先运行 <code>hexo generate</code>。",
+    "search.no_results": "未找到与 &ldquo;%s&rdquo; 相关的文章。", "search.results": "%d 个结果",
+    "category.title": "分类", "category.empty": "暂无分类。",
+    "theme.switch_light": "切换到亮色模式", "theme.switch_dark": "切换到暗色模式",
+    "lang.switch_to": "English", "lang.label": "语言"
+  },
+  "en": {
+    "nav.home": "Home", "nav.archives": "Archives", "nav.tags": "Tags", "nav.about": "About", "nav.search": "Search",
+    "a11y.skip_to_content": "Skip to main content", "a11y.toggle_nav": "Toggle navigation menu",
+    "a11y.hero_banner": "Hero banner", "a11y.tag_cloud": "Tag cloud", "a11y.recent_posts": "Recent posts",
+    "a11y.page_nav": "Page navigation", "a11y.archive_pagination": "Archive pagination",
+    "a11y.toc": "Table of Contents", "a11y.adjacent_posts": "Adjacent posts", "a11y.avatar": "Avatar",
+    "a11y.search_posts": "Search posts", "a11y.reading_time": "Reading time",
+    "hero.scroll_hint": "Scroll to explore",
+    "post.toc_title": "Contents", "post.prev": "← Previous", "post.next": "Next →", "post.min_read": "min read",
+    "pagination.prev": "← Prev", "pagination.next": "Next →",
+    "archive.title": "Archives", "tags.title": "Tags", "tags.empty": "No tags yet. Write some posts!",
+    "search.title": "Search", "search.placeholder": "Type to search posts...",
+    "search.index_missing": "Search index not found. Run <code>hexo generate</code> first.",
+    "search.no_results": "No posts found for &ldquo;%s&rdquo;.", "search.results": "%d results",
+    "category.title": "Categories", "category.empty": "No categories yet.",
+    "theme.switch_light": "Switch to light mode", "theme.switch_dark": "Switch to dark mode",
+    "lang.switch_to": "中文", "lang.label": "Language"
+  }
+};
+</script>
+
+<!-- Scripts -->
+<script src="/js/main.js"></script>
+
+  <script src="/js/search.js"></script>
+
+
+<!-- hexo injector body_end start --><script src="/js/image-viewer.js" defer></script><!-- hexo injector body_end end --></body>
+</html>
+
