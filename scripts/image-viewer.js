@@ -101,6 +101,37 @@ function attrOf(attrs, name) {
 function enhance(html, title) {
   if (!html || typeof html !== 'string') return html;
 
+  // --- ::: photo-grid 容器语法 ---
+  // HTML 块内部不会解析 Markdown，所以直接在 <div class="photo-grid"> 里写
+  // ![](/images/a.jpg) 会变成一串纯文字。这里支持更顺手的写法：
+  //
+  //   ::: photo-grid
+  //   ![](/images/a.jpg)
+  //   ![](/images/b.jpg)
+  //   :::
+  //
+  // 加 natural 则不裁切：  ::: photo-grid natural
+  // 原理：此时 marked 已经把 ![]() 渲染成真正的 <img>，只需把整段包进带类的 div。
+  // marked 可能把整段塞进一个 <p>（用 <br> 连行），也可能因为空行拆成多个 <p>，两种都处理。
+  const wrapGrid = (natural, inner) => {
+    const imgs = inner.match(/<img\b[^>]*>/gi) || [];
+    if (!imgs.length) return null;
+    const cls = 'photo-grid' + (natural ? ' natural' : '');
+    return '<div class="' + cls + '">\n' + imgs.join('\n') + '\n</div>';
+  };
+
+  // 情况一：空行把它拆成了多个段落
+  html = html.replace(
+    /<p>\s*:::\s*photo-grid\s*(natural)?\s*<\/p>([\s\S]*?)<p>\s*:::\s*<\/p>/gi,
+    (whole, natural, inner) => wrapGrid(natural, inner) || whole
+  );
+
+  // 情况二：整段被包在同一个 <p> 里，行与行之间是 <br>
+  html = html.replace(
+    /<p>\s*:::\s*photo-grid\s*(natural)?(?:\s|<br\s*\/?>)+([\s\S]*?):::\s*<\/p>/gi,
+    (whole, natural, inner) => wrapGrid(natural, inner) || whole
+  );
+
   let index = 0;
   return html.replace(/<img\b([^>]*)>/gi, (whole, attrs) => {
     let a = attrs;
