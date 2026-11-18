@@ -220,6 +220,9 @@
           
           
         
+          
+          
+        
 
         
 
@@ -234,6 +237,22 @@
         
           <a href="#tag-家国情怀" class="tag-cloud-item size-xs">
             家国情怀
+          </a>
+        
+          <a href="#tag-C++" class="tag-cloud-item size-xs">
+            C++
+          </a>
+        
+          <a href="#tag-数据结构" class="tag-cloud-item size-xs">
+            数据结构
+          </a>
+        
+          <a href="#tag-文件操作" class="tag-cloud-item size-xs">
+            文件操作
+          </a>
+        
+          <a href="#tag-学习笔记" class="tag-cloud-item size-xs">
+            学习笔记
           </a>
         
           <a href="#tag-摄影" class="tag-cloud-item size-xl">
@@ -268,22 +287,6 @@
             静物玩偶
           </a>
         
-          <a href="#tag-C++" class="tag-cloud-item size-xs">
-            C++
-          </a>
-        
-          <a href="#tag-数据结构" class="tag-cloud-item size-xs">
-            数据结构
-          </a>
-        
-          <a href="#tag-文件操作" class="tag-cloud-item size-xs">
-            文件操作
-          </a>
-        
-          <a href="#tag-学习笔记" class="tag-cloud-item size-xs">
-            学习笔记
-          </a>
-        
           <a href="#tag-旅行随拍" class="tag-cloud-item size-xs">
             旅行随拍
           </a>
@@ -294,14 +297,6 @@
         
           <a href="#tag-静物模型" class="tag-cloud-item size-xs">
             静物模型
-          </a>
-        
-          <a href="#tag-尼康" class="tag-cloud-item size-xs">
-            尼康
-          </a>
-        
-          <a href="#tag-单反" class="tag-cloud-item size-xs">
-            单反
           </a>
         
           <a href="#tag-开发" class="tag-cloud-item size-xs">
@@ -316,22 +311,6 @@
             开源
           </a>
         
-          <a href="#tag-120胶卷" class="tag-cloud-item size-xs">
-            120胶卷
-          </a>
-        
-          <a href="#tag-中画幅" class="tag-cloud-item size-xs">
-            中画幅
-          </a>
-        
-          <a href="#tag-福马" class="tag-cloud-item size-xs">
-            福马
-          </a>
-        
-          <a href="#tag-黑白" class="tag-cloud-item size-xs">
-            黑白
-          </a>
-        
           <a href="#tag-春日记录" class="tag-cloud-item size-xs">
             春日记录
           </a>
@@ -342,6 +321,34 @@
         
           <a href="#tag-风光摄影" class="tag-cloud-item size-xs">
             风光摄影
+          </a>
+        
+          <a href="#tag-尼康" class="tag-cloud-item size-xs">
+            尼康
+          </a>
+        
+          <a href="#tag-单反" class="tag-cloud-item size-xs">
+            单反
+          </a>
+        
+          <a href="#tag-福马" class="tag-cloud-item size-xs">
+            福马
+          </a>
+        
+          <a href="#tag-黑白" class="tag-cloud-item size-xs">
+            黑白
+          </a>
+        
+          <a href="#tag-科研、流程、科研方法" class="tag-cloud-item size-xs">
+            科研、流程、科研方法
+          </a>
+        
+          <a href="#tag-120胶卷" class="tag-cloud-item size-xs">
+            120胶卷
+          </a>
+        
+          <a href="#tag-中画幅" class="tag-cloud-item size-xs">
+            中画幅
           </a>
         
       </div>
@@ -483,6 +490,234 @@
           </div>
         </section>
       
+        <section class="tag-section" id="tag-C++">
+          <h2 class="tag-section-title"># C++</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/C++" class="tag-pill">C++</a>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="tag-pill">数据结构</a>
+      
+        <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C" class="tag-pill">文件操作</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="tag-pill">学习笔记</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2021/04/13/C++TXL/" itemprop="url">
+      <span itemprop="headline">C++ 通讯录管理系统</span>
+    </a>
+  </h2>
+
+  
+    <p class="article-card-excerpt" itemprop="description">
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
+<ol>
+<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
+<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
+<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
+</ol>
+<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
+    </p>
+  
+
+  <div class="article-card-meta">
+    <time datetime="2021-04-13" itemprop="datePublished">
+      2021-04-13
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~21 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-数据结构">
+          <h2 class="tag-section-title"># 数据结构</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/C++" class="tag-pill">C++</a>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="tag-pill">数据结构</a>
+      
+        <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C" class="tag-pill">文件操作</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="tag-pill">学习笔记</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2021/04/13/C++TXL/" itemprop="url">
+      <span itemprop="headline">C++ 通讯录管理系统</span>
+    </a>
+  </h2>
+
+  
+    <p class="article-card-excerpt" itemprop="description">
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
+<ol>
+<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
+<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
+<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
+</ol>
+<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
+    </p>
+  
+
+  <div class="article-card-meta">
+    <time datetime="2021-04-13" itemprop="datePublished">
+      2021-04-13
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~21 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-文件操作">
+          <h2 class="tag-section-title"># 文件操作</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/C++" class="tag-pill">C++</a>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="tag-pill">数据结构</a>
+      
+        <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C" class="tag-pill">文件操作</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="tag-pill">学习笔记</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2021/04/13/C++TXL/" itemprop="url">
+      <span itemprop="headline">C++ 通讯录管理系统</span>
+    </a>
+  </h2>
+
+  
+    <p class="article-card-excerpt" itemprop="description">
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
+<ol>
+<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
+<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
+<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
+</ol>
+<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
+    </p>
+  
+
+  <div class="article-card-meta">
+    <time datetime="2021-04-13" itemprop="datePublished">
+      2021-04-13
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~21 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-学习笔记">
+          <h2 class="tag-section-title"># 学习笔记</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/C++" class="tag-pill">C++</a>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="tag-pill">数据结构</a>
+      
+        <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C" class="tag-pill">文件操作</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="tag-pill">学习笔记</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2021/04/13/C++TXL/" itemprop="url">
+      <span itemprop="headline">C++ 通讯录管理系统</span>
+    </a>
+  </h2>
+
+  
+    <p class="article-card-excerpt" itemprop="description">
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
+<ol>
+<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
+<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
+<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
+</ol>
+<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
+    </p>
+  
+
+  <div class="article-card-meta">
+    <time datetime="2021-04-13" itemprop="datePublished">
+      2021-04-13
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~21 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
         <section class="tag-section" id="tag-摄影">
           <h2 class="tag-section-title"># 摄影</h2>
           <div class="article-cards">
@@ -576,24 +811,28 @@
       
         <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
       
-        <a href="/tags/%E5%B0%BC%E5%BA%B7" class="tag-pill">尼康</a>
+        <a href="/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D" class="tag-pill">校园随拍</a>
       
-        <a href="/tags/%E5%8D%95%E5%8F%8D" class="tag-pill">单反</a>
+        <a href="/tags/%E6%98%A5%E6%97%A5%E8%AE%B0%E5%BD%95" class="tag-pill">春日记录</a>
+      
+        <a href="/tags/%E5%B0%BC%E5%BA%B7%E7%9B%B4%E5%87%BA" class="tag-pill">尼康直出</a>
+      
+        <a href="/tags/%E9%A3%8E%E5%85%89%E6%91%84%E5%BD%B1" class="tag-pill">风光摄影</a>
       
     </div>
   
 
   <h2 class="article-card-title">
-    <a href="/2026/11/16/%E4%B8%9C%E5%A4%A7%E6%B5%91%E5%8D%97%E4%B9%8B%E7%A7%8B/" itemprop="url">
-      <span itemprop="headline">东大浑南之秋</span>
+    <a href="/2026/04/10/nikond4_1/" itemprop="url">
+      <span itemprop="headline">尼康D4作品集</span>
     </a>
   </h2>
 
   
 
   <div class="article-card-meta">
-    <time datetime="2026-11-16" itemprop="datePublished">
-      2026-11-16
+    <time datetime="2026-04-10" itemprop="datePublished">
+      2026-04-10
     </time>
     
       <span aria-label="阅读时间" data-i18n-attrs="aria-label">
@@ -614,20 +853,16 @@
       
         <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
       
-        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
+        <a href="/tags/%E5%B0%BC%E5%BA%B7" class="tag-pill">尼康</a>
       
-        <a href="/tags/%E6%9F%AF%E8%BE%BE" class="tag-pill">柯达</a>
-      
-        <a href="/tags/120%E8%83%B6%E5%8D%B7" class="tag-pill">120胶卷</a>
-      
-        <a href="/tags/%E4%B8%AD%E7%94%BB%E5%B9%85" class="tag-pill">中画幅</a>
+        <a href="/tags/%E5%8D%95%E5%8F%8D" class="tag-pill">单反</a>
       
     </div>
   
 
   <h2 class="article-card-title">
-    <a href="/2026/11/16/%E6%B5%B7%E9%B8%A54A%E6%90%AD%E9%85%8D120%E8%A7%84%E6%A0%BC%E8%83%B6%E5%8D%B7%E6%9F%AF%E8%BE%BE%E9%87%91200/" itemprop="url">
-      <span itemprop="headline">胶片日记｜海鸥4A搭配120规格胶卷柯达金200</span>
+    <a href="/2026/11/16/%E4%B8%9C%E5%A4%A7%E6%B5%91%E5%8D%97%E4%B9%8B%E7%A7%8B/" itemprop="url">
+      <span itemprop="headline">东大浑南之秋</span>
     </a>
   </h2>
 
@@ -696,28 +931,28 @@
       
         <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
       
-        <a href="/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D" class="tag-pill">校园随拍</a>
+        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
       
-        <a href="/tags/%E6%98%A5%E6%97%A5%E8%AE%B0%E5%BD%95" class="tag-pill">春日记录</a>
+        <a href="/tags/%E6%9F%AF%E8%BE%BE" class="tag-pill">柯达</a>
       
-        <a href="/tags/%E5%B0%BC%E5%BA%B7%E7%9B%B4%E5%87%BA" class="tag-pill">尼康直出</a>
+        <a href="/tags/120%E8%83%B6%E5%8D%B7" class="tag-pill">120胶卷</a>
       
-        <a href="/tags/%E9%A3%8E%E5%85%89%E6%91%84%E5%BD%B1" class="tag-pill">风光摄影</a>
+        <a href="/tags/%E4%B8%AD%E7%94%BB%E5%B9%85" class="tag-pill">中画幅</a>
       
     </div>
   
 
   <h2 class="article-card-title">
-    <a href="/2026/04/10/nikond4_1/" itemprop="url">
-      <span itemprop="headline">尼康D4作品集</span>
+    <a href="/2026/11/16/%E6%B5%B7%E9%B8%A54A%E6%90%AD%E9%85%8D120%E8%A7%84%E6%A0%BC%E8%83%B6%E5%8D%B7%E6%9F%AF%E8%BE%BE%E9%87%91200/" itemprop="url">
+      <span itemprop="headline">胶片日记｜海鸥4A搭配120规格胶卷柯达金200</span>
     </a>
   </h2>
 
   
 
   <div class="article-card-meta">
-    <time datetime="2026-04-10" itemprop="datePublished">
-      2026-04-10
+    <time datetime="2026-11-16" itemprop="datePublished">
+      2026-11-16
     </time>
     
       <span aria-label="阅读时间" data-i18n-attrs="aria-label">
@@ -785,18 +1020,16 @@
       
         <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
       
-        <a href="/tags/%E6%9F%AF%E8%BE%BE" class="tag-pill">柯达</a>
+        <a href="/tags/%E7%A6%8F%E9%A9%AC" class="tag-pill">福马</a>
       
-        <a href="/tags/120%E8%83%B6%E5%8D%B7" class="tag-pill">120胶卷</a>
-      
-        <a href="/tags/%E4%B8%AD%E7%94%BB%E5%B9%85" class="tag-pill">中画幅</a>
+        <a href="/tags/%E9%BB%91%E7%99%BD" class="tag-pill">黑白</a>
       
     </div>
   
 
   <h2 class="article-card-title">
-    <a href="/2026/11/16/%E6%B5%B7%E9%B8%A54A%E6%90%AD%E9%85%8D120%E8%A7%84%E6%A0%BC%E8%83%B6%E5%8D%B7%E6%9F%AF%E8%BE%BE%E9%87%91200/" itemprop="url">
-      <span itemprop="headline">胶片日记｜海鸥4A搭配120规格胶卷柯达金200</span>
+    <a href="/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/" itemprop="url">
+      <span itemprop="headline">胶片日记｜尼康FM搭配福马400黑白胶卷</span>
     </a>
   </h2>
 
@@ -827,16 +1060,18 @@
       
         <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
       
-        <a href="/tags/%E7%A6%8F%E9%A9%AC" class="tag-pill">福马</a>
+        <a href="/tags/%E6%9F%AF%E8%BE%BE" class="tag-pill">柯达</a>
       
-        <a href="/tags/%E9%BB%91%E7%99%BD" class="tag-pill">黑白</a>
+        <a href="/tags/120%E8%83%B6%E5%8D%B7" class="tag-pill">120胶卷</a>
+      
+        <a href="/tags/%E4%B8%AD%E7%94%BB%E5%B9%85" class="tag-pill">中画幅</a>
       
     </div>
   
 
   <h2 class="article-card-title">
-    <a href="/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/" itemprop="url">
-      <span itemprop="headline">胶片日记｜尼康FM搭配福马400黑白胶卷</span>
+    <a href="/2026/11/16/%E6%B5%B7%E9%B8%A54A%E6%90%AD%E9%85%8D120%E8%A7%84%E6%A0%BC%E8%83%B6%E5%8D%B7%E6%9F%AF%E8%BE%BE%E9%87%91200/" itemprop="url">
+      <span itemprop="headline">胶片日记｜海鸥4A搭配120规格胶卷柯达金200</span>
     </a>
   </h2>
 
@@ -1275,234 +1510,6 @@
           </div>
         </section>
       
-        <section class="tag-section" id="tag-C++">
-          <h2 class="tag-section-title"># C++</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/C++" class="tag-pill">C++</a>
-      
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="tag-pill">数据结构</a>
-      
-        <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C" class="tag-pill">文件操作</a>
-      
-        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="tag-pill">学习笔记</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2021/04/13/C++TXL/" itemprop="url">
-      <span itemprop="headline">C++ 通讯录管理系统</span>
-    </a>
-  </h2>
-
-  
-    <p class="article-card-excerpt" itemprop="description">
-      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
-<ol>
-<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
-<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
-<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
-</ol>
-<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
-    </p>
-  
-
-  <div class="article-card-meta">
-    <time datetime="2021-04-13" itemprop="datePublished">
-      2021-04-13
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~21 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
-        <section class="tag-section" id="tag-数据结构">
-          <h2 class="tag-section-title"># 数据结构</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/C++" class="tag-pill">C++</a>
-      
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="tag-pill">数据结构</a>
-      
-        <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C" class="tag-pill">文件操作</a>
-      
-        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="tag-pill">学习笔记</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2021/04/13/C++TXL/" itemprop="url">
-      <span itemprop="headline">C++ 通讯录管理系统</span>
-    </a>
-  </h2>
-
-  
-    <p class="article-card-excerpt" itemprop="description">
-      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
-<ol>
-<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
-<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
-<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
-</ol>
-<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
-    </p>
-  
-
-  <div class="article-card-meta">
-    <time datetime="2021-04-13" itemprop="datePublished">
-      2021-04-13
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~21 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
-        <section class="tag-section" id="tag-文件操作">
-          <h2 class="tag-section-title"># 文件操作</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/C++" class="tag-pill">C++</a>
-      
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="tag-pill">数据结构</a>
-      
-        <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C" class="tag-pill">文件操作</a>
-      
-        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="tag-pill">学习笔记</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2021/04/13/C++TXL/" itemprop="url">
-      <span itemprop="headline">C++ 通讯录管理系统</span>
-    </a>
-  </h2>
-
-  
-    <p class="article-card-excerpt" itemprop="description">
-      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
-<ol>
-<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
-<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
-<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
-</ol>
-<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
-    </p>
-  
-
-  <div class="article-card-meta">
-    <time datetime="2021-04-13" itemprop="datePublished">
-      2021-04-13
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~21 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
-        <section class="tag-section" id="tag-学习笔记">
-          <h2 class="tag-section-title"># 学习笔记</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/C++" class="tag-pill">C++</a>
-      
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="tag-pill">数据结构</a>
-      
-        <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C" class="tag-pill">文件操作</a>
-      
-        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" class="tag-pill">学习笔记</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2021/04/13/C++TXL/" itemprop="url">
-      <span itemprop="headline">C++ 通讯录管理系统</span>
-    </a>
-  </h2>
-
-  
-    <p class="article-card-excerpt" itemprop="description">
-      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一个基于黑马程序员 C++ 教程修改而来的通讯录管理系统。在原版基础上，我添加了一些输入校验和确认机制。不过由于个人能力有限，这个程序仍存在不少瑕疵，主要集中在以下三点：</p>
-<ol>
-<li>输入年龄、性别等数字选项时，如果<strong>不小心输入了非数字字符</strong>，程序会陷入死循环。</li>
-<li>联系人数组满员（1000人）后，执行删除操作时会因为尝试移动并不存在的 <code>personArray[1000]</code> 而导致<strong>数组越界</strong>。大佬建议使用链表来优化。</li>
-<li><strong>程序关闭后所有数据丢失</strong>，因为没有结合文件操作进行持久化存储。</li>
-</ol>
-<p>写下这篇文章，既是对自己学习过程的记录，也希望能帮到遇到同样问题的同学。下面是完整的程序源码，以及针对上述问题的分析与改进思路。</p>
-    </p>
-  
-
-  <div class="article-card-meta">
-    <time datetime="2021-04-13" itemprop="datePublished">
-      2021-04-13
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~21 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
         <section class="tag-section" id="tag-旅行随拍">
           <h2 class="tag-section-title"># 旅行随拍</h2>
           <div class="article-cards">
@@ -1636,96 +1643,6 @@
   <div class="article-card-meta">
     <time datetime="2026-02-20" itemprop="datePublished">
       2026-02-20
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~1 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
-        <section class="tag-section" id="tag-尼康">
-          <h2 class="tag-section-title"># 尼康</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
-      
-        <a href="/tags/%E5%B0%BC%E5%BA%B7" class="tag-pill">尼康</a>
-      
-        <a href="/tags/%E5%8D%95%E5%8F%8D" class="tag-pill">单反</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2026/11/16/%E4%B8%9C%E5%A4%A7%E6%B5%91%E5%8D%97%E4%B9%8B%E7%A7%8B/" itemprop="url">
-      <span itemprop="headline">东大浑南之秋</span>
-    </a>
-  </h2>
-
-  
-
-  <div class="article-card-meta">
-    <time datetime="2026-11-16" itemprop="datePublished">
-      2026-11-16
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~1 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
-        <section class="tag-section" id="tag-单反">
-          <h2 class="tag-section-title"># 单反</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
-      
-        <a href="/tags/%E5%B0%BC%E5%BA%B7" class="tag-pill">尼康</a>
-      
-        <a href="/tags/%E5%8D%95%E5%8F%8D" class="tag-pill">单反</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2026/11/16/%E4%B8%9C%E5%A4%A7%E6%B5%91%E5%8D%97%E4%B9%8B%E7%A7%8B/" itemprop="url">
-      <span itemprop="headline">东大浑南之秋</span>
-    </a>
-  </h2>
-
-  
-
-  <div class="article-card-meta">
-    <time datetime="2026-11-16" itemprop="datePublished">
-      2026-11-16
     </time>
     
       <span aria-label="阅读时间" data-i18n-attrs="aria-label">
@@ -1875,198 +1792,6 @@
           </div>
         </section>
       
-        <section class="tag-section" id="tag-120胶卷">
-          <h2 class="tag-section-title"># 120胶卷</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
-      
-        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
-      
-        <a href="/tags/%E6%9F%AF%E8%BE%BE" class="tag-pill">柯达</a>
-      
-        <a href="/tags/120%E8%83%B6%E5%8D%B7" class="tag-pill">120胶卷</a>
-      
-        <a href="/tags/%E4%B8%AD%E7%94%BB%E5%B9%85" class="tag-pill">中画幅</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2026/11/16/%E6%B5%B7%E9%B8%A54A%E6%90%AD%E9%85%8D120%E8%A7%84%E6%A0%BC%E8%83%B6%E5%8D%B7%E6%9F%AF%E8%BE%BE%E9%87%91200/" itemprop="url">
-      <span itemprop="headline">胶片日记｜海鸥4A搭配120规格胶卷柯达金200</span>
-    </a>
-  </h2>
-
-  
-
-  <div class="article-card-meta">
-    <time datetime="2026-11-16" itemprop="datePublished">
-      2026-11-16
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~1 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
-        <section class="tag-section" id="tag-中画幅">
-          <h2 class="tag-section-title"># 中画幅</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
-      
-        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
-      
-        <a href="/tags/%E6%9F%AF%E8%BE%BE" class="tag-pill">柯达</a>
-      
-        <a href="/tags/120%E8%83%B6%E5%8D%B7" class="tag-pill">120胶卷</a>
-      
-        <a href="/tags/%E4%B8%AD%E7%94%BB%E5%B9%85" class="tag-pill">中画幅</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2026/11/16/%E6%B5%B7%E9%B8%A54A%E6%90%AD%E9%85%8D120%E8%A7%84%E6%A0%BC%E8%83%B6%E5%8D%B7%E6%9F%AF%E8%BE%BE%E9%87%91200/" itemprop="url">
-      <span itemprop="headline">胶片日记｜海鸥4A搭配120规格胶卷柯达金200</span>
-    </a>
-  </h2>
-
-  
-
-  <div class="article-card-meta">
-    <time datetime="2026-11-16" itemprop="datePublished">
-      2026-11-16
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~1 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
-        <section class="tag-section" id="tag-福马">
-          <h2 class="tag-section-title"># 福马</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
-      
-        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
-      
-        <a href="/tags/%E7%A6%8F%E9%A9%AC" class="tag-pill">福马</a>
-      
-        <a href="/tags/%E9%BB%91%E7%99%BD" class="tag-pill">黑白</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/" itemprop="url">
-      <span itemprop="headline">胶片日记｜尼康FM搭配福马400黑白胶卷</span>
-    </a>
-  </h2>
-
-  
-
-  <div class="article-card-meta">
-    <time datetime="2026-11-16" itemprop="datePublished">
-      2026-11-16
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~1 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
-        <section class="tag-section" id="tag-黑白">
-          <h2 class="tag-section-title"># 黑白</h2>
-          <div class="article-cards">
-            
-              <!-- Article Card (used in index, archive, tag pages) -->
-<article class="article-card" itemscope itemtype="http://schema.org/Article">
-  
-
-  
-    <div class="article-card-tags">
-      
-        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
-      
-        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
-      
-        <a href="/tags/%E7%A6%8F%E9%A9%AC" class="tag-pill">福马</a>
-      
-        <a href="/tags/%E9%BB%91%E7%99%BD" class="tag-pill">黑白</a>
-      
-    </div>
-  
-
-  <h2 class="article-card-title">
-    <a href="/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/" itemprop="url">
-      <span itemprop="headline">胶片日记｜尼康FM搭配福马400黑白胶卷</span>
-    </a>
-  </h2>
-
-  
-
-  <div class="article-card-meta">
-    <time datetime="2026-11-16" itemprop="datePublished">
-      2026-11-16
-    </time>
-    
-      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
-        
-        ~1 <span data-i18n="post.min_read">分钟阅读</span>
-      </span>
-    
-  </div>
-</article>
-
-            
-          </div>
-        </section>
-      
         <section class="tag-section" id="tag-春日记录">
           <h2 class="tag-section-title"># 春日记录</h2>
           <div class="article-cards">
@@ -2200,6 +1925,329 @@
   <div class="article-card-meta">
     <time datetime="2026-04-10" itemprop="datePublished">
       2026-04-10
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~1 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-尼康">
+          <h2 class="tag-section-title"># 尼康</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
+      
+        <a href="/tags/%E5%B0%BC%E5%BA%B7" class="tag-pill">尼康</a>
+      
+        <a href="/tags/%E5%8D%95%E5%8F%8D" class="tag-pill">单反</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2026/11/16/%E4%B8%9C%E5%A4%A7%E6%B5%91%E5%8D%97%E4%B9%8B%E7%A7%8B/" itemprop="url">
+      <span itemprop="headline">东大浑南之秋</span>
+    </a>
+  </h2>
+
+  
+
+  <div class="article-card-meta">
+    <time datetime="2026-11-16" itemprop="datePublished">
+      2026-11-16
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~1 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-单反">
+          <h2 class="tag-section-title"># 单反</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
+      
+        <a href="/tags/%E5%B0%BC%E5%BA%B7" class="tag-pill">尼康</a>
+      
+        <a href="/tags/%E5%8D%95%E5%8F%8D" class="tag-pill">单反</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2026/11/16/%E4%B8%9C%E5%A4%A7%E6%B5%91%E5%8D%97%E4%B9%8B%E7%A7%8B/" itemprop="url">
+      <span itemprop="headline">东大浑南之秋</span>
+    </a>
+  </h2>
+
+  
+
+  <div class="article-card-meta">
+    <time datetime="2026-11-16" itemprop="datePublished">
+      2026-11-16
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~1 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-福马">
+          <h2 class="tag-section-title"># 福马</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
+      
+        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
+      
+        <a href="/tags/%E7%A6%8F%E9%A9%AC" class="tag-pill">福马</a>
+      
+        <a href="/tags/%E9%BB%91%E7%99%BD" class="tag-pill">黑白</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/" itemprop="url">
+      <span itemprop="headline">胶片日记｜尼康FM搭配福马400黑白胶卷</span>
+    </a>
+  </h2>
+
+  
+
+  <div class="article-card-meta">
+    <time datetime="2026-11-16" itemprop="datePublished">
+      2026-11-16
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~1 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-黑白">
+          <h2 class="tag-section-title"># 黑白</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
+      
+        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
+      
+        <a href="/tags/%E7%A6%8F%E9%A9%AC" class="tag-pill">福马</a>
+      
+        <a href="/tags/%E9%BB%91%E7%99%BD" class="tag-pill">黑白</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2026/11/16/%E5%B0%BC%E5%BA%B7FM%E6%90%AD%E9%85%8D%E7%A6%8F%E9%A9%AC400%E9%BB%91%E7%99%BD%E8%83%B6%E5%8D%B7/" itemprop="url">
+      <span itemprop="headline">胶片日记｜尼康FM搭配福马400黑白胶卷</span>
+    </a>
+  </h2>
+
+  
+
+  <div class="article-card-meta">
+    <time datetime="2026-11-16" itemprop="datePublished">
+      2026-11-16
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~1 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-科研、流程、科研方法">
+          <h2 class="tag-section-title"># 科研、流程、科研方法</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/%E7%A7%91%E7%A0%94%E3%80%81%E6%B5%81%E7%A8%8B%E3%80%81%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95" class="tag-pill">科研、流程、科研方法</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2026/11/18/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%88%E6%B5%81%E7%A8%8B%E7%89%88%EF%BC%89/" itemprop="url">
+      <span itemprop="headline">科研方法论（流程版）</span>
+    </a>
+  </h2>
+
+  
+
+  <div class="article-card-meta">
+    <time datetime="2026-11-18" itemprop="datePublished">
+      2026-11-18
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~9 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-120胶卷">
+          <h2 class="tag-section-title"># 120胶卷</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
+      
+        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
+      
+        <a href="/tags/%E6%9F%AF%E8%BE%BE" class="tag-pill">柯达</a>
+      
+        <a href="/tags/120%E8%83%B6%E5%8D%B7" class="tag-pill">120胶卷</a>
+      
+        <a href="/tags/%E4%B8%AD%E7%94%BB%E5%B9%85" class="tag-pill">中画幅</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2026/11/16/%E6%B5%B7%E9%B8%A54A%E6%90%AD%E9%85%8D120%E8%A7%84%E6%A0%BC%E8%83%B6%E5%8D%B7%E6%9F%AF%E8%BE%BE%E9%87%91200/" itemprop="url">
+      <span itemprop="headline">胶片日记｜海鸥4A搭配120规格胶卷柯达金200</span>
+    </a>
+  </h2>
+
+  
+
+  <div class="article-card-meta">
+    <time datetime="2026-11-16" itemprop="datePublished">
+      2026-11-16
+    </time>
+    
+      <span aria-label="阅读时间" data-i18n-attrs="aria-label">
+        
+        ~1 <span data-i18n="post.min_read">分钟阅读</span>
+      </span>
+    
+  </div>
+</article>
+
+            
+          </div>
+        </section>
+      
+        <section class="tag-section" id="tag-中画幅">
+          <h2 class="tag-section-title"># 中画幅</h2>
+          <div class="article-cards">
+            
+              <!-- Article Card (used in index, archive, tag pages) -->
+<article class="article-card" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+    <div class="article-card-tags">
+      
+        <a href="/tags/%E6%91%84%E5%BD%B1" class="tag-pill">摄影</a>
+      
+        <a href="/tags/%E8%83%B6%E7%89%87" class="tag-pill">胶片</a>
+      
+        <a href="/tags/%E6%9F%AF%E8%BE%BE" class="tag-pill">柯达</a>
+      
+        <a href="/tags/120%E8%83%B6%E5%8D%B7" class="tag-pill">120胶卷</a>
+      
+        <a href="/tags/%E4%B8%AD%E7%94%BB%E5%B9%85" class="tag-pill">中画幅</a>
+      
+    </div>
+  
+
+  <h2 class="article-card-title">
+    <a href="/2026/11/16/%E6%B5%B7%E9%B8%A54A%E6%90%AD%E9%85%8D120%E8%A7%84%E6%A0%BC%E8%83%B6%E5%8D%B7%E6%9F%AF%E8%BE%BE%E9%87%91200/" itemprop="url">
+      <span itemprop="headline">胶片日记｜海鸥4A搭配120规格胶卷柯达金200</span>
+    </a>
+  </h2>
+
+  
+
+  <div class="article-card-meta">
+    <time datetime="2026-11-16" itemprop="datePublished">
+      2026-11-16
     </time>
     
       <span aria-label="阅读时间" data-i18n-attrs="aria-label">
