@@ -17,9 +17,9 @@
     </author>
     <category term="科研" scheme="https://navybunny.github.io/categories/%E7%A7%91%E7%A0%94/"/>
     <category term="科研" scheme="https://navybunny.github.io/tags/%E7%A7%91%E7%A0%94/"/>
-    <category term="文献阅读" scheme="https://navybunny.github.io/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
     <category term="流程" scheme="https://navybunny.github.io/tags/%E6%B5%81%E7%A8%8B/"/>
     <category term="经验" scheme="https://navybunny.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="文献阅读" scheme="https://navybunny.github.io/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
     <id>https://navybunny.github.io/2026/11/18/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB%E4%B8%83%E9%97%AE/</id>
     <link href="https://navybunny.github.io/2026/11/18/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB%E4%B8%83%E9%97%AE/"/>
     <published>2026-11-18T12:47:10.000Z</published>
@@ -40,8 +40,8 @@
     <category term="科研" scheme="https://navybunny.github.io/categories/%E7%A7%91%E7%A0%94/"/>
     <category term="科研" scheme="https://navybunny.github.io/tags/%E7%A7%91%E7%A0%94/"/>
     <category term="流程" scheme="https://navybunny.github.io/tags/%E6%B5%81%E7%A8%8B/"/>
-    <category term="经验" scheme="https://navybunny.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <category term="方法论" scheme="https://navybunny.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="经验" scheme="https://navybunny.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <id>https://navybunny.github.io/2026/11/18/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%88%E6%B5%81%E7%A8%8B%E7%89%88%EF%BC%89/</id>
     <link href="https://navybunny.github.io/2026/11/18/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%88%E6%B5%81%E7%A8%8B%E7%89%88%EF%BC%89/"/>
     <published>2026-11-18T12:07:40.000Z</published>
@@ -164,8 +164,8 @@
       <name>NavyBunny</name>
     </author>
     <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
-    <category term="校园随拍" scheme="https://navybunny.github.io/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D/"/>
     <category term="摄影" scheme="https://navybunny.github.io/tags/%E6%91%84%E5%BD%B1/"/>
+    <category term="校园随拍" scheme="https://navybunny.github.io/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D/"/>
     <category term="春日记录" scheme="https://navybunny.github.io/tags/%E6%98%A5%E6%97%A5%E8%AE%B0%E5%BD%95/"/>
     <category term="尼康直出" scheme="https://navybunny.github.io/tags/%E5%B0%BC%E5%BA%B7%E7%9B%B4%E5%87%BA/"/>
     <category term="风光摄影" scheme="https://navybunny.github.io/tags/%E9%A3%8E%E5%85%89%E6%91%84%E5%BD%B1/"/>
@@ -207,8 +207,8 @@
       <name>NavyBunny</name>
     </author>
     <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
-    <category term="胶片摄影" scheme="https://navybunny.github.io/tags/%E8%83%B6%E7%89%87%E6%91%84%E5%BD%B1/"/>
     <category term="摄影" scheme="https://navybunny.github.io/tags/%E6%91%84%E5%BD%B1/"/>
+    <category term="胶片摄影" scheme="https://navybunny.github.io/tags/%E8%83%B6%E7%89%87%E6%91%84%E5%BD%B1/"/>
     <category term="旅行随拍" scheme="https://navybunny.github.io/tags/%E6%97%85%E8%A1%8C%E9%9A%8F%E6%8B%8D/"/>
     <category term="烟火记录" scheme="https://navybunny.github.io/tags/%E7%83%9F%E7%81%AB%E8%AE%B0%E5%BD%95/"/>
     <category term="静物模型" scheme="https://navybunny.github.io/tags/%E9%9D%99%E7%89%A9%E6%A8%A1%E5%9E%8B/"/>
@@ -232,16 +232,33 @@
     </author>
     <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
     <category term="摄影" scheme="https://navybunny.github.io/tags/%E6%91%84%E5%BD%B1/"/>
+    <category term="航展" scheme="https://navybunny.github.io/tags/%E8%88%AA%E5%B1%95/"/>
+    <category term="战斗机" scheme="https://navybunny.github.io/tags/%E6%88%98%E6%96%97%E6%9C%BA/"/>
+    <id>https://navybunny.github.io/2025/09/27/%E8%88%AA%E5%B1%95%E4%B8%8A%E7%9A%84D90%E8%80%81%E5%BD%93%E7%9B%8A%E5%A3%AE/</id>
+    <link href="https://navybunny.github.io/2025/09/27/%E8%88%AA%E5%B1%95%E4%B8%8A%E7%9A%84D90%E8%80%81%E5%BD%93%E7%9B%8A%E5%A3%AE/"/>
+    <published>2025-09-27T10:53:24.000Z</published>
+    <summary>
+      <![CDATA[<p>以前小时候虽说玩过老爹的尼康D90和佳能5D2，但从2023年开始，我开始捡起家中尘封已久的D90。我开始认认真真地去玩摄影，去投入摄影这个爱好，也开始让自己对各个参数和构图有了自己的第一次理解。</p>
+<p>2023年暑假到2024年初，我与尼康D90的这半年攒下了不少]]>
+    </summary>
+    <title>航展上的D90老当益壮</title>
+    <updated>2026-11-18T13:54:49.884Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>NavyBunny</name>
+    </author>
+    <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
+    <category term="摄影" scheme="https://navybunny.github.io/tags/%E6%91%84%E5%BD%B1/"/>
     <category term="尼康" scheme="https://navybunny.github.io/tags/%E5%B0%BC%E5%BA%B7/"/>
     <id>https://navybunny.github.io/2024/02/02/%E6%88%91%E4%B8%8E%E5%B0%BC%E5%BA%B7D90%E7%9A%84%E5%8D%8A%E5%B9%B4-2/</id>
     <link href="https://navybunny.github.io/2024/02/02/%E6%88%91%E4%B8%8E%E5%B0%BC%E5%BA%B7D90%E7%9A%84%E5%8D%8A%E5%B9%B4-2/"/>
     <published>2024-02-02T07:36:41.000Z</published>
     <summary>
-      <![CDATA[<p>以前小时候虽说玩过老爹的尼康D90和佳能5D2，但从2023年开始，我开始捡起家中尘封已久的D90。我开始认认真真地去玩摄影，去投入摄影这个爱好，也开始让自己对各个参数和构图有了自己的第一次理解。</p>
-<p>2023年暑假到2024年初，我与尼康D90的这半年攒下了不少]]>
+      <![CDATA[<p>以前小时候虽说玩过老爹的尼康D90和佳能5D2，但从2023年开始，我开始捡起家中尘封已久的D90。<br>我开始认认真真地去玩摄影，去投入摄影这个爱好，也开始让自己对各个参数和构图有了自己的第一次理解。<br>2023年暑假到2024年初，我与尼康D90的这半年攒下了不少]]>
     </summary>
     <title>我与尼康D90的半年</title>
-    <updated>2026-11-18T13:51:33.003Z</updated>
+    <updated>2026-11-18T13:59:01.782Z</updated>
   </entry>
   <entry>
     <author>
