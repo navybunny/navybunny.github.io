@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, NavyBunny</rights>
   <subtitle>一个爱摄影、玩模型、玩wargame且是一名铁杆军迷的计算机专业学生</subtitle>
   <title>NavyBunny的博客</title>
-  <updated>2026-11-18T12:48:10.049Z</updated>
+  <updated>2026-11-18T12:49:37.933Z</updated>
   <entry>
     <author>
       <name>NavyBunny</name>
@@ -18,6 +18,8 @@
     <category term="科研" scheme="https://navybunny.github.io/categories/%E7%A7%91%E7%A0%94/"/>
     <category term="科研" scheme="https://navybunny.github.io/tags/%E7%A7%91%E7%A0%94/"/>
     <category term="文献阅读" scheme="https://navybunny.github.io/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    <category term="流程" scheme="https://navybunny.github.io/tags/%E6%B5%81%E7%A8%8B/"/>
+    <category term="经验" scheme="https://navybunny.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <id>https://navybunny.github.io/2026/11/18/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB%E4%B8%83%E9%97%AE/</id>
     <link href="https://navybunny.github.io/2026/11/18/%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB%E4%B8%83%E9%97%AE/"/>
     <published>2026-11-18T12:47:10.000Z</published>
@@ -29,7 +31,7 @@
 <div class="badge-row">]]>
     </summary>
     <title>论文精读七问</title>
-    <updated>2026-11-18T12:48:10.049Z</updated>
+    <updated>2026-11-18T12:49:37.933Z</updated>
   </entry>
   <entry>
     <author>
@@ -38,8 +40,8 @@
     <category term="科研" scheme="https://navybunny.github.io/categories/%E7%A7%91%E7%A0%94/"/>
     <category term="科研" scheme="https://navybunny.github.io/tags/%E7%A7%91%E7%A0%94/"/>
     <category term="流程" scheme="https://navybunny.github.io/tags/%E6%B5%81%E7%A8%8B/"/>
-    <category term="方法论" scheme="https://navybunny.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     <category term="经验" scheme="https://navybunny.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="方法论" scheme="https://navybunny.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     <id>https://navybunny.github.io/2026/11/18/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%88%E6%B5%81%E7%A8%8B%E7%89%88%EF%BC%89/</id>
     <link href="https://navybunny.github.io/2026/11/18/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%88%E6%B5%81%E7%A8%8B%E7%89%88%EF%BC%89/"/>
     <published>2026-11-18T12:07:40.000Z</published>
@@ -162,8 +164,8 @@
       <name>NavyBunny</name>
     </author>
     <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
-    <category term="校园随拍" scheme="https://navybunny.github.io/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D/"/>
     <category term="摄影" scheme="https://navybunny.github.io/tags/%E6%91%84%E5%BD%B1/"/>
+    <category term="校园随拍" scheme="https://navybunny.github.io/tags/%E6%A0%A1%E5%9B%AD%E9%9A%8F%E6%8B%8D/"/>
     <category term="春日记录" scheme="https://navybunny.github.io/tags/%E6%98%A5%E6%97%A5%E8%AE%B0%E5%BD%95/"/>
     <category term="尼康直出" scheme="https://navybunny.github.io/tags/%E5%B0%BC%E5%BA%B7%E7%9B%B4%E5%87%BA/"/>
     <category term="风光摄影" scheme="https://navybunny.github.io/tags/%E9%A3%8E%E5%85%89%E6%91%84%E5%BD%B1/"/>
@@ -205,8 +207,8 @@
       <name>NavyBunny</name>
     </author>
     <category term="摄影" scheme="https://navybunny.github.io/categories/%E6%91%84%E5%BD%B1/"/>
-    <category term="胶片摄影" scheme="https://navybunny.github.io/tags/%E8%83%B6%E7%89%87%E6%91%84%E5%BD%B1/"/>
     <category term="摄影" scheme="https://navybunny.github.io/tags/%E6%91%84%E5%BD%B1/"/>
+    <category term="胶片摄影" scheme="https://navybunny.github.io/tags/%E8%83%B6%E7%89%87%E6%91%84%E5%BD%B1/"/>
     <category term="旅行随拍" scheme="https://navybunny.github.io/tags/%E6%97%85%E8%A1%8C%E9%9A%8F%E6%8B%8D/"/>
     <category term="烟火记录" scheme="https://navybunny.github.io/tags/%E7%83%9F%E7%81%AB%E8%AE%B0%E5%BD%95/"/>
     <category term="静物模型" scheme="https://navybunny.github.io/tags/%E9%9D%99%E7%89%A9%E6%A8%A1%E5%9E%8B/"/>
